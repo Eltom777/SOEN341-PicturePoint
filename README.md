@@ -12,3 +12,4 @@
 ## Contributors
 - Jordan Hum (Jordan-Hum) - 40095876
 - Anthony Iacampo (a-iacampo) - 40096683
+- Thomas Tran (digathomas) - 40095654
