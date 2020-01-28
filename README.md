@@ -4,7 +4,7 @@
 ## Objective
 ## Core Features
 ### Extra Features
-## Languages/Technology
+## Languages/Technologies
 - Javascript
 - PHP
 - Firebase
