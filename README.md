@@ -3,7 +3,7 @@
 ## Description
 PicturePoint is a photo-sharing web application. Similar to [Instagram](https://help.instagram.com/424737657584573), users may upload pictures to their profile, follow other users' and like/comment on users' published picutres. This application lets PicturePointers create and be part of groups. Members within these groups will be able to upload and download pictures from this shared space. 
 ## Objective
-PicturePoint focuses on providing a platform to share pictures within a group. This application can be viewed as a shared cloud storage space for pictures. Each storage space will be controlled by a group of users. 
+PicturePoint focuses on providing a platform to share pictures within a group. This application can be viewed as a shared cloud storage space for pictures. Each storage space will be controlled by a group of users and the privacy of these shared pictures can also be configured by it's creator.
 ## Core Features
 - Login page for users to access their profile
 - Signup page allows a user to create a new profile
