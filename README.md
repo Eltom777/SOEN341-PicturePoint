@@ -1,7 +1,7 @@
 # SOEN341-PicturePoint
 
 ## Description
-PicturePoint is a photo-sharing web application. Similar to [Instagram](https://help.instagram.com/424737657584573), users may upload pictures to their profile, follow other users' and like/comment on users' published picutres. This application lets PicturePointers create and be part of a groups. Members within these groups will be able to upload and download pictures from this shared space. 
+PicturePoint is a photo-sharing web application. Similar to [Instagram](https://help.instagram.com/424737657584573), users may upload pictures to their profile, follow other users' and like/comment on users' published picutres. This application lets PicturePointers create and be part of groups. Members within these groups will be able to upload and download pictures from this shared space. 
 ## Objective
 PicturePoint focuses on providing a platform to share pictures within a group. This application can be viewed as a shared cloud storage space for pictures. Each storage space will be controlled by a group of users. 
 ## Core Features
@@ -21,7 +21,7 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - PHP
 - Firebase
 - React
-- GCL Framework
+- gRPC Framework for PHP
 ## Contributors
 - Liam-Thomas Flynn (Eltom777) - 40034877 (Team leader)
 - Jordan Hum (Jordan-Hum) - 40095876
