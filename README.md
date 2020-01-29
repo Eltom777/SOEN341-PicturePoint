@@ -27,3 +27,4 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - Jordan Hum (Jordan-Hum) - 40095876
 - Anthony Iacampo (a-iacampo) - 40096683
 - Haocheng Yang (Swnoob) - 40031815
+- Thomas Tran (digathomas) - 40095654
