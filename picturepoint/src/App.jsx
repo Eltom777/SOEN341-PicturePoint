@@ -12,7 +12,6 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 function App() {
-
   //=============================================*TEMP*============================================================
   //Accessing firebase database
   db.collection('users').get().then(data => {
@@ -31,21 +30,20 @@ function App() {
     console.log(users);
   });
   //users = [{creationDate: "2020-01-23T20:22:39.616Z", email: "user@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "user"}, {...}, {...}]
-
   //===============================================================================================================
 
   //Using state
   const [users, setUsers] = useState([
-    {creationDate: "2020-01-23T20:22:39.616Z", email: "user@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "user"}
-    //{creationDate: "2020-01-23T20:28:14.512Z", email: "user1@email.com", userID: "AfybjsKWt0TZEKYpXVXfQk0FRVi1", username: "user1"},
-    //{creationDate: "2020-01-23T21:05:24.198Z", email: "user2@email.com", userID: "6CMdkh3VA3hERftUeK8EYldU3Yb2", username: "user2"}
+    {creationDate: "2020-01-23T20:22:39.616Z", email: "a.iacampo@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "a-iacampo", name: "Anthony Iacampo"}
+    //{creationDate: "2020-01-23T20:28:14.512Z", email: "user1@email.com", userID: "AfybjsKWt0TZEKYpXVXfQk0FRVi1", username: "user1", name: "Jordan Hum"},
+    //{creationDate: "2020-01-23T21:05:24.198Z", email: "user2@email.com", userID: "6CMdkh3VA3hERftUeK8EYldU3Yb2", username: "user2", name: "Thomas Flynn"}
   ]);
 
   return (
     <div>
       <Header />
       {users.map(user => (
-        <Profile username={user.username} email={user.email} />
+        <Profile username={user.username} email={user.email} name={user.name} creationDate={user.creationDate} />
       ))}
       <Footer />
     </div>

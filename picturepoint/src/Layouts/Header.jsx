@@ -19,8 +19,7 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        fontFamily: "Bradley Hand ITC",
-        fontSize: "40px"
+        fontFamily: "Bradley Hand ITC"
     },
 }));
 
@@ -35,7 +34,7 @@ function Header() {
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>
+                    <Typography variant="h3" className={classes.title}>
                         Picture Point
                     </Typography>
                     <IconButton
