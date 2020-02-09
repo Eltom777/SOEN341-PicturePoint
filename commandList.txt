@@ -1,0 +1,7 @@
+Create React App:
+npx create-react-app picturepoint
+
+cd into picturepoint:
+npm install --save firebase
+npm install @material-ui/core
+npm install @material-ui/icons
