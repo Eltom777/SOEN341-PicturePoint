@@ -45,6 +45,7 @@ auth.onAuthStateChanged(function(user){
   if(user){
   var email = user.email;
   alert("Active User" + email)
+  window.location.href='after.html'
 }
   else{
     alert("No Active user")
