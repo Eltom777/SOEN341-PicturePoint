@@ -44,7 +44,7 @@ function signOut(){
 auth.onAuthStateChanged(function(user){
   if(user){
   var email = user.email;
-  alert("Active User" + email.value)
+  alert("Active User" + email)
 }
   else{
     alert("No Active user")

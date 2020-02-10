@@ -2,38 +2,106 @@
 <html lang="en" dir="ltr">
 
 
-  <head>
-    <meta charset="utf-8">
-    <title>Login Page</title>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>picture point Login Page</title>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
 
-    <script  src="login.js" > </script>
-  </head>
+  <script src="login.js"> </script>
+  <link rel="stylesheet" href="css/logIn.css">
+  <style media="screen">
+    body {
+      background-color: #eaffd0;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      margin: 5px 0;
+      opacity: 0.85;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 20px;
+      text-decoration: none;
+      /* remove underline from anchors */
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      border: none;
+    }
+  </style>
+
+</head>
 
 
 
-  <body>
-    <h1>login</h1>
-    <div id="buttons">
-
-
-    <div id="header">  </div>
-
-    <input type="email" placeholder="email" id="email">
-    <input type="password" placeholder="password" id="password">
-
-    <button onclick="signUp()" id="button">signUp</button>
-    <button onclick="signIn()" id="button">signIn</button>
-    <button onclick="signOut()" id="button">signOut</button>
-    </div>
+<body>
+  <a href="http://concordia.ca">
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Concordia_University_logo.svg/1280px-Concordia_University_logo.svg.png" height=10% width=20%>
+  </a>
 
 
 
-  </body>
+
+
+  <br><br><br><br><br><br><br>
+  <center>
+    <table align="center">
+
+      <tr>
+        <td>
+          <h1 style="color:orange">PicturePoint<span style="color:grey">Login</span></h1>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="email" placeholder="Enter your email here" id="email">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input  type="password" placeholder="Enter your password here" id="password">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="btn_signup" type="button" onclick="signUp()" name="button" id="signUp">signUp</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <button class="btn_login" type="button" onclick="signIn()" name="button" id="signIn">signIn</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+
+          <button onclick="signOut()" id="button">signOut</button>
+
+        </td>
+      </tr>
+    </table>
+  </center>
+
+
+
+</body>
+
 </html>
