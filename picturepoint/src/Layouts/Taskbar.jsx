@@ -14,9 +14,9 @@ const useStyles = makeStyles({
 });
 
 //Render
-function Footer() {
+function Taskbar(props) {
     const classes = useStyles();
-    const [value, setValue] = useState(1); //Set to 1 to start at "My Profile"
+    const [value, setValue] = useState(0); //Set to 1 to start at "My Photos"
   
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -31,12 +31,12 @@ function Footer() {
             textColor="primary"
             centered
             >
-                <Tab label="My Feed" />
-                <Tab label="My Profile" />
+                <Tab label="My Friends" />
                 <Tab label="My Photos" />
+                <Tab label="My Albums" />
             </Tabs>
         </Paper>
     );
 }
 
-export default Footer;
+export default Taskbar;

@@ -11,7 +11,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 //Style
 const useStyles = makeStyles({
-    root: {
+    card: {
       width: 700,
       backgroundColor: 'whitesmoke',
       padding: 10,
@@ -39,10 +39,10 @@ function Profile(props) {
     return (
         <div>
             <Box display="flex" justifyContent="center">
-                <Card className={classes.root}>
-                    <Grid container >
+                <Card className={classes.card}>
+                    <Grid container>
                         <Grid item className={classes.avatar}>
-                            <Avatar className={classes.avatarSize}>A</Avatar>
+                            <Avatar className={classes.avatarSize}>{props.name[0]}</Avatar>
                         </Grid>
                         <Grid item>
                             <CardContent>
