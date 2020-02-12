@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+    
+	
+	<%- include('templates/header') -%>
+	
+	<section class="container grey-text">
+		<h4 class="center">Add a picture</h4>
+		<form class="white" class ="" id="uploadButton">
+			<label>Caption:</label>
+			<input type="text" name="caption">
+			<label>Picture:</label>
+			<input type="file" name="picture">
+			<div class="center">
+				<input type="submit" name="submit" value="submit" class="btn brand z-depth-0">
+			</div>
+		</form>
+    </section>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDTSp-jysKsVYkvrlOjAJBqZoU4GsjG-nk",
+            authDomain: "picturepoint-381cf.firebaseapp.com",
+            databaseURL: "https://picturepoint-381cf.firebaseio.com",
+            projectId: "picturepoint-381cf",
+            storageBucket: "picturepoint-381cf.appspot.com",
+            messagingSenderId: "370534118114",
+            appId: "1:370534118114:web:5025cb108da80915c564bb",
+            measurementId: "G-8LPREMPPKG"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        var uploadButton = document.getElementById('uploadbutton');
+
+        uploadButton.addEventListener('change',function(element){
+            
+            //get file
+            var file = element.target.files[0];
+
+            document.write('here');
+
+            //TODO: Validate if input file is a png 
+
+            //check file
+            //firebase.storage().ref('user/' + file.name);
+        }
+        );
+
+
+
+    </script>
+	<%- include('templates/footer') -%>
+
+</html>
