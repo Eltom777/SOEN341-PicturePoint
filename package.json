@@ -18,5 +18,6 @@
   "homepage": "https://github.com/Eltom777/SOEN341-PicturePoint#readme",
   "dependencies": {
     "express": "^4.17.1"
+	"firebase": "^7.8.1"
   }
 }
