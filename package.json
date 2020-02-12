@@ -1,0 +1,22 @@
+{
+  "name": "soen341-picturepoint",
+  "version": "1.0.0",
+  "description": "Mock instagram for SOEN341",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eltom777/SOEN341-PicturePoint.git"
+  },
+  "author": "Picture Point Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eltom777/SOEN341-PicturePoint/issues"
+  },
+  "homepage": "https://github.com/Eltom777/SOEN341-PicturePoint#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
