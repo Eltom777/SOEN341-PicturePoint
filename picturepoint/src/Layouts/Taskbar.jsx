@@ -1,4 +1,6 @@
+//React
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,7 +18,7 @@ const useStyles = makeStyles({
 //Render
 function Taskbar(props) {
     const classes = useStyles();
-    const [value, setValue] = useState(0); //Set to 1 to start at "My Photos"
+    const [value, setValue] = useState(0); //<- BUG here
   
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -31,9 +33,9 @@ function Taskbar(props) {
             textColor="primary"
             centered
             >
-                <Tab label="My Friends" />
-                <Tab label="My Photos" />
-                <Tab label="My Albums" />
+                <Tab label="My Friends" component={Link} to="/" />
+                <Tab label="My Photos" component={Link} to="/Photos" />
+                <Tab label="My Albums" disabled />
             </Tabs>
         </Paper>
     );

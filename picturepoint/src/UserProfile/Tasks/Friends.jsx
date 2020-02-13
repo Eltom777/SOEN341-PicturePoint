@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+//React
+import React, { useState, Fragment } from 'react';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,6 +12,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+
+//Functions
+import { getFollowers, getFollowing } from '../../Functions/DataProcessor';
 
 //Style
 const useStyles = makeStyles({
@@ -30,8 +34,12 @@ const useStyles = makeStyles({
     }
 });
 
-function Friend(props) {
+function Friends() {
     const classes = useStyles();
+
+    //Temp Data
+    const [followers] = useState(getFollowers);
+    const [following] = useState(getFollowing);
 
     return(
         <div>
@@ -42,7 +50,7 @@ function Friend(props) {
                             <Typography variant="h4" align="center">
                                 Followers
                             </Typography>
-                            {props.followers.map(follower => (
+                            {followers.map(follower => (
                                 <Fragment>
                                     <List component="nav">
                                         <ListItem button>
@@ -61,7 +69,7 @@ function Friend(props) {
                             <Typography variant="h4" align="center">
                                 Following
                             </Typography>
-                            {props.following.map(following => (
+                            {following.map(following => (
                                 <Fragment>
                                     <List component="nav">
                                         <ListItem button>
@@ -81,4 +89,4 @@ function Friend(props) {
     );
 }
 
-export default Friend;
+export default Friends;

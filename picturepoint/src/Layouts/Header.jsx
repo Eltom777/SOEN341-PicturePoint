@@ -1,3 +1,4 @@
+//React
 import React from 'react';
 
 //Material UI
@@ -39,7 +40,6 @@ function Header() {
                     </Typography>
                     <IconButton
                         edge="end"
-                        onClick={console.log("Bring me to my profile")}
                         color="inherit"
                     >
                         <AccountCircle />
