@@ -28,12 +28,9 @@ server.post('/add.ejs',function(req,res){
   let imageFileName;
   
   busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
-      console.log(mimetype);
       
-      // my.image.png => ['my', 'image', 'png']
       const imageExtension = filename.split('.')[filename.split('.').length - 1];
       
-      // generate randome file id
       imageFileName = `${Math.round(Math.random() * 1000000000000).toString()}.${imageExtension}`;
 
       const filepath = path.join(os.tmpdir(), imageFileName);
@@ -44,9 +41,8 @@ server.post('/add.ejs',function(req,res){
       console.log(val);
   });
   busboy.on('finish', () => {
-	  console.log(imageToBeUploaded.filepath);
       const storage = admin.storage();
-      console.log(JSON.stringify(storage.appInternal.options));
+     
       admin
       .storage()
       .bucket()
