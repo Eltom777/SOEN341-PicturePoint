@@ -13,16 +13,29 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 //Style
 const useStyles = makeStyles({
-    root: {
-
-    }
+    paper: {
+        padding: 10,
+        marginTop: 20,
+        marginLeft: 20,
+        marginRight: 20,
+        marginBottom: 20,
+        height: 800, 
+        width: 900,
+        overflow: 'auto'
+    },
 });
 
 function Photos(props) {
     const classes = useStyles();
     return(
         <div>
-            <Typography>Photos</Typography>
+            <Box display="flex" justifyContent="center">
+                <Paper className={classes.paper} elevation={3}>
+                   <Typography variant="h4" align="center">
+                       Place holder for photo list
+                   </Typography>
+                </Paper>
+            </Box>
         </div>
     );
 }

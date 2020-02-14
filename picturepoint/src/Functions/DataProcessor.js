@@ -47,24 +47,26 @@ import 'firebase/firestore';
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+const app = require('express')();
 
-
-    //Array of users
-    var users = [];
-
-    //Accessing firebase database
+//Function to get User from the database
+app.get('/getUser', (request, response) => {
     db.collection('users').get().then(data => {
+        let users = [];
         data.forEach(doc => {
-            //Stores a user object into the array
             users.push({
-                creationDate: doc.data().creationDate,
+                userID: doc.id,
                 email: doc.data().email,
-                userID: doc.data().userID,
-                username: doc.data().username
+                username: doc.data().username,
+                name: doc.data().name,
+                creationDate: doc.data().creationDate
             });
         });
-        //console.log(users);
-    });
-    //users = [{creationDate: "2020-01-23T20:22:39.616Z", email: "user@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "user"}, {...}, {...}]
+        return response.json(users);
+    })
+    .catch(err => console.error(err));
+});
+
+exports.api = functions.https.onRequest(app);
     //===============================================================================================================
 */
