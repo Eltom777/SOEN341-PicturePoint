@@ -35,10 +35,10 @@
 
     //take user to new Page
   }
-function signOut(){
-  auth.signOut();
-  alert("signed Out")
-}
+// function signOut(){
+//   auth.signOut();
+//   alert("signed Out")
+// }
 
 
 auth.onAuthStateChanged(function(user){
