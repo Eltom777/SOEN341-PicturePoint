@@ -1,39 +1,3 @@
-//Firebase
-import { firebaseConfig } from '../Config/config';
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-/*
-    //=============================================*TEMP*============================================================
-    //Array of users
-    var users = [];
-
-    //Accessing firebase database
-    db.collection('users').get().then(data => {
-        data.forEach(doc => {
-            //Stores a user object into the array
-            users.push({
-                creationDate: doc.data().creationDate,
-                email: doc.data().email,
-                userID: doc.data().userID,
-                username: doc.data().username
-            });
-        });
-        //console.log(users);
-    });
-    //users = [{creationDate: "2020-01-23T20:22:39.616Z", email: "user@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "user"}, {...}, {...}]
-    //===============================================================================================================
-*/
-
-export const getUser = () => {
-    //Temp data
-    return([
-        {creationDate: "2020-01-23T20:22:39.616Z", email: "a.iacampo@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "a-iacampo", name: "Anthony Iacampo"}
-    ]);
-}
 
 export const getFollowers = () => {
     //Temp data
@@ -71,3 +35,36 @@ export const getFollowing = () => {
         {creationDate: "2020-01-23T20:22:39.616Z", email: "user@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "user", name: "Eric"},
     ]);
 }
+
+
+
+/*
+    //=============================================*TEMP*============================================================
+//Firebase
+import { firebaseConfig } from '../Config/config';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+
+    //Array of users
+    var users = [];
+
+    //Accessing firebase database
+    db.collection('users').get().then(data => {
+        data.forEach(doc => {
+            //Stores a user object into the array
+            users.push({
+                creationDate: doc.data().creationDate,
+                email: doc.data().email,
+                userID: doc.data().userID,
+                username: doc.data().username
+            });
+        });
+        //console.log(users);
+    });
+    //users = [{creationDate: "2020-01-23T20:22:39.616Z", email: "user@email.com", userID: "7at02dmw3JNMgaLHiST7D5HBrpy2", username: "user"}, {...}, {...}]
+    //===============================================================================================================
+*/

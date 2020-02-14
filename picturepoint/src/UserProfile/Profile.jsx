@@ -1,5 +1,5 @@
 //React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -35,26 +35,62 @@ const useStyles = makeStyles({
 
 function Profile(props) {
     const classes = useStyles();
-    var date = new Date(props.creationDate);
 
+    //User data & User initial & User index
+    const [user, setUser] = useState({});
+    const [initial, setInitial] = useState("");
+    const currentUserID = props.currentUserID;
+
+    //Selects user's index
+    const selectUser = (users, userID) => {
+        var index;
+        for (var i = 0; i < users.length; i++){
+            if(users[i].userID === userID){
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    //Runs fecthing 
+    useEffect(() => {
+        fetchUser();
+    }, []);
+    
+    //Function to get user from Firebase api
+    const fetchUser = async () => {
+        const data = await fetch('https://us-central1-picturepoint-381cf.cloudfunctions.net/api/getUser');
+        const users = await data.json();
+
+        //For Test
+        console.log(users); 
+
+        setUser(users[selectUser(users, currentUserID)]);
+        setInitial(users[selectUser(users, currentUserID)].name[0]);
+    }
+
+    //Date variable 
+    var date = new Date(user.creationDate);
+
+    //Renders the profile card
     return (
         <div>
             <Box display="flex" justifyContent="center">
                 <Card className={classes.card}>
                     <Grid container>
                         <Grid item className={classes.avatar}>
-                            <Avatar className={classes.avatarSize}>{props.name[0]}</Avatar>
+                            <Avatar className={classes.avatarSize}>{initial}</Avatar>
                         </Grid>
                         <Grid item>
                             <CardContent>
                                 <Typography variant="h3" color="inherit">
-                                    {props.username}
+                                    {user.username}
                                 </Typography>
                                 <Typography variant="h5">
-                                    {props.name}
+                                    {user.name}
                                 </Typography>
                                 <Typography variant="body1" gutterBottom>
-                                    {props.email}
+                                    {user.email}
                                 </Typography>
                                 <Typography variant="body1" component="p">
                                     This is my bio!

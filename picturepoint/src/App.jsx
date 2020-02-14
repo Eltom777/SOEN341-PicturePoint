@@ -1,5 +1,5 @@
 //React
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Components
@@ -13,20 +13,16 @@ import Taskbar from './Layouts/Taskbar';
 import Friends from './UserProfile/Tasks/Friends';
 import Photos from './UserProfile/Tasks/Photos';
 
-//Functions
-import { getUser } from './Functions/DataProcessor';
-
 function App() {
-    //Temp data
-    const [currentUser] = useState(getUser);
+    //Enter the user ID of the user profile you want to load
+    var currentUserID = 't-flynn'
 
+    //Renders the main user profile page
     return (
         <div>
             <Router>
                 <Header />
-                {currentUser.map(user => (
-                    <Profile username={user.username} email={user.email} name={user.name} creationDate={user.creationDate} />
-                ))}
+                <Profile currentUserID={currentUserID} />
                 <Taskbar />
                 <Switch>
                     <Route exact path="/" component={Friends} />
