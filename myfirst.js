@@ -11,5 +11,7 @@ server.get('/',function(req,res){
 server.get('/add.ejs',function(req,res){
   res.render('add');
 })
-
+server.post('/add.ejs',function(req,res){
+	
+)}
 server.listen(8080);
