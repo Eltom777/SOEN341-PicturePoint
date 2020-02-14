@@ -2,4 +2,4 @@ llanguage: node_js
 node_js:
   - 7
 script:
-    - ./unit-tests/test1.js
+    - node ./unit-tests/test1.js
