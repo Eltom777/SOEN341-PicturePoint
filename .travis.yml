@@ -1,0 +1,5 @@
+llanguage: node_js
+node_js:
+  - 7
+script:
+    - node ./unit-tests/test1.js
