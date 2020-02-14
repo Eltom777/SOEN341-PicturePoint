@@ -15,7 +15,7 @@ server.get('/',function(req,res){
 
 server.get('/add.ejs',function(req,res){
   res.render('add');
-})
+});
 server.post('/add.ejs',function(req,res){
   const Busboy = require('busboy');
   const path = require('path');
@@ -73,5 +73,5 @@ server.post('/add.ejs',function(req,res){
       });
   });
   req.pipe(busboy);
-)}
+});
 server.listen(8080);
