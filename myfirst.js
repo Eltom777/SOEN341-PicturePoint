@@ -1,5 +1,7 @@
 var express = require('express');
 const firebase = require('firebase');
+const { admin, db } = require('./functions/util/admin');
+const config = require('./functions/util/FirebaseConfig');
 const Busboy = require('busboy');
 
 firebase.initializeApp(config);
