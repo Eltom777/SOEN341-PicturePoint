@@ -21,7 +21,9 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - Javascript
 - Firebase
 - React
+- React Router
 - Node js
+- Material UI
 ## Contributors
 - Liam-Thomas Flynn (Eltom777) - 40034877 (Team leader)
 - Jordan Hum (Jordan-Hum) - 40095876
