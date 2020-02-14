@@ -1,5 +1,7 @@
 var express = require('express');
+const firebase = require('firebase');
 
+firebase.initializeApp(config);
 var server = express();
 
 server.set('view engine','ejs');
