@@ -44,7 +44,33 @@ server.post('/add.ejs',function(req,res){
       console.log(val);
   });
   busboy.on('finish', () => {
-	  
+	  console.log(imageToBeUploaded.filepath);
+      const storage = admin.storage();
+      console.log(JSON.stringify(storage.appInternal.options));
+      admin
+      .storage()
+      .bucket()
+      .upload(imageToBeUploaded.filepath, {
+          resumable: false,
+          metadata: {
+          metadata: {
+              contentType: imageToBeUploaded.mimetype
+          }
+          }
+      })
+      .then(() => {
+          const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
+          config.storageBucket
+          }/o/${imageFileName}?alt=media`;
+          return db.doc(`/users/t-flynn`).update({ imageUrl });
+      })
+      .then(() => {
+          return res.json({ message: 'image uploaded successfully' });
+      })
+      .catch((err) => {
+          console.error(err);
+          return res.status(500).json({ error: 'something went wrong' });
+      });
   });
   req.pipe(busboy);
 )}
