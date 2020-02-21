@@ -13,7 +13,12 @@ exports.UploadImage = () => {
     
         let imageToBeUploaded = {};
         let imageFileName;
+        let caption;
 
+        busboy.on('field', (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) => {
+            console.log(fieldname);
+            caption = val;
+        });
         busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
             console.log(fieldname, file, filename, encoding, mimetype);
             if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
@@ -29,12 +34,11 @@ exports.UploadImage = () => {
             imageToBeUploaded = { filepath, mimetype };
             file.pipe(fs.createWriteStream(filepath));
         });
-        busboy.on('field', (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) => {
-            console.log(val);
+        busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated) {
+             caption = val;
         });
         busboy.on('finish', () => {
             const storage = admin.storage();
-           
             admin
             .storage()
             .bucket()
@@ -50,7 +54,8 @@ exports.UploadImage = () => {
                 const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
                 config.storageBucket
                 }/o/${imageFileName}?alt=media`;
-                return db.doc(`/users/t-flynn`).update({ imageUrl });
+                //creating a new document inside  collection photo
+                return db.collection('/photos').doc(imageFileName).set({imageUrl,caption,user: 't-flynn'}); 
             })
             .then(() => {
                 return res.json({ message: 'image uploaded successfully' });
