@@ -1,8 +1,8 @@
 var express = require('express');
+var router = express.Router();
 const firebase = require('firebase');
-const { admin, db } = require('./functions/util/admin');
 const config = require('./functions/util/FirebaseConfig');
-const Busboy = require('busboy');
+const addPhoto = require('./functions/addPhoto');
 
 firebase.initializeApp(config);
 var server = express();
@@ -16,58 +16,7 @@ server.get('/',function(req,res){
 server.get('/add.ejs',function(req,res){
   res.render('add');
 });
-server.post('/add.ejs',function(req,res){
-  const Busboy = require('busboy');
-  const path = require('path');
-  const os = require('os');
-  const fs = require('fs');
 
-  const busboy = new Busboy({headers: req.headers});
-  
-  let imageToBeUploaded = {};
-  let imageFileName;
-  
-  busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
-      
-      const imageExtension = filename.split('.')[filename.split('.').length - 1];
-      
-      imageFileName = `${Math.round(Math.random() * 1000000000000).toString()}.${imageExtension}`;
+server.post('/add.ejs', addPhoto.UploadImage());
 
-      const filepath = path.join(os.tmpdir(), imageFileName);
-      imageToBeUploaded = { filepath, mimetype,imageFileName };
-      file.pipe(fs.createWriteStream(filepath));
-  });
-  busboy.on('field', (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) => {
-      console.log(val);
-  });
-  busboy.on('finish', () => {
-      const storage = admin.storage();
-     
-      admin
-      .storage()
-      .bucket()
-      .upload(imageToBeUploaded.filepath, {
-          resumable: false,
-          metadata: {
-          metadata: {
-              contentType: imageToBeUploaded.mimetype
-          }
-          }
-      })
-      .then(() => {
-          const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
-          config.storageBucket
-          }/o/${imageFileName}?alt=media`;
-          return db.doc(`/users/t-flynn`).update({ imageUrl });
-      })
-      .then(() => {
-          return res.json({ message: 'image uploaded successfully' });
-      })
-      .catch((err) => {
-          console.error(err);
-          return res.status(500).json({ error: 'something went wrong' });
-      });
-  });
-  req.pipe(busboy);
-});
 server.listen(8080);
