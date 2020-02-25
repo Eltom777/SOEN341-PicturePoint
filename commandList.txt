@@ -5,8 +5,14 @@ cd into picturepoint:
 npm install react
 npm install --save react-router-dom
 npm install --save firebase
-npm install -g firebase-tools
 npm install express --save
 npm install @material-ui/core
 npm install @material-ui/icons
 npm install @material-ui/system
+
+Create Firebase functions:
+firebase init
+
+cd into functions:
+npm install -g firebase-tools
+npm install --save express

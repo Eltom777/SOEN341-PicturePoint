@@ -1,4 +1,4 @@
-export const firebaseConfig = {
+module.exports = {
     apiKey: "AIzaSyDTSp-jysKsVYkvrlOjAJBqZoU4GsjG-nk",
     authDomain: "picturepoint-381cf.firebaseapp.com",
     databaseURL: "https://picturepoint-381cf.firebaseio.com",
