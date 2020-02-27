@@ -13,6 +13,9 @@ import Taskbar from './Layouts/Taskbar';
 import Friends from './UserProfile/Tasks/Friends';
 import Photos from './UserProfile/Tasks/Photos';
 
+//Pages
+import Picture from './Posts/Picture';
+
 function App() {
     //Enter the user ID of the user profile you want to load
     var currentUserID = 't-flynn'
@@ -26,7 +29,8 @@ function App() {
                 <Taskbar />
                 <Switch>
                     <Route exact path="/" component={Friends} />
-                    <Route exact path="/photos" component={Photos} />
+                    <Route exact path="/Photos" render={(props) => <Photos currentUserID={currentUserID} />} />
+                    <Route exact path="/Photos/:id" component={Picture} />
                 </Switch>
             </Router>
         </div>

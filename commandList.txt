@@ -4,7 +4,6 @@ npx create-react-app picturepoint
 cd into picturepoint:
 npm install react
 npm install --save react-router-dom
-npm install --save firebase
 npm install express --save
 npm install @material-ui/core
 npm install @material-ui/icons
@@ -15,4 +14,6 @@ firebase init
 
 cd into functions:
 npm install -g firebase-tools
+npm install --save firebase
 npm install --save express
+npm install --save cors

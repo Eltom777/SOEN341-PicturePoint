@@ -32,6 +32,24 @@ app.get('/getUser', (request, response) => {
     .catch(err => console.error(err));
 });
 
+//Function to get Photo from the database
+app.get('/getPhoto', (request, response) => {
+    db.collection('photos').orderBy('creationDate', 'desc').get().then(data => {
+        let photos = [];
+        data.forEach(doc => {
+            photos.push({
+                photoID: doc.id,
+                caption: doc.data().caption,
+                imageUrl: doc.data().imageUrl,
+                username: doc.data().user,
+                creationDate: doc.data().creationDate
+            });
+        });
+        return response.json(photos);
+    })
+    .catch(err => console.error(err));
+});
+
 //==========================================================================================================================================
 
 //Authentication
