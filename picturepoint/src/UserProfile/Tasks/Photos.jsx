@@ -1,17 +1,18 @@
 //React
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 //Style
 const useStyles = makeStyles({
@@ -30,9 +31,10 @@ const useStyles = makeStyles({
         marginTop: 10,
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-around'
+        justifyContent: 'space-evenly'
     },
     card: {
+        marginTop: 10,
         height: 360,
         width: 360
     },
@@ -53,6 +55,16 @@ function Photos(props) {
     //User data & User initial & User index
     const [photos, setPhotos] = useState([]);
     const currentUserID = props.currentUserID;
+
+    const selectPhoto = (photos) => {
+        var selectedPhoto = [];
+        for(var i = 0; i < photos.length; i++) {
+            if(photos[i].username === currentUserID) {
+                selectedPhoto.push(photos[i]);
+            }
+        }
+        return selectedPhoto;
+    }
     
     //Function to get user from Firebase api
     const fetchPhotos = async () => {
@@ -62,7 +74,7 @@ function Photos(props) {
         //For Test
         console.log(photos);
         
-        setPhotos(photos);
+        setPhotos(selectPhoto(photos));
     }
 
     //Date variable 
@@ -72,10 +84,19 @@ function Photos(props) {
         <div>
             <Box display="flex" justifyContent="center">
                 <Paper className={classes.paper} elevation={3}>
-                    <Typography variant="h4" align="center">
-                        Posts
-                   </Typography>
-                   <Paper className={classes.paperImage} elevation={0}>
+                    <Grid container>
+                        <Grid item xs>
+                            <Typography variant="h4" align="center">
+                                Posts
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Fab color="primary" aria-label="add" component={Link} to={'/'}>
+                                <AddIcon />
+                            </Fab>
+                        </Grid>
+                    </Grid>
+                    <Paper className={classes.paperImage} elevation={0}>
                         {photos.map(photo => (
                             <Card className={classes.card}>
                                 <CardActionArea component={Link} to={`/Photos/${photo.photoID}`}>
@@ -83,7 +104,8 @@ function Photos(props) {
                                 </CardActionArea>
                             </Card>
                         ))}
-                   </Paper>
+                    </Paper>
+
                 </Paper>
             </Box>
         </div>

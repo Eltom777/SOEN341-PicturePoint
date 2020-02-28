@@ -33,7 +33,7 @@ function Taskbar(props) {
             textColor="primary"
             centered
             >
-                <Tab label="My Friends" component={Link} to="/" />
+                <Tab label="My Friends" component={Link} to="/Friends" />
                 <Tab label="My Photos" component={Link} to="/Photos" />
                 <Tab label="My Albums" disabled />
             </Tabs>

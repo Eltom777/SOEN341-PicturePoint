@@ -28,7 +28,7 @@ function App() {
                 <Profile currentUserID={currentUserID} />
                 <Taskbar />
                 <Switch>
-                    <Route exact path="/" component={Friends} />
+                    <Route exact path="/Friends" component={Friends} />
                     <Route exact path="/Photos" render={(props) => <Photos currentUserID={currentUserID} />} />
                     <Route exact path="/Photos/:id" component={Picture} />
                 </Switch>

@@ -1,6 +1,5 @@
 //React
-import React, { useState, useEffect, Fragment } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -29,6 +28,8 @@ function Picture({ match }) {
     //Runs fecthing 
     useEffect(() => {
         fetchPhoto();
+
+        //For Test
         console.log(match);
     }, []);
 
@@ -51,13 +52,11 @@ function Picture({ match }) {
     const fetchPhoto = async () => {
         const data = await fetch('https://us-central1-picturepoint-381cf.cloudfunctions.net/api/getPhoto');
         const photos = await data.json();
-
-        //For Test
-        console.log(photos);
         
         setPhoto(photos[selectPhoto(photos)]);
     }
 
+    //This page should include the caption, likes and comments --> Assign Jordan
     return(
         <div>
             <Box display="flex" justifyContent="center">

@@ -50,6 +50,22 @@ app.get('/getPhoto', (request, response) => {
     .catch(err => console.error(err));
 });
 
+//Function to get Friends from the database
+app.get('/getFriend', (request, response) => {
+    db.collection('links').get().then(data => {
+        let friends = [];
+        data.forEach(doc => {
+            friends.push({
+                linkID: doc.id,
+                followed: doc.data().followed,
+                following: doc.data().following
+            });
+        });
+        return response.json(friends);
+    })
+    .catch(err => console.error(err));
+});
+
 //==========================================================================================================================================
 
 //Authentication
