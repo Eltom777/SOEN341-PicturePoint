@@ -25,7 +25,6 @@ const useStyles = makeStyles({
         height: 800, 
         width: 900,
         overflow: 'auto',
-
     },
     paperImage: {
         marginTop: 10,
@@ -91,7 +90,7 @@ function Photos(props) {
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Fab color="primary" aria-label="add" component={Link} to={'/'}>
+                            <Fab color="primary" aria-label="add" component={Link} to={'/Photos/AddPhoto'}>
                                 <AddIcon />
                             </Fab>
                         </Grid>

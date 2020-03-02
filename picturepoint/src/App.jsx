@@ -15,6 +15,7 @@ import Photos from './UserProfile/Tasks/Photos';
 
 //Pages
 import Picture from './Posts/Picture';
+import AddPhoto from './AddPhoto';
 
 function App() {
     //Enter the user ID of the user profile you want to load
@@ -30,6 +31,7 @@ function App() {
                 <Switch>
                     <Route exact path="/Friends" component={Friends} />
                     <Route exact path="/Photos" render={(props) => <Photos currentUserID={currentUserID} />} />
+                    <Route exact path="/Photos/AddPhoto" component={AddPhoto} />
                     <Route exact path="/Photos/:id" component={Picture} />
                 </Switch>
             </Router>
