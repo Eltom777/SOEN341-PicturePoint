@@ -3,13 +3,21 @@ const firebaseConfig = require('./Config/config');
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const app = require('express')();
+const Busboy = require('busboy');
+const path = require('path');
+const os = require('os');
+const fs = require('fs');
+const serviceAccount = require('./keys/picturepoint-381cf-firebase-adminsdk-a9cln-a81acf0f10.json');
 
 //Enable CORS
 const cors = require('cors');
 app.use(cors());
 
 //Initialize the app
-admin.initializeApp();
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    storageBucket: "picturepoint-381cf.appspot.com"
+});
 const firebase = require('firebase');
 firebase.initializeApp(firebaseConfig);
 const db = admin.firestore();
@@ -64,6 +72,73 @@ app.get('/getFriend', (request, response) => {
         return response.json(friends);
     })
     .catch(err => console.error(err));
+});
+
+//route to post 
+app.post('/AddPhoto', (req,res) => {
+    
+    //const busboy = new Busboy({headers: req.headers});
+
+    res.json({header: JSON.stringify(req.header)});
+    /*
+    
+    let imageToBeUploaded = {};
+    let imageFileName;
+    let caption;
+
+    busboy.on('field', (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) => {
+        console.log(fieldname);
+        caption = val;
+    });
+    busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
+        console.log(fieldname, file, filename, encoding, mimetype);
+        if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
+            return res.status(400).json({ error: 'Wrong file type submitted' });
+        }
+        // my.image.png => ['my', 'image', 'png']
+        const imageExtension = filename.split('.')[filename.split('.').length - 1];
+        // 32756238461724837.png
+        imageFileName = `${Math.round(
+            Math.random() * 1000000000000
+        ).toString()}.${imageExtension}`;
+        const filepath = path.join(os.tmpdir(), imageFileName);
+        imageToBeUploaded = { filepath, mimetype };
+        file.pipe(fs.createWriteStream(filepath));
+    });
+    busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated) {
+         caption = val;
+    });
+    busboy.on('finish', () => {
+        const storage = admin.storage();
+        admin
+        .storage()
+        .bucket()
+        .upload(imageToBeUploaded.filepath, {
+            resumable: false,
+            metadata: {
+            metadata: {
+                contentType: imageToBeUploaded.mimetype
+            }
+            }
+        })
+        .then(() => {
+            const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
+            config.storageBucket
+            }/o/${imageFileName}?alt=media`;
+            //creating a new document inside  collection photo
+            return db.collection('/photos').doc(imageFileName).set({imageUrl,caption,user: 't-flynn', creationData: new Date().toISOString()}); 
+        })
+        .then(() => {
+            return res.json({ message: 'image uploaded successfully' });
+        })
+        .catch((err) => {
+            console.error(err);
+            return res.status(500).json({ error: 'something went wrong' });
+        });
+
+    });
+    */
+    //req.pipe(busboy); 
 });
 
 //==========================================================================================================================================
@@ -227,6 +302,8 @@ app.get('/getPhoto', (request, response) => {
     })
     .catch(err => console.error(err));
 });
+
+
 
 //API
 exports.api = functions.https.onRequest(app);
