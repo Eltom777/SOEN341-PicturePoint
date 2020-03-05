@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import https from "https";
 
-export default class AddPhoto extends Component {
+
+class AddPhoto extends Component {
     constructor(props) {
         super(props);
         this.state = {text: '', file: ''};
@@ -11,7 +12,6 @@ export default class AddPhoto extends Component {
         this.SubmitPicture = this.SubmitPicture.bind(this);
     }
     
-
     handleChange(event) {
         this.setState({
           [event.target.type]: event.target.value
@@ -29,7 +29,7 @@ export default class AddPhoto extends Component {
         formData.append('text', this.state.caption);
         formData.append('file', this.state.file);
         axios.post(
-                'http://localhost:8080/add.ejs',
+                'https://us-central1-picturepoint-381cf.cloudfunctions.net/api/AddPhoto',
                 formData,
                 httpsAgent,
                 {
@@ -49,7 +49,6 @@ export default class AddPhoto extends Component {
     render(){
         return (
             <div>
-                {console.log("HELLO")}
             <form onSubmit={this.SubmitPicture}>
                 <input 
                 label="Caption"
@@ -69,3 +68,5 @@ export default class AddPhoto extends Component {
         );
     }
 }
+
+export default AddPhoto;
