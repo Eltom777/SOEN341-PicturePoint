@@ -1,5 +1,5 @@
 //React
-import React, { useState, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     }
 });
 
-function Friends() {
+function Friends(props) {
     const classes = useStyles();
 
     //Temp Data

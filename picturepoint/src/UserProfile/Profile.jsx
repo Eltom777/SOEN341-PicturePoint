@@ -9,6 +9,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import EditIcon from '@material-ui/icons/Edit';
 
 //Style
 const useStyles = makeStyles({
@@ -30,7 +32,10 @@ const useStyles = makeStyles({
     },
     posBottom: {
         marginTop: 20,
-      }
+    },
+    editIcon: {
+        marginLeft: 330
+    }
 });
 
 function Profile(props) {
@@ -47,6 +52,7 @@ function Profile(props) {
         for (var i = 0; i < users.length; i++){
             if(users[i].userID === userID){
                 index = i;
+                break;
             }
         }
         return index;
@@ -99,6 +105,11 @@ function Profile(props) {
                                     Member since {date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
                                 </Typography>
                             </CardContent>
+                        </Grid>
+                        <Grid item>
+                            <Fab className={classes.editIcon} size="small" color="secondary" aria-label="edit">
+                                <EditIcon />
+                            </Fab>
                         </Grid>
                     </Grid>
                 </Card>
