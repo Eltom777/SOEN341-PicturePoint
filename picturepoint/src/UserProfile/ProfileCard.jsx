@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     }
 });
 
-function Profile(props) {
+function ProfileCard(props) {
     const classes = useStyles();
 
     //User data & User initial & User index
@@ -118,4 +118,4 @@ function Profile(props) {
     );
 }
 
-export default Profile;
+export default ProfileCard;
