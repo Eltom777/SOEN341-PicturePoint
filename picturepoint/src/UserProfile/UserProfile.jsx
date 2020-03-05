@@ -16,10 +16,8 @@ import Photos from './Taskbar Components/Photos';
 import Picture from '../Posts/Picture';
 import AddPhoto from '../AddPhoto';
 
-function UserProfile() {
-    //Enter the user ID of the user profile you want to load
-    var currentUserID = 't-flynn'
-
+function UserProfile(props) {
+    var currentUserID = props.currentUserID;
     //Renders the main user profile page
     return (
         <div>

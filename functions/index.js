@@ -303,7 +303,5 @@ app.get('/getPhoto', (request, response) => {
     .catch(err => console.error(err));
 });
 
-
-
 //API
 exports.api = functions.https.onRequest(app);
