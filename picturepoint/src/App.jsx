@@ -1,36 +1,43 @@
 //React
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-//Components
-import Profile from './UserProfile/Profile';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 //Layout
 import Header from './Layouts/Header';
-import Taskbar from './Layouts/Taskbar';
 
-//Tasks
-import Friends from './UserProfile/Tasks/Friends';
-import Photos from './UserProfile/Tasks/Photos';
+//Pages
+import UserProfile from './UserProfile/UserProfile';
 
-function App() {
-    //Enter the user ID of the user profile you want to load
-    var currentUserID = 't-flynn'
+//
+import Navigation from "./Login/components/Navigation";
+import SignUpPage from "./Login/components/SignUp";
+import SignInPage from "./Login/components/SignIn";
+import PasswordForgetPage from "./Login/components/PasswordForget";
+import HomePage from "./Login/components/Home";
+import AccountPage from "./Login/components/Account";
+import withAuthentication from "./Login/components/withAuthentication";
 
-    //Renders the main user profile page
-    return (
-        <div>
-            <Router>
-                <Header />
-                <Profile currentUserID={currentUserID} />
-                <Taskbar />
-                <Switch>
-                    <Route exact path="/" component={Friends} />
-                    <Route exact path="/photos" component={Photos} />
-                </Switch>
-            </Router>
-        </div>
-    );
-}
+import * as routes from "./Login/constants/routes";
 
-export default App;
+//Enter the user ID of the user profile you want to load
+var currentUserID = 't-flynn';
+
+const App = () => (
+  <Router>
+    <div>
+      <Navigation />
+      <hr />
+      <Route exact path={routes.SIGN_UP} component={SignUpPage} />
+      <Route exact path={routes.SIGN_IN} component={SignInPage} />
+      <Route
+        exact
+        path={routes.PASSWORD_FORGET}
+        component={PasswordForgetPage}
+      />
+      <Route exact path={routes.HOME} render={(props) => <UserProfile currentUserID={currentUserID} />} />
+      <Route exact path={routes.ACCOUNT} component={AccountPage} />
+    </div>
+  </Router>
+);
+
+export default withAuthentication(App);
