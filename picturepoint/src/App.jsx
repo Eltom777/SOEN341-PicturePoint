@@ -20,7 +20,7 @@ import withAuthentication from "./Login/components/withAuthentication";
 import * as routes from "./Login/constants/routes";
 
 //Enter the user ID of the user profile you want to load
-var currentUserID = 'user3';
+var currentUserID = 't-flynn';
 
 const App = () => (
   <Router>
