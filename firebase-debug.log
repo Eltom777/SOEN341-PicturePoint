@@ -1,0 +1,1042 @@
+[debug] [2020-03-05T22:41:25.271Z] ----------------------------------------------------------------------
+[debug] [2020-03-05T22:41:25.273Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\etothra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-03-05T22:41:25.273Z] CLI Version:   7.12.1
+[debug] [2020-03-05T22:41:25.273Z] Platform:      win32
+[debug] [2020-03-05T22:41:25.273Z] Node Version:  v12.14.1
+[debug] [2020-03-05T22:41:25.274Z] Time:          Thu Mar 05 2020 17:41:25 GMT-0500 (Eastern Standard Time)
+[debug] [2020-03-05T22:41:25.274Z] ----------------------------------------------------------------------
+[debug] [2020-03-05T22:41:25.275Z] 
+[debug] [2020-03-05T22:41:25.283Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-05T22:41:25.284Z] > authorizing via signed-in user
+[debug] [2020-03-05T22:41:25.284Z] [iam] checking project picturepoint-381cf for permissions ["firebase.projects.get"]
+[debug] [2020-03-05T22:41:25.285Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/picturepoint-381cf:testIamPermissions  
+
+[debug] [2020-03-05T22:41:25.655Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-05T22:41:25.657Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/picturepoint-381cf  
+ 
+[debug] [2020-03-05T22:41:26.005Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\etothra\Workspace\SOEN341-PicturePoint'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions" for Cloud Functions...
+[debug] [2020-03-05T22:41:27.565Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:41:27.565Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-05T22:41:27.565Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:41:27.566Z] [worker-~diagnostic~-442aa553-805a-4641-b0af-d2a194a3a962]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\314500
+[debug] [2020-03-05T22:41:27.566Z] [worker-~diagnostic~-442aa553-805a-4641-b0af-d2a194a3a962]: BUSY
+[debug] [2020-03-05T22:41:28.025Z] [runtime-status] [314500] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:41:28.025Z] [runtime-status] [314500] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:41:28.029Z] [runtime-status] [314500] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:41:28.031Z] [runtime-status] [314500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:41:28.032Z] [runtime-status] [314500] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[api]: http function initialized (http://localhost:5000/picturepoint-381cf/us-central1/api).
+[debug] [2020-03-05T22:41:28.909Z] [worker-~diagnostic~-442aa553-805a-4641-b0af-d2a194a3a962]: IDLE
+[debug] [2020-03-05T22:42:01.577Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:42:02.579Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:42:02.579Z] [worker-~diagnostic~-442aa553-805a-4641-b0af-d2a194a3a962]: FINISHING
+[debug] [2020-03-05T22:42:02.632Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:42:02.632Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:42:02.632Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:42:02.632Z] [worker-~diagnostic~-db8ae20d-3eb0-4112-8431-0bc3ca27f1eb]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\297304
+[debug] [2020-03-05T22:42:02.632Z] [worker-~diagnostic~-db8ae20d-3eb0-4112-8431-0bc3ca27f1eb]: BUSY
+[debug] [2020-03-05T22:42:02.633Z] [worker-~diagnostic~-442aa553-805a-4641-b0af-d2a194a3a962]: exited
+[debug] [2020-03-05T22:42:02.633Z] [worker-~diagnostic~-442aa553-805a-4641-b0af-d2a194a3a962]: FINISHED
+[debug] [2020-03-05T22:42:03.087Z] [runtime-status] [297304] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:42:03.088Z] [runtime-status] [297304] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:42:03.092Z] [runtime-status] [297304] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:42:03.095Z] [runtime-status] [297304] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:42:03.096Z] [runtime-status] [297304] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:42:04.151Z] [worker-~diagnostic~-db8ae20d-3eb0-4112-8431-0bc3ca27f1eb]: IDLE
+[debug] [2020-03-05T22:42:39.638Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-05T22:42:39.638Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-05T22:42:39.638Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-05T22:42:39.638Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:42:39.671Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:42:39.672Z] [worker-pool] Adding worker with key api, total=1
+[debug] [2020-03-05T22:42:39.672Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:42:39.672Z] [worker-api-7389b1be-7e7c-4ced-9b1b-248aef15d25a]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\308976
+[debug] [2020-03-05T22:42:39.672Z] [worker-api-7389b1be-7e7c-4ced-9b1b-248aef15d25a]: BUSY
+[debug] [2020-03-05T22:42:40.105Z] [runtime-status] [308976] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:42:40.106Z] [runtime-status] [308976] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:42:40.109Z] [runtime-status] [308976] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:42:40.111Z] [runtime-status] [308976] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:42:40.112Z] [runtime-status] [308976] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:42:41.089Z] [runtime-status] [308976] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:42:41.090Z] [runtime-status] [308976] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:42:41.090Z] [runtime-status] [308976] Running api in mode HTTPS
+[debug] [2020-03-05T22:42:41.093Z] [runtime-status] [308976] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\308976
+[debug] [2020-03-05T22:42:41.099Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:42:41.106Z] [runtime-status] [308976] Ephemeral server handling GET request
+[debug] [2020-03-05T22:42:41.108Z] [runtime-status] [308976] Ephemeral server survived.
+[debug] [2020-03-05T22:45:23.463Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-03-05T22:45:23.464Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-03-05T22:45:23.464Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFriend --> api
+[debug] [2020-03-05T22:45:23.511Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:45:23.511Z] [worker-pool] Adding worker with key api, total=2
+[debug] [2020-03-05T22:45:23.511Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:45:23.511Z] [worker-api-8bcfaf19-a388-4c93-858d-699022b48dbb]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\316768
+[debug] [2020-03-05T22:45:23.511Z] [worker-api-8bcfaf19-a388-4c93-858d-699022b48dbb]: BUSY
+[debug] [2020-03-05T22:45:23.952Z] [runtime-status] [316768] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:45:23.953Z] [runtime-status] [316768] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:45:23.957Z] [runtime-status] [316768] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:45:23.959Z] [runtime-status] [316768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:45:23.960Z] [runtime-status] [316768] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:45:24.779Z] [runtime-status] [316768] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:45:24.780Z] [runtime-status] [316768] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:45:24.780Z] [runtime-status] [316768] Running api in mode HTTPS
+[debug] [2020-03-05T22:45:24.782Z] [runtime-status] [316768] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\316768
+[debug] [2020-03-05T22:45:24.787Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:45:24.792Z] [runtime-status] [316768] Ephemeral server handling GET request
+[debug] [2020-03-05T22:45:24.796Z] [runtime-status] [316768] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-05T22:45:25.552Z] [worker-api-8bcfaf19-a388-4c93-858d-699022b48dbb]: IDLE
+[debug] [2020-03-05T22:45:25.552Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-05T22:46:49.994Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:46:50.999Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:46:50.999Z] [worker-~diagnostic~-db8ae20d-3eb0-4112-8431-0bc3ca27f1eb]: FINISHING
+[debug] [2020-03-05T22:46:50.999Z] [worker-pool] Marking BUSY worker to finish (api)
+[debug] [2020-03-05T22:46:50.999Z] [worker-api-7389b1be-7e7c-4ced-9b1b-248aef15d25a]: FINISHING
+[debug] [2020-03-05T22:46:50.999Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-05T22:46:50.999Z] [worker-api-8bcfaf19-a388-4c93-858d-699022b48dbb]: FINISHING
+[debug] [2020-03-05T22:46:51.047Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:46:51.048Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:46:51.048Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:46:51.048Z] [worker-~diagnostic~-731f1eec-fa60-41ce-b2f9-13b5d1158d6a]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\313716
+[debug] [2020-03-05T22:46:51.048Z] [worker-~diagnostic~-731f1eec-fa60-41ce-b2f9-13b5d1158d6a]: BUSY
+[debug] [2020-03-05T22:46:51.049Z] [worker-~diagnostic~-db8ae20d-3eb0-4112-8431-0bc3ca27f1eb]: exited
+[debug] [2020-03-05T22:46:51.049Z] [worker-~diagnostic~-db8ae20d-3eb0-4112-8431-0bc3ca27f1eb]: FINISHED
+[debug] [2020-03-05T22:46:51.049Z] [worker-api-8bcfaf19-a388-4c93-858d-699022b48dbb]: exited
+[debug] [2020-03-05T22:46:51.050Z] [worker-api-8bcfaf19-a388-4c93-858d-699022b48dbb]: FINISHED
+[debug] [2020-03-05T22:46:51.482Z] [runtime-status] [313716] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:46:51.482Z] [runtime-status] [313716] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:46:51.486Z] [runtime-status] [313716] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:46:51.489Z] [runtime-status] [313716] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:46:51.490Z] [runtime-status] [313716] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:46:52.301Z] [worker-~diagnostic~-731f1eec-fa60-41ce-b2f9-13b5d1158d6a]: IDLE
+[debug] [2020-03-05T22:46:56.125Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-03-05T22:46:56.125Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-03-05T22:46:56.125Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-05T22:46:56.125Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:46:56.125Z] [worker-pool] Cleaned up workers for api: 2 --> 1
+[debug] [2020-03-05T22:46:56.147Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:46:56.147Z] [worker-pool] Adding worker with key api, total=2
+[debug] [2020-03-05T22:46:56.147Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:46:56.147Z] [worker-api-980fb8a7-68a4-4911-a416-dedd63289fbd]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\294808
+[debug] [2020-03-05T22:46:56.147Z] [worker-api-980fb8a7-68a4-4911-a416-dedd63289fbd]: BUSY
+[debug] [2020-03-05T22:46:56.545Z] [runtime-status] [294808] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:46:56.546Z] [runtime-status] [294808] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:46:56.549Z] [runtime-status] [294808] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:46:56.551Z] [runtime-status] [294808] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:46:56.552Z] [runtime-status] [294808] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:46:57.385Z] [runtime-status] [294808] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:46:57.386Z] [runtime-status] [294808] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:46:57.387Z] [runtime-status] [294808] Running api in mode HTTPS
+[debug] [2020-03-05T22:46:57.389Z] [runtime-status] [294808] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\294808
+[debug] [2020-03-05T22:46:57.394Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:46:57.400Z] [runtime-status] [294808] Ephemeral server handling GET request
+[debug] [2020-03-05T22:46:57.405Z] [runtime-status] [294808] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-05T22:46:57.409Z] [worker-api-980fb8a7-68a4-4911-a416-dedd63289fbd]: IDLE
+[debug] [2020-03-05T22:46:57.409Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-05T22:47:44.323Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:47:45.324Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:47:45.324Z] [worker-~diagnostic~-731f1eec-fa60-41ce-b2f9-13b5d1158d6a]: FINISHING
+[debug] [2020-03-05T22:47:45.325Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-05T22:47:45.325Z] [worker-api-980fb8a7-68a4-4911-a416-dedd63289fbd]: FINISHING
+[debug] [2020-03-05T22:47:45.367Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:47:45.367Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:47:45.367Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:47:45.367Z] [worker-~diagnostic~-591492ff-410a-477a-9c19-782cd39bf04b]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\294980
+[debug] [2020-03-05T22:47:45.368Z] [worker-~diagnostic~-591492ff-410a-477a-9c19-782cd39bf04b]: BUSY
+[debug] [2020-03-05T22:47:45.368Z] [worker-~diagnostic~-731f1eec-fa60-41ce-b2f9-13b5d1158d6a]: exited
+[debug] [2020-03-05T22:47:45.368Z] [worker-~diagnostic~-731f1eec-fa60-41ce-b2f9-13b5d1158d6a]: FINISHED
+[debug] [2020-03-05T22:47:45.368Z] [worker-api-980fb8a7-68a4-4911-a416-dedd63289fbd]: exited
+[debug] [2020-03-05T22:47:45.368Z] [worker-api-980fb8a7-68a4-4911-a416-dedd63289fbd]: FINISHED
+[debug] [2020-03-05T22:47:45.832Z] [runtime-status] [294980] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:47:45.833Z] [runtime-status] [294980] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:47:45.836Z] [runtime-status] [294980] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:47:45.839Z] [runtime-status] [294980] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:45.840Z] [runtime-status] [294980] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:46.634Z] [worker-~diagnostic~-591492ff-410a-477a-9c19-782cd39bf04b]: IDLE
+[debug] [2020-03-05T22:47:48.898Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-03-05T22:47:48.898Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-03-05T22:47:48.898Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-05T22:47:48.898Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:47:48.898Z] [worker-pool] Cleaned up workers for api: 2 --> 1
+[debug] [2020-03-05T22:47:48.922Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:47:48.923Z] [worker-pool] Adding worker with key api, total=2
+[debug] [2020-03-05T22:47:48.923Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:47:48.923Z] [worker-api-b53003e6-9941-411f-b199-35612a444238]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\317408
+[debug] [2020-03-05T22:47:48.923Z] [worker-api-b53003e6-9941-411f-b199-35612a444238]: BUSY
+[debug] [2020-03-05T22:47:49.377Z] [runtime-status] [317408] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:47:49.378Z] [runtime-status] [317408] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:47:49.382Z] [runtime-status] [317408] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:47:49.385Z] [runtime-status] [317408] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:49.386Z] [runtime-status] [317408] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:50.343Z] [runtime-status] [317408] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:47:50.343Z] [runtime-status] [317408] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:47:50.343Z] [runtime-status] [317408] Running api in mode HTTPS
+[debug] [2020-03-05T22:47:50.348Z] [runtime-status] [317408] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\317408
+[debug] [2020-03-05T22:47:50.355Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:47:50.362Z] [runtime-status] [317408] Ephemeral server handling GET request
+[debug] [2020-03-05T22:47:50.373Z] [runtime-status] [317408] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-05T22:47:50.504Z] [worker-api-b53003e6-9941-411f-b199-35612a444238]: IDLE
+[debug] [2020-03-05T22:47:50.505Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:91:25
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-05T22:47:54.086Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:47:54.320Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:47:54.467Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:47:55.467Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:47:55.467Z] [worker-~diagnostic~-591492ff-410a-477a-9c19-782cd39bf04b]: FINISHING
+[debug] [2020-03-05T22:47:55.468Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-05T22:47:55.468Z] [worker-api-b53003e6-9941-411f-b199-35612a444238]: FINISHING
+[debug] [2020-03-05T22:47:55.494Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:47:55.494Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:47:55.494Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:47:55.494Z] [worker-~diagnostic~-f0446503-e1b3-401b-aa6a-098ea62b9825]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\311796
+[debug] [2020-03-05T22:47:55.494Z] [worker-~diagnostic~-f0446503-e1b3-401b-aa6a-098ea62b9825]: BUSY
+[debug] [2020-03-05T22:47:55.494Z] [worker-~diagnostic~-591492ff-410a-477a-9c19-782cd39bf04b]: exited
+[debug] [2020-03-05T22:47:55.495Z] [worker-~diagnostic~-591492ff-410a-477a-9c19-782cd39bf04b]: FINISHED
+[debug] [2020-03-05T22:47:55.495Z] [worker-api-b53003e6-9941-411f-b199-35612a444238]: exited
+[debug] [2020-03-05T22:47:55.495Z] [worker-api-b53003e6-9941-411f-b199-35612a444238]: FINISHED
+[debug] [2020-03-05T22:47:56.006Z] [runtime-status] [311796] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:47:56.007Z] [runtime-status] [311796] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:47:56.012Z] [runtime-status] [311796] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:47:56.015Z] [runtime-status] [311796] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:56.016Z] [runtime-status] [311796] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:56.443Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:47:56.872Z] [worker-~diagnostic~-f0446503-e1b3-401b-aa6a-098ea62b9825]: IDLE
+[debug] [2020-03-05T22:47:57.444Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:47:57.444Z] [worker-~diagnostic~-f0446503-e1b3-401b-aa6a-098ea62b9825]: FINISHING
+[debug] [2020-03-05T22:47:57.444Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:47:57.444Z] [worker-pool] Cleaned up workers for api: 2 --> 1
+[debug] [2020-03-05T22:47:57.469Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:47:57.470Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:47:57.470Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:47:57.470Z] [worker-~diagnostic~-6979a1a0-e3da-4b0e-b223-bd382d1b9397]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\315108
+[debug] [2020-03-05T22:47:57.470Z] [worker-~diagnostic~-6979a1a0-e3da-4b0e-b223-bd382d1b9397]: BUSY
+[debug] [2020-03-05T22:47:57.471Z] [worker-~diagnostic~-f0446503-e1b3-401b-aa6a-098ea62b9825]: exited
+[debug] [2020-03-05T22:47:57.471Z] [worker-~diagnostic~-f0446503-e1b3-401b-aa6a-098ea62b9825]: FINISHED
+[debug] [2020-03-05T22:47:57.937Z] [runtime-status] [315108] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:47:57.938Z] [runtime-status] [315108] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:47:57.943Z] [runtime-status] [315108] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:47:57.945Z] [runtime-status] [315108] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:57.946Z] [runtime-status] [315108] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:58.877Z] [worker-~diagnostic~-6979a1a0-e3da-4b0e-b223-bd382d1b9397]: IDLE
+[debug] [2020-03-05T22:47:59.194Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-03-05T22:47:59.195Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-03-05T22:47:59.195Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-05T22:47:59.195Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:47:59.218Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:47:59.218Z] [worker-pool] Adding worker with key api, total=2
+[debug] [2020-03-05T22:47:59.218Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:47:59.218Z] [worker-api-089b4f9b-2575-4118-ba99-05158f928911]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\289804
+[debug] [2020-03-05T22:47:59.218Z] [worker-api-089b4f9b-2575-4118-ba99-05158f928911]: BUSY
+[debug] [2020-03-05T22:47:59.655Z] [runtime-status] [289804] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:47:59.656Z] [runtime-status] [289804] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:47:59.660Z] [runtime-status] [289804] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:47:59.662Z] [runtime-status] [289804] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:47:59.663Z] [runtime-status] [289804] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:00.694Z] [runtime-status] [289804] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:48:00.695Z] [runtime-status] [289804] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:48:00.695Z] [runtime-status] [289804] Running api in mode HTTPS
+[debug] [2020-03-05T22:48:00.698Z] [runtime-status] [289804] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\289804
+[debug] [2020-03-05T22:48:00.704Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:48:00.710Z] [runtime-status] [289804] Ephemeral server handling GET request
+[debug] [2020-03-05T22:48:00.720Z] [runtime-status] [289804] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-05T22:48:00.848Z] [worker-api-089b4f9b-2575-4118-ba99-05158f928911]: IDLE
+[debug] [2020-03-05T22:48:00.848Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:91:25
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-05T22:48:20.209Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:48:21.210Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:48:21.211Z] [worker-~diagnostic~-6979a1a0-e3da-4b0e-b223-bd382d1b9397]: FINISHING
+[debug] [2020-03-05T22:48:21.212Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-05T22:48:21.213Z] [worker-api-089b4f9b-2575-4118-ba99-05158f928911]: FINISHING
+[debug] [2020-03-05T22:48:21.270Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:48:21.270Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:48:21.271Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:48:21.271Z] [worker-~diagnostic~-21211f31-8c8a-4b9a-8fb6-f8b26f1949f7]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\317260
+[debug] [2020-03-05T22:48:21.271Z] [worker-~diagnostic~-21211f31-8c8a-4b9a-8fb6-f8b26f1949f7]: BUSY
+[debug] [2020-03-05T22:48:21.271Z] [worker-~diagnostic~-6979a1a0-e3da-4b0e-b223-bd382d1b9397]: exited
+[debug] [2020-03-05T22:48:21.271Z] [worker-~diagnostic~-6979a1a0-e3da-4b0e-b223-bd382d1b9397]: FINISHED
+[debug] [2020-03-05T22:48:21.271Z] [worker-api-089b4f9b-2575-4118-ba99-05158f928911]: exited
+[debug] [2020-03-05T22:48:21.271Z] [worker-api-089b4f9b-2575-4118-ba99-05158f928911]: FINISHED
+[debug] [2020-03-05T22:48:21.878Z] [runtime-status] [317260] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:48:21.879Z] [runtime-status] [317260] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:48:21.883Z] [runtime-status] [317260] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:48:21.888Z] [runtime-status] [317260] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:21.891Z] [runtime-status] [317260] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:22.732Z] [worker-~diagnostic~-21211f31-8c8a-4b9a-8fb6-f8b26f1949f7]: IDLE
+[debug] [2020-03-05T22:48:22.973Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-03-05T22:48:22.973Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-03-05T22:48:22.973Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-05T22:48:22.974Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:48:22.974Z] [worker-pool] Cleaned up workers for api: 2 --> 1
+[debug] [2020-03-05T22:48:23.010Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:48:23.010Z] [worker-pool] Adding worker with key api, total=2
+[debug] [2020-03-05T22:48:23.010Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:48:23.011Z] [worker-api-db4d422d-2174-4f3a-89bb-12c383e525b5]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\309884
+[debug] [2020-03-05T22:48:23.011Z] [worker-api-db4d422d-2174-4f3a-89bb-12c383e525b5]: BUSY
+[debug] [2020-03-05T22:48:23.468Z] [runtime-status] [309884] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:48:23.469Z] [runtime-status] [309884] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:48:23.472Z] [runtime-status] [309884] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:48:23.474Z] [runtime-status] [309884] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:23.476Z] [runtime-status] [309884] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:24.383Z] [runtime-status] [309884] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:48:24.384Z] [runtime-status] [309884] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:48:24.384Z] [runtime-status] [309884] Running api in mode HTTPS
+[debug] [2020-03-05T22:48:24.388Z] [runtime-status] [309884] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\309884
+[debug] [2020-03-05T22:48:24.394Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:48:24.399Z] [runtime-status] [309884] Ephemeral server handling GET request
+[debug] [2020-03-05T22:48:24.410Z] [runtime-status] [309884] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-05T22:48:24.527Z] [worker-api-db4d422d-2174-4f3a-89bb-12c383e525b5]: IDLE
+[debug] [2020-03-05T22:48:24.527Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:90:25
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-05T22:48:36.328Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:48:37.329Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:48:37.329Z] [worker-~diagnostic~-21211f31-8c8a-4b9a-8fb6-f8b26f1949f7]: FINISHING
+[debug] [2020-03-05T22:48:37.329Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-05T22:48:37.329Z] [worker-api-db4d422d-2174-4f3a-89bb-12c383e525b5]: FINISHING
+[debug] [2020-03-05T22:48:37.357Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:48:37.357Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:48:37.358Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:48:37.358Z] [worker-~diagnostic~-2518fc3e-2426-4693-b3c2-420a0f217eb6]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\296100
+[debug] [2020-03-05T22:48:37.358Z] [worker-~diagnostic~-2518fc3e-2426-4693-b3c2-420a0f217eb6]: BUSY
+[debug] [2020-03-05T22:48:37.358Z] [worker-~diagnostic~-21211f31-8c8a-4b9a-8fb6-f8b26f1949f7]: exited
+[debug] [2020-03-05T22:48:37.358Z] [worker-~diagnostic~-21211f31-8c8a-4b9a-8fb6-f8b26f1949f7]: FINISHED
+[debug] [2020-03-05T22:48:37.358Z] [worker-api-db4d422d-2174-4f3a-89bb-12c383e525b5]: exited
+[debug] [2020-03-05T22:48:37.359Z] [worker-api-db4d422d-2174-4f3a-89bb-12c383e525b5]: FINISHED
+[debug] [2020-03-05T22:48:37.846Z] [runtime-status] [296100] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:48:37.847Z] [runtime-status] [296100] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:48:37.851Z] [runtime-status] [296100] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:48:37.853Z] [runtime-status] [296100] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:37.854Z] [runtime-status] [296100] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:38.806Z] [worker-~diagnostic~-2518fc3e-2426-4693-b3c2-420a0f217eb6]: IDLE
+[debug] [2020-03-05T22:48:38.855Z] [work-queue] {"queueLength":1,"workRunningCount":1}
+[debug] [2020-03-05T22:48:38.855Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-03-05T22:48:38.855Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-05T22:48:38.855Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:48:38.855Z] [worker-pool] Cleaned up workers for api: 2 --> 1
+[debug] [2020-03-05T22:48:38.879Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:48:38.879Z] [worker-pool] Adding worker with key api, total=2
+[debug] [2020-03-05T22:48:38.879Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:48:38.880Z] [worker-api-db50cada-e545-4a99-89fa-f4aa569813c8]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\316656
+[debug] [2020-03-05T22:48:38.880Z] [worker-api-db50cada-e545-4a99-89fa-f4aa569813c8]: BUSY
+[debug] [2020-03-05T22:48:39.351Z] [runtime-status] [316656] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:48:39.352Z] [runtime-status] [316656] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:48:39.356Z] [runtime-status] [316656] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:48:39.359Z] [runtime-status] [316656] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:39.360Z] [runtime-status] [316656] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:48:40.250Z] [runtime-status] [316656] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:48:40.252Z] [runtime-status] [316656] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:48:40.252Z] [runtime-status] [316656] Running api in mode HTTPS
+[debug] [2020-03-05T22:48:40.255Z] [runtime-status] [316656] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\316656
+[debug] [2020-03-05T22:48:40.261Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:48:40.266Z] [runtime-status] [316656] Ephemeral server handling GET request
+[debug] [2020-03-05T22:48:40.272Z] [runtime-status] [316656] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:90:25
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-05T22:57:47.751Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:57:48.752Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:57:48.752Z] [worker-~diagnostic~-2518fc3e-2426-4693-b3c2-420a0f217eb6]: FINISHING
+[debug] [2020-03-05T22:57:48.752Z] [worker-pool] Marking BUSY worker to finish (api)
+[debug] [2020-03-05T22:57:48.752Z] [worker-api-db50cada-e545-4a99-89fa-f4aa569813c8]: FINISHING
+[debug] [2020-03-05T22:57:48.787Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:57:48.787Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:57:48.787Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:57:48.787Z] [worker-~diagnostic~-af575799-80d2-443b-8072-d4be4866bd79]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\314848
+[debug] [2020-03-05T22:57:48.787Z] [worker-~diagnostic~-af575799-80d2-443b-8072-d4be4866bd79]: BUSY
+[debug] [2020-03-05T22:57:48.788Z] [worker-~diagnostic~-2518fc3e-2426-4693-b3c2-420a0f217eb6]: exited
+[debug] [2020-03-05T22:57:48.788Z] [worker-~diagnostic~-2518fc3e-2426-4693-b3c2-420a0f217eb6]: FINISHED
+[debug] [2020-03-05T22:57:49.237Z] [runtime-status] [314848] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:57:49.238Z] [runtime-status] [314848] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:57:49.242Z] [runtime-status] [314848] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:57:49.244Z] [runtime-status] [314848] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:57:49.245Z] [runtime-status] [314848] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:57:50.101Z] [worker-~diagnostic~-af575799-80d2-443b-8072-d4be4866bd79]: IDLE
+[debug] [2020-03-05T22:58:52.320Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:58:53.321Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:58:53.321Z] [worker-~diagnostic~-af575799-80d2-443b-8072-d4be4866bd79]: FINISHING
+[debug] [2020-03-05T22:58:53.321Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:58:53.374Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:58:53.374Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:58:53.374Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:58:53.374Z] [worker-~diagnostic~-99c62b8e-fbee-4a43-9bc9-a5eb4011a253]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\314412
+[debug] [2020-03-05T22:58:53.374Z] [worker-~diagnostic~-99c62b8e-fbee-4a43-9bc9-a5eb4011a253]: BUSY
+[debug] [2020-03-05T22:58:53.374Z] [worker-~diagnostic~-af575799-80d2-443b-8072-d4be4866bd79]: exited
+[debug] [2020-03-05T22:58:53.374Z] [worker-~diagnostic~-af575799-80d2-443b-8072-d4be4866bd79]: FINISHED
+[debug] [2020-03-05T22:58:53.794Z] [runtime-status] [314412] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:58:53.796Z] [runtime-status] [314412] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:58:53.799Z] [runtime-status] [314412] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:58:53.802Z] [runtime-status] [314412] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:58:53.803Z] [runtime-status] [314412] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:58:54.764Z] [worker-~diagnostic~-99c62b8e-fbee-4a43-9bc9-a5eb4011a253]: IDLE
+[debug] [2020-03-05T22:59:01.406Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T22:59:02.408Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T22:59:02.408Z] [worker-~diagnostic~-99c62b8e-fbee-4a43-9bc9-a5eb4011a253]: FINISHING
+[debug] [2020-03-05T22:59:02.408Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:59:02.431Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T22:59:02.431Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T22:59:02.431Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T22:59:02.431Z] [worker-~diagnostic~-8c5a66cb-3b7a-4d06-bc4a-d29c032bb1ca]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\309324
+[debug] [2020-03-05T22:59:02.431Z] [worker-~diagnostic~-8c5a66cb-3b7a-4d06-bc4a-d29c032bb1ca]: BUSY
+[debug] [2020-03-05T22:59:02.431Z] [worker-~diagnostic~-99c62b8e-fbee-4a43-9bc9-a5eb4011a253]: exited
+[debug] [2020-03-05T22:59:02.431Z] [worker-~diagnostic~-99c62b8e-fbee-4a43-9bc9-a5eb4011a253]: FINISHED
+[debug] [2020-03-05T22:59:02.834Z] [runtime-status] [309324] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:59:02.836Z] [runtime-status] [309324] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:59:02.839Z] [runtime-status] [309324] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:59:02.842Z] [runtime-status] [309324] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:59:02.843Z] [runtime-status] [309324] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:59:03.724Z] [worker-~diagnostic~-8c5a66cb-3b7a-4d06-bc4a-d29c032bb1ca]: IDLE
+[debug] [2020-03-05T22:59:10.308Z] [work-queue] {"queueLength":1,"workRunningCount":2}
+[debug] [2020-03-05T22:59:10.309Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-05T22:59:10.309Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-05T22:59:10.309Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-05T22:59:10.342Z] [worker-pool] addWorker(api)
+[debug] [2020-03-05T22:59:10.342Z] [worker-pool] Adding worker with key api, total=3
+[debug] [2020-03-05T22:59:10.342Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-05T22:59:10.342Z] [worker-api-1f3a4836-e29e-4173-b7d3-8195281c49a6]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\314440
+[debug] [2020-03-05T22:59:10.342Z] [worker-api-1f3a4836-e29e-4173-b7d3-8195281c49a6]: BUSY
+[debug] [2020-03-05T22:59:10.820Z] [runtime-status] [314440] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T22:59:10.821Z] [runtime-status] [314440] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T22:59:10.827Z] [runtime-status] [314440] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T22:59:10.832Z] [runtime-status] [314440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:59:10.835Z] [runtime-status] [314440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T22:59:11.696Z] [runtime-status] [314440] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-05T22:59:11.697Z] [runtime-status] [314440] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-05T22:59:11.697Z] [runtime-status] [314440] Running api in mode HTTPS
+[debug] [2020-03-05T22:59:11.701Z] [runtime-status] [314440] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\314440
+[debug] [2020-03-05T22:59:11.707Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-05T22:59:11.712Z] [runtime-status] [314440] Ephemeral server handling GET request
+[debug] [2020-03-05T22:59:11.717Z] [runtime-status] [314440] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:93:25
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-05T23:01:30.933Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-05T23:01:31.934Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-05T23:01:31.935Z] [worker-~diagnostic~-8c5a66cb-3b7a-4d06-bc4a-d29c032bb1ca]: FINISHING
+[debug] [2020-03-05T23:01:31.936Z] [worker-pool] Marking BUSY worker to finish (api)
+[debug] [2020-03-05T23:01:31.936Z] [worker-api-1f3a4836-e29e-4173-b7d3-8195281c49a6]: FINISHING
+[debug] [2020-03-05T23:01:31.984Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-05T23:01:31.984Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-05T23:01:31.984Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-05T23:01:31.985Z] [worker-~diagnostic~-144ce2ca-374b-4324-8aa3-541e0188fb0e]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\310240
+[debug] [2020-03-05T23:01:31.985Z] [worker-~diagnostic~-144ce2ca-374b-4324-8aa3-541e0188fb0e]: BUSY
+[debug] [2020-03-05T23:01:31.985Z] [worker-~diagnostic~-8c5a66cb-3b7a-4d06-bc4a-d29c032bb1ca]: exited
+[debug] [2020-03-05T23:01:31.985Z] [worker-~diagnostic~-8c5a66cb-3b7a-4d06-bc4a-d29c032bb1ca]: FINISHED
+[debug] [2020-03-05T23:01:32.403Z] [runtime-status] [310240] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-05T23:01:32.404Z] [runtime-status] [310240] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-05T23:01:32.407Z] [runtime-status] [310240] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-05T23:01:32.410Z] [runtime-status] [310240] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T23:01:32.411Z] [runtime-status] [310240] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-05T23:01:33.251Z] [worker-~diagnostic~-144ce2ca-374b-4324-8aa3-541e0188fb0e]: IDLE
+[debug] [2020-03-06T00:23:28.850Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T00:23:28.851Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T00:23:28.852Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFriends --> api
+[debug] [2020-03-06T00:23:28.852Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T00:23:29.022Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T00:23:29.022Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T00:23:29.023Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T00:23:29.023Z] [worker-api-71a9daf5-d32a-4aeb-94a0-f25c3a427ee6]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\304804
+[debug] [2020-03-06T00:23:29.023Z] [worker-api-71a9daf5-d32a-4aeb-94a0-f25c3a427ee6]: BUSY
+[debug] [2020-03-06T00:23:30.175Z] [runtime-status] [304804] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T00:23:30.178Z] [runtime-status] [304804] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T00:23:30.192Z] [runtime-status] [304804] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T00:23:30.201Z] [runtime-status] [304804] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T00:23:30.205Z] [runtime-status] [304804] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T00:23:33.004Z] [runtime-status] [304804] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T00:23:33.006Z] [runtime-status] [304804] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T00:23:33.009Z] [runtime-status] [304804] Running api in mode HTTPS
+[debug] [2020-03-06T00:23:33.016Z] [runtime-status] [304804] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\304804
+[debug] [2020-03-06T00:23:33.023Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T00:23:33.040Z] [runtime-status] [304804] Ephemeral server handling GET request
+[debug] [2020-03-06T00:23:33.061Z] [runtime-status] [304804] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T00:23:33.068Z] [worker-api-71a9daf5-d32a-4aeb-94a0-f25c3a427ee6]: IDLE
+[debug] [2020-03-06T00:23:33.068Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-06T00:53:44.871Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T00:53:45.872Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T00:53:45.872Z] [worker-~diagnostic~-144ce2ca-374b-4324-8aa3-541e0188fb0e]: FINISHING
+[debug] [2020-03-06T00:53:45.873Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T00:53:45.873Z] [worker-api-71a9daf5-d32a-4aeb-94a0-f25c3a427ee6]: FINISHING
+[debug] [2020-03-06T00:53:45.952Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T00:53:45.952Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T00:53:45.952Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T00:53:45.952Z] [worker-~diagnostic~-2cb258f7-3908-430b-991e-2079ce923f06]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\307104
+[debug] [2020-03-06T00:53:45.952Z] [worker-~diagnostic~-2cb258f7-3908-430b-991e-2079ce923f06]: BUSY
+[debug] [2020-03-06T00:53:45.953Z] [worker-~diagnostic~-144ce2ca-374b-4324-8aa3-541e0188fb0e]: exited
+[debug] [2020-03-06T00:53:45.953Z] [worker-~diagnostic~-144ce2ca-374b-4324-8aa3-541e0188fb0e]: FINISHED
+[debug] [2020-03-06T00:53:45.953Z] [worker-api-71a9daf5-d32a-4aeb-94a0-f25c3a427ee6]: exited
+[debug] [2020-03-06T00:53:45.953Z] [worker-api-71a9daf5-d32a-4aeb-94a0-f25c3a427ee6]: FINISHED
+[debug] [2020-03-06T00:53:47.069Z] [runtime-status] [307104] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T00:53:47.077Z] [runtime-status] [307104] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T00:53:47.098Z] [runtime-status] [307104] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T00:53:47.109Z] [runtime-status] [307104] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T00:53:47.114Z] [runtime-status] [307104] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T00:53:49.631Z] [worker-~diagnostic~-2cb258f7-3908-430b-991e-2079ce923f06]: IDLE
+[debug] [2020-03-06T01:08:18.708Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:08:19.710Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:08:19.711Z] [worker-~diagnostic~-2cb258f7-3908-430b-991e-2079ce923f06]: FINISHING
+[debug] [2020-03-06T01:08:19.711Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:08:19.714Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:08:19.870Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:08:19.870Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:08:19.870Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:08:19.871Z] [worker-~diagnostic~-6f161281-ed12-444a-9567-9341434033cb]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\311432
+[debug] [2020-03-06T01:08:19.871Z] [worker-~diagnostic~-6f161281-ed12-444a-9567-9341434033cb]: BUSY
+[debug] [2020-03-06T01:08:19.873Z] [worker-~diagnostic~-2cb258f7-3908-430b-991e-2079ce923f06]: exited
+[debug] [2020-03-06T01:08:19.873Z] [worker-~diagnostic~-2cb258f7-3908-430b-991e-2079ce923f06]: FINISHED
+[debug] [2020-03-06T01:08:21.095Z] [runtime-status] [311432] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:08:21.097Z] [runtime-status] [311432] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:08:21.105Z] [runtime-status] [311432] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:08:21.110Z] [runtime-status] [311432] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:08:21.113Z] [runtime-status] [311432] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:08:23.362Z] [worker-~diagnostic~-6f161281-ed12-444a-9567-9341434033cb]: IDLE
+[debug] [2020-03-06T01:11:06.131Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:11:07.133Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:11:07.133Z] [worker-~diagnostic~-6f161281-ed12-444a-9567-9341434033cb]: FINISHING
+[debug] [2020-03-06T01:11:07.134Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:11:07.337Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:11:07.338Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:11:07.339Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:11:07.339Z] [worker-~diagnostic~-9334a0b6-2460-45de-8362-ec51131be6ed]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\238872
+[debug] [2020-03-06T01:11:07.340Z] [worker-~diagnostic~-9334a0b6-2460-45de-8362-ec51131be6ed]: BUSY
+[debug] [2020-03-06T01:11:07.344Z] [worker-~diagnostic~-6f161281-ed12-444a-9567-9341434033cb]: exited
+[debug] [2020-03-06T01:11:07.344Z] [worker-~diagnostic~-6f161281-ed12-444a-9567-9341434033cb]: FINISHED
+[debug] [2020-03-06T01:11:08.852Z] [runtime-status] [238872] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:11:08.855Z] [runtime-status] [238872] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:11:08.866Z] [runtime-status] [238872] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:11:08.874Z] [runtime-status] [238872] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:11:08.878Z] [runtime-status] [238872] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:11:11.503Z] [worker-~diagnostic~-9334a0b6-2460-45de-8362-ec51131be6ed]: IDLE
+[debug] [2020-03-06T01:14:16.608Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:14:16.608Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:14:16.608Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-06T01:14:16.608Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:14:16.701Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:14:16.701Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:14:16.701Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:14:16.701Z] [worker-api-b50ab55b-03ca-4bd9-9cc8-e2fe3c99daee]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\318896
+[debug] [2020-03-06T01:14:16.701Z] [worker-api-b50ab55b-03ca-4bd9-9cc8-e2fe3c99daee]: BUSY
+[debug] [2020-03-06T01:14:17.844Z] [runtime-status] [318896] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:14:17.847Z] [runtime-status] [318896] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:14:17.857Z] [runtime-status] [318896] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:14:17.863Z] [runtime-status] [318896] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:14:17.866Z] [runtime-status] [318896] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:14:20.401Z] [runtime-status] [318896] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:14:20.403Z] [runtime-status] [318896] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:14:20.404Z] [runtime-status] [318896] Running api in mode HTTPS
+[debug] [2020-03-06T01:14:20.415Z] [runtime-status] [318896] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\318896
+[debug] [2020-03-06T01:14:20.422Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:14:20.436Z] [runtime-status] [318896] Ephemeral server handling GET request
+[debug] [2020-03-06T01:14:20.451Z] [runtime-status] [318896] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:14:21.603Z] [worker-api-b50ab55b-03ca-4bd9-9cc8-e2fe3c99daee]: IDLE
+[debug] [2020-03-06T01:14:21.603Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:99:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:98:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-06T01:27:20.206Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:27:21.207Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:27:21.207Z] [worker-~diagnostic~-9334a0b6-2460-45de-8362-ec51131be6ed]: FINISHING
+[debug] [2020-03-06T01:27:21.208Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T01:27:21.209Z] [worker-api-b50ab55b-03ca-4bd9-9cc8-e2fe3c99daee]: FINISHING
+[debug] [2020-03-06T01:27:21.386Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:27:21.387Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:27:21.387Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:27:21.387Z] [worker-~diagnostic~-db378754-5ffd-4caf-90be-5868efaf2877]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\272040
+[debug] [2020-03-06T01:27:21.388Z] [worker-~diagnostic~-db378754-5ffd-4caf-90be-5868efaf2877]: BUSY
+[debug] [2020-03-06T01:27:21.391Z] [worker-~diagnostic~-9334a0b6-2460-45de-8362-ec51131be6ed]: exited
+[debug] [2020-03-06T01:27:21.391Z] [worker-~diagnostic~-9334a0b6-2460-45de-8362-ec51131be6ed]: FINISHED
+[debug] [2020-03-06T01:27:21.392Z] [worker-api-b50ab55b-03ca-4bd9-9cc8-e2fe3c99daee]: exited
+[debug] [2020-03-06T01:27:21.392Z] [worker-api-b50ab55b-03ca-4bd9-9cc8-e2fe3c99daee]: FINISHED
+[debug] [2020-03-06T01:27:22.568Z] [runtime-status] [272040] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:27:22.571Z] [runtime-status] [272040] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:27:22.580Z] [runtime-status] [272040] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:27:22.585Z] [runtime-status] [272040] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:27:22.588Z] [runtime-status] [272040] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:27:25.034Z] [worker-~diagnostic~-db378754-5ffd-4caf-90be-5868efaf2877]: IDLE
+[debug] [2020-03-06T01:27:29.759Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:27:29.760Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:27:29.760Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-06T01:27:29.760Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:27:29.760Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:27:29.870Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:27:29.870Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:27:29.870Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:27:29.871Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\271160
+[debug] [2020-03-06T01:27:29.871Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: BUSY
+[debug] [2020-03-06T01:27:31.337Z] [runtime-status] [271160] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:27:31.340Z] [runtime-status] [271160] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:27:31.350Z] [runtime-status] [271160] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:27:31.357Z] [runtime-status] [271160] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:27:31.360Z] [runtime-status] [271160] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:27:34.366Z] [runtime-status] [271160] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:27:34.368Z] [runtime-status] [271160] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:27:34.368Z] [runtime-status] [271160] Running api in mode HTTPS
+[debug] [2020-03-06T01:27:34.376Z] [runtime-status] [271160] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\271160
+[debug] [2020-03-06T01:27:34.390Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:27:34.406Z] [runtime-status] [271160] Ephemeral server handling GET request
+[debug] [2020-03-06T01:27:34.422Z] [runtime-status] [271160] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:99:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:98:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:27:35.543Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: IDLE
+[debug] [2020-03-06T01:27:35.543Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-06T01:28:21.836Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:28:21.837Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:28:21.837Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFriend --> api
+[debug] [2020-03-06T01:28:21.837Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:28:21.838Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\271160
+[debug] [2020-03-06T01:28:21.838Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: BUSY
+[debug] [2020-03-06T01:28:21.840Z] [runtime-status] [271160] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:28:21.843Z] [runtime-status] [271160] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:28:21.844Z] [runtime-status] [271160] Running api in mode HTTPS
+[debug] [2020-03-06T01:28:21.845Z] [runtime-status] [271160] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\271160
+[debug] [2020-03-06T01:28:21.849Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:28:21.857Z] [runtime-status] [271160] Ephemeral server handling GET request
+[debug] [2020-03-06T01:28:21.861Z] [runtime-status] [271160] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:28:22.024Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: IDLE
+[debug] [2020-03-06T01:28:22.024Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-06T01:28:31.022Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:28:31.022Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:28:31.023Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-06T01:28:31.023Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:28:31.023Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\271160
+[debug] [2020-03-06T01:28:31.024Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: BUSY
+[debug] [2020-03-06T01:28:31.025Z] [runtime-status] [271160] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:28:31.029Z] [runtime-status] [271160] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:28:31.030Z] [runtime-status] [271160] Running api in mode HTTPS
+[debug] [2020-03-06T01:28:31.030Z] [runtime-status] [271160] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\271160
+[debug] [2020-03-06T01:28:31.035Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:28:31.044Z] [runtime-status] [271160] Ephemeral server handling GET request
+[debug] [2020-03-06T01:28:31.047Z] [runtime-status] [271160] Ephemeral server survived.
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:28:31.223Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: IDLE
+[debug] [2020-03-06T01:28:31.224Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:99:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:98:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-06T01:38:09.797Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:38:10.798Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:38:10.799Z] [worker-~diagnostic~-db378754-5ffd-4caf-90be-5868efaf2877]: FINISHING
+[debug] [2020-03-06T01:38:10.800Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T01:38:10.800Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: FINISHING
+[debug] [2020-03-06T01:38:10.887Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:38:10.887Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:38:10.887Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:38:10.887Z] [worker-~diagnostic~-4d09511e-1610-46c7-87f0-6d9d5af66eb6]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\270556
+[debug] [2020-03-06T01:38:10.888Z] [worker-~diagnostic~-4d09511e-1610-46c7-87f0-6d9d5af66eb6]: BUSY
+[debug] [2020-03-06T01:38:10.889Z] [worker-~diagnostic~-db378754-5ffd-4caf-90be-5868efaf2877]: exited
+[debug] [2020-03-06T01:38:10.889Z] [worker-~diagnostic~-db378754-5ffd-4caf-90be-5868efaf2877]: FINISHED
+[debug] [2020-03-06T01:38:10.889Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: exited
+[debug] [2020-03-06T01:38:10.889Z] [worker-api-b3b402e1-e302-402f-9710-c16aab0ca251]: FINISHED
+[debug] [2020-03-06T01:38:12.267Z] [runtime-status] [270556] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:38:12.270Z] [runtime-status] [270556] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:38:12.281Z] [runtime-status] [270556] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:38:12.287Z] [runtime-status] [270556] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:38:12.291Z] [runtime-status] [270556] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:38:14.321Z] [worker-~diagnostic~-4d09511e-1610-46c7-87f0-6d9d5af66eb6]: IDLE
+[debug] [2020-03-06T01:38:15.340Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:38:15.340Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:38:15.340Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers --> api
+[debug] [2020-03-06T01:38:15.340Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:38:15.340Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:38:15.385Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:38:15.385Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:38:15.386Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:38:15.386Z] [worker-api-a7f91a7b-f6cd-4229-896a-9b6bb6fe4942]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\288024
+[debug] [2020-03-06T01:38:15.386Z] [worker-api-a7f91a7b-f6cd-4229-896a-9b6bb6fe4942]: BUSY
+[debug] [2020-03-06T01:38:16.320Z] [runtime-status] [288024] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:38:16.323Z] [runtime-status] [288024] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:38:16.332Z] [runtime-status] [288024] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:38:16.337Z] [runtime-status] [288024] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:38:16.340Z] [runtime-status] [288024] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:38:18.395Z] [runtime-status] [288024] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:38:18.397Z] [runtime-status] [288024] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:38:18.397Z] [runtime-status] [288024] Running api in mode HTTPS
+[debug] [2020-03-06T01:38:18.404Z] [runtime-status] [288024] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\288024
+[debug] [2020-03-06T01:38:18.414Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:38:18.426Z] [runtime-status] [288024] Ephemeral server handling GET request
+[debug] [2020-03-06T01:38:18.438Z] [runtime-status] [288024] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:94:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:93:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:38:19.560Z] [worker-api-a7f91a7b-f6cd-4229-896a-9b6bb6fe4942]: IDLE
+[debug] [2020-03-06T01:38:19.560Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-06T01:39:51.782Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:39:52.784Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:39:52.784Z] [worker-~diagnostic~-4d09511e-1610-46c7-87f0-6d9d5af66eb6]: FINISHING
+[debug] [2020-03-06T01:39:52.785Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T01:39:52.785Z] [worker-api-a7f91a7b-f6cd-4229-896a-9b6bb6fe4942]: FINISHING
+[debug] [2020-03-06T01:39:52.881Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:39:52.881Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:39:52.881Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:39:52.881Z] [worker-~diagnostic~-6bdfaa0f-6b5f-4bb4-a1a8-e49cc5a33f1d]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\284868
+[debug] [2020-03-06T01:39:52.881Z] [worker-~diagnostic~-6bdfaa0f-6b5f-4bb4-a1a8-e49cc5a33f1d]: BUSY
+[debug] [2020-03-06T01:39:52.883Z] [worker-~diagnostic~-4d09511e-1610-46c7-87f0-6d9d5af66eb6]: exited
+[debug] [2020-03-06T01:39:52.883Z] [worker-~diagnostic~-4d09511e-1610-46c7-87f0-6d9d5af66eb6]: FINISHED
+[debug] [2020-03-06T01:39:52.883Z] [worker-api-a7f91a7b-f6cd-4229-896a-9b6bb6fe4942]: exited
+[debug] [2020-03-06T01:39:52.883Z] [worker-api-a7f91a7b-f6cd-4229-896a-9b6bb6fe4942]: FINISHED
+[debug] [2020-03-06T01:39:54.131Z] [runtime-status] [284868] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:39:54.134Z] [runtime-status] [284868] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:39:54.144Z] [runtime-status] [284868] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:39:54.149Z] [runtime-status] [284868] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:39:54.152Z] [runtime-status] [284868] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:39:56.597Z] [worker-~diagnostic~-6bdfaa0f-6b5f-4bb4-a1a8-e49cc5a33f1d]: IDLE
+[debug] [2020-03-06T01:40:56.249Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:40:57.253Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:40:57.254Z] [worker-~diagnostic~-6bdfaa0f-6b5f-4bb4-a1a8-e49cc5a33f1d]: FINISHING
+[debug] [2020-03-06T01:40:57.255Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:40:57.256Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:40:57.441Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:40:57.442Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:40:57.442Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:40:57.442Z] [worker-~diagnostic~-ad0cf872-ce5d-4781-9c79-b24bcd5d6f96]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\311700
+[debug] [2020-03-06T01:40:57.442Z] [worker-~diagnostic~-ad0cf872-ce5d-4781-9c79-b24bcd5d6f96]: BUSY
+[debug] [2020-03-06T01:40:57.443Z] [worker-~diagnostic~-6bdfaa0f-6b5f-4bb4-a1a8-e49cc5a33f1d]: exited
+[debug] [2020-03-06T01:40:57.443Z] [worker-~diagnostic~-6bdfaa0f-6b5f-4bb4-a1a8-e49cc5a33f1d]: FINISHED
+[debug] [2020-03-06T01:40:59.196Z] [runtime-status] [311700] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:40:59.197Z] [runtime-status] [311700] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:40:59.203Z] [runtime-status] [311700] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:40:59.206Z] [runtime-status] [311700] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:40:59.208Z] [runtime-status] [311700] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:41:01.330Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:41:01.330Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:41:01.330Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers?username=a-iacampo --> api
+[debug] [2020-03-06T01:41:01.331Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:41:01.393Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:41:01.393Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:41:01.393Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:41:01.394Z] [worker-api-9c5f9e31-8236-4471-9dc1-43216ab59ab9]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\293656
+[debug] [2020-03-06T01:41:01.394Z] [worker-api-9c5f9e31-8236-4471-9dc1-43216ab59ab9]: BUSY
+[debug] [2020-03-06T01:41:01.805Z] [worker-~diagnostic~-ad0cf872-ce5d-4781-9c79-b24bcd5d6f96]: IDLE
+[debug] [2020-03-06T01:41:02.642Z] [runtime-status] [293656] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:41:02.645Z] [runtime-status] [293656] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:41:02.655Z] [runtime-status] [293656] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:41:02.662Z] [runtime-status] [293656] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:41:02.665Z] [runtime-status] [293656] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:41:06.065Z] [runtime-status] [293656] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:41:06.075Z] [runtime-status] [293656] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:41:06.076Z] [runtime-status] [293656] Running api in mode HTTPS
+[debug] [2020-03-06T01:41:06.087Z] [runtime-status] [293656] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\293656
+[debug] [2020-03-06T01:41:06.099Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:41:06.132Z] [runtime-status] [293656] Ephemeral server handling GET request
+[debug] [2020-03-06T01:41:06.164Z] [runtime-status] [293656] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:94:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:93:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:41:07.652Z] [worker-api-9c5f9e31-8236-4471-9dc1-43216ab59ab9]: IDLE
+[debug] [2020-03-06T01:41:07.652Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-06T01:42:33.098Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:42:34.100Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:42:34.101Z] [worker-~diagnostic~-ad0cf872-ce5d-4781-9c79-b24bcd5d6f96]: FINISHING
+[debug] [2020-03-06T01:42:34.102Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T01:42:34.103Z] [worker-api-9c5f9e31-8236-4471-9dc1-43216ab59ab9]: FINISHING
+[debug] [2020-03-06T01:42:34.294Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:42:34.295Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:42:34.295Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:42:34.295Z] [worker-~diagnostic~-0ba9f05e-684e-4fea-a1ea-abb4a3730409]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\319292
+[debug] [2020-03-06T01:42:34.295Z] [worker-~diagnostic~-0ba9f05e-684e-4fea-a1ea-abb4a3730409]: BUSY
+[debug] [2020-03-06T01:42:34.297Z] [worker-~diagnostic~-ad0cf872-ce5d-4781-9c79-b24bcd5d6f96]: exited
+[debug] [2020-03-06T01:42:34.297Z] [worker-~diagnostic~-ad0cf872-ce5d-4781-9c79-b24bcd5d6f96]: FINISHED
+[debug] [2020-03-06T01:42:34.297Z] [worker-api-9c5f9e31-8236-4471-9dc1-43216ab59ab9]: exited
+[debug] [2020-03-06T01:42:34.298Z] [worker-api-9c5f9e31-8236-4471-9dc1-43216ab59ab9]: FINISHED
+[debug] [2020-03-06T01:42:35.754Z] [runtime-status] [319292] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:42:35.760Z] [runtime-status] [319292] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:42:35.775Z] [runtime-status] [319292] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:42:35.808Z] [runtime-status] [319292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:42:35.812Z] [runtime-status] [319292] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:42:37.886Z] [worker-~diagnostic~-0ba9f05e-684e-4fea-a1ea-abb4a3730409]: IDLE
+[debug] [2020-03-06T01:42:38.491Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:42:38.491Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:42:38.491Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers?username=a-iacampo --> api
+[debug] [2020-03-06T01:42:38.491Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:42:38.491Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:42:38.536Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:42:38.537Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:42:38.537Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:42:38.537Z] [worker-api-0dfc25ee-43af-4c82-ad44-54f3e8b11ebf]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\267920
+[debug] [2020-03-06T01:42:38.537Z] [worker-api-0dfc25ee-43af-4c82-ad44-54f3e8b11ebf]: BUSY
+[debug] [2020-03-06T01:42:39.503Z] [runtime-status] [267920] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:42:39.505Z] [runtime-status] [267920] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:42:39.513Z] [runtime-status] [267920] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:42:39.516Z] [runtime-status] [267920] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:42:39.518Z] [runtime-status] [267920] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:42:41.436Z] [runtime-status] [267920] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:42:41.438Z] [runtime-status] [267920] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:42:41.439Z] [runtime-status] [267920] Running api in mode HTTPS
+[debug] [2020-03-06T01:42:41.445Z] [runtime-status] [267920] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\267920
+[debug] [2020-03-06T01:42:41.452Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:42:41.464Z] [runtime-status] [267920] Ephemeral server handling GET request
+[debug] [2020-03-06T01:42:41.472Z] [runtime-status] [267920] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:94:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:93:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:42:42.478Z] [worker-api-0dfc25ee-43af-4c82-ad44-54f3e8b11ebf]: IDLE
+[debug] [2020-03-06T01:42:42.478Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-06T01:43:18.484Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:43:19.485Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:43:19.486Z] [worker-~diagnostic~-0ba9f05e-684e-4fea-a1ea-abb4a3730409]: FINISHING
+[debug] [2020-03-06T01:43:19.488Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T01:43:19.489Z] [worker-api-0dfc25ee-43af-4c82-ad44-54f3e8b11ebf]: FINISHING
+[debug] [2020-03-06T01:43:19.631Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:43:19.631Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:43:19.631Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:43:19.632Z] [worker-~diagnostic~-5875d789-8463-4443-b2ec-23a3e1417b60]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\263172
+[debug] [2020-03-06T01:43:19.632Z] [worker-~diagnostic~-5875d789-8463-4443-b2ec-23a3e1417b60]: BUSY
+[debug] [2020-03-06T01:43:19.633Z] [worker-~diagnostic~-0ba9f05e-684e-4fea-a1ea-abb4a3730409]: exited
+[debug] [2020-03-06T01:43:19.633Z] [worker-~diagnostic~-0ba9f05e-684e-4fea-a1ea-abb4a3730409]: FINISHED
+[debug] [2020-03-06T01:43:19.633Z] [worker-api-0dfc25ee-43af-4c82-ad44-54f3e8b11ebf]: exited
+[debug] [2020-03-06T01:43:19.634Z] [worker-api-0dfc25ee-43af-4c82-ad44-54f3e8b11ebf]: FINISHED
+[debug] [2020-03-06T01:43:20.949Z] [runtime-status] [263172] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:43:20.953Z] [runtime-status] [263172] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:43:20.965Z] [runtime-status] [263172] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:43:20.972Z] [runtime-status] [263172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:43:20.976Z] [runtime-status] [263172] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:43:23.361Z] [worker-~diagnostic~-5875d789-8463-4443-b2ec-23a3e1417b60]: IDLE
+[debug] [2020-03-06T01:43:24.455Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:43:24.457Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:43:24.457Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers?username=a-iacampo --> api
+[debug] [2020-03-06T01:43:24.458Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:43:24.458Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:43:24.588Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:43:24.588Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:43:24.588Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:43:24.589Z] [worker-api-c8a4fb12-520b-45c1-b494-f405b4a11f5c]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\321432
+[debug] [2020-03-06T01:43:24.589Z] [worker-api-c8a4fb12-520b-45c1-b494-f405b4a11f5c]: BUSY
+[debug] [2020-03-06T01:43:25.985Z] [runtime-status] [321432] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:43:25.988Z] [runtime-status] [321432] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:43:25.999Z] [runtime-status] [321432] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:43:26.005Z] [runtime-status] [321432] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:43:26.008Z] [runtime-status] [321432] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:43:28.482Z] [runtime-status] [321432] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:43:28.483Z] [runtime-status] [321432] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:43:28.483Z] [runtime-status] [321432] Running api in mode HTTPS
+[debug] [2020-03-06T01:43:28.490Z] [runtime-status] [321432] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\321432
+[debug] [2020-03-06T01:43:28.495Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:43:28.508Z] [runtime-status] [321432] Ephemeral server handling GET request
+[debug] [2020-03-06T01:43:28.521Z] [runtime-status] [321432] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:94:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:93:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:43:29.662Z] [worker-api-c8a4fb12-520b-45c1-b494-f405b4a11f5c]: IDLE
+[debug] [2020-03-06T01:43:29.662Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-06T01:44:46.696Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:44:47.698Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:44:47.698Z] [worker-~diagnostic~-5875d789-8463-4443-b2ec-23a3e1417b60]: FINISHING
+[debug] [2020-03-06T01:44:47.699Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T01:44:47.699Z] [worker-api-c8a4fb12-520b-45c1-b494-f405b4a11f5c]: FINISHING
+[debug] [2020-03-06T01:44:47.844Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:44:47.844Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:44:47.844Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:44:47.844Z] [worker-~diagnostic~-3a6ba83c-f7d6-4dba-bbc7-a89d88c71efa]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\319468
+[debug] [2020-03-06T01:44:47.844Z] [worker-~diagnostic~-3a6ba83c-f7d6-4dba-bbc7-a89d88c71efa]: BUSY
+[debug] [2020-03-06T01:44:47.851Z] [worker-api-c8a4fb12-520b-45c1-b494-f405b4a11f5c]: exited
+[debug] [2020-03-06T01:44:47.851Z] [worker-api-c8a4fb12-520b-45c1-b494-f405b4a11f5c]: FINISHED
+[debug] [2020-03-06T01:44:47.851Z] [worker-~diagnostic~-5875d789-8463-4443-b2ec-23a3e1417b60]: exited
+[debug] [2020-03-06T01:44:47.851Z] [worker-~diagnostic~-5875d789-8463-4443-b2ec-23a3e1417b60]: FINISHED
+[debug] [2020-03-06T01:44:49.403Z] [runtime-status] [319468] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:44:49.405Z] [runtime-status] [319468] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:44:49.414Z] [runtime-status] [319468] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:44:49.419Z] [runtime-status] [319468] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:44:49.422Z] [runtime-status] [319468] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:44:50.736Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:44:50.736Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:44:50.736Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers?username=a-iacampo --> api
+[debug] [2020-03-06T01:44:50.736Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:44:50.737Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:44:50.801Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:44:50.801Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:44:50.801Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:44:50.801Z] [worker-api-381487a0-0fc3-4f77-82e6-52f3c1c1e0bb]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\321880
+[debug] [2020-03-06T01:44:50.801Z] [worker-api-381487a0-0fc3-4f77-82e6-52f3c1c1e0bb]: BUSY
+[debug] [2020-03-06T01:44:51.579Z] [worker-~diagnostic~-3a6ba83c-f7d6-4dba-bbc7-a89d88c71efa]: IDLE
+[debug] [2020-03-06T01:44:51.888Z] [runtime-status] [321880] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:44:51.890Z] [runtime-status] [321880] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:44:51.896Z] [runtime-status] [321880] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:44:51.901Z] [runtime-status] [321880] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:44:51.904Z] [runtime-status] [321880] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:44:53.896Z] [runtime-status] [321880] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:44:53.898Z] [runtime-status] [321880] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:44:53.898Z] [runtime-status] [321880] Running api in mode HTTPS
+[debug] [2020-03-06T01:44:53.909Z] [runtime-status] [321880] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\321880
+[debug] [2020-03-06T01:44:53.924Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:44:53.939Z] [runtime-status] [321880] Ephemeral server handling GET request
+[debug] [2020-03-06T01:44:53.953Z] [runtime-status] [321880] Ephemeral server survived.
+[info] >  (node:321880) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[info] >      at ServerResponse.setHeader (_http_outgoing.js:485:11)
+[info] >      at ServerResponse.header (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\express\lib\response.js:771:10)
+[info] >      at ServerResponse.send (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\express\lib\response.js:170:12)
+[info] >      at ServerResponse.json (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\express\lib\response.js:267:15)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:86:26
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:81:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-03-06T01:44:55.010Z] [worker-api-381487a0-0fc3-4f77-82e6-52f3c1c1e0bb]: IDLE
+[debug] [2020-03-06T01:44:55.010Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[info] >  (node:321880) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+[info] >  (node:321880) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:95:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:94:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[debug] [2020-03-06T01:46:07.864Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:46:08.866Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:46:08.867Z] [worker-~diagnostic~-3a6ba83c-f7d6-4dba-bbc7-a89d88c71efa]: FINISHING
+[debug] [2020-03-06T01:46:08.868Z] [worker-pool] Shutting down IDLE worker (api)
+[debug] [2020-03-06T01:46:08.868Z] [worker-api-381487a0-0fc3-4f77-82e6-52f3c1c1e0bb]: FINISHING
+[debug] [2020-03-06T01:46:09.023Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:46:09.023Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:46:09.023Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:46:09.023Z] [worker-~diagnostic~-ddc2dc04-a8d8-44d6-9293-9a5c45c85474]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\321932
+[debug] [2020-03-06T01:46:09.023Z] [worker-~diagnostic~-ddc2dc04-a8d8-44d6-9293-9a5c45c85474]: BUSY
+[debug] [2020-03-06T01:46:09.024Z] [worker-~diagnostic~-3a6ba83c-f7d6-4dba-bbc7-a89d88c71efa]: exited
+[debug] [2020-03-06T01:46:09.024Z] [worker-~diagnostic~-3a6ba83c-f7d6-4dba-bbc7-a89d88c71efa]: FINISHED
+[debug] [2020-03-06T01:46:09.024Z] [worker-api-381487a0-0fc3-4f77-82e6-52f3c1c1e0bb]: exited
+[debug] [2020-03-06T01:46:09.024Z] [worker-api-381487a0-0fc3-4f77-82e6-52f3c1c1e0bb]: FINISHED
+[debug] [2020-03-06T01:46:10.370Z] [runtime-status] [321932] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:46:10.375Z] [runtime-status] [321932] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:46:10.387Z] [runtime-status] [321932] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:46:10.394Z] [runtime-status] [321932] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:46:10.397Z] [runtime-status] [321932] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:46:12.454Z] [work-queue] {"queueLength":1,"workRunningCount":3}
+[debug] [2020-03-06T01:46:12.455Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-06T01:46:12.455Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers?username=a-iacampo --> api
+[debug] [2020-03-06T01:46:12.455Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:46:12.455Z] [worker-pool] Cleaned up workers for api: 4 --> 3
+[debug] [2020-03-06T01:46:12.527Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:46:12.527Z] [worker-pool] Adding worker with key api, total=4
+[debug] [2020-03-06T01:46:12.527Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:46:12.528Z] [worker-api-d92e28bf-5ec7-4727-ad84-57c5ab2c2317]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\322216
+[debug] [2020-03-06T01:46:12.528Z] [worker-api-d92e28bf-5ec7-4727-ad84-57c5ab2c2317]: BUSY
+[debug] [2020-03-06T01:46:12.708Z] [worker-~diagnostic~-ddc2dc04-a8d8-44d6-9293-9a5c45c85474]: IDLE
+[debug] [2020-03-06T01:46:14.592Z] [runtime-status] [322216] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:46:14.597Z] [runtime-status] [322216] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:46:14.616Z] [runtime-status] [322216] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:46:14.629Z] [runtime-status] [322216] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:46:14.636Z] [runtime-status] [322216] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:46:18.234Z] [runtime-status] [322216] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:46:18.236Z] [runtime-status] [322216] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:46:18.236Z] [runtime-status] [322216] Running api in mode HTTPS
+[debug] [2020-03-06T01:46:18.246Z] [runtime-status] [322216] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\322216
+[debug] [2020-03-06T01:46:18.254Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:46:18.275Z] [runtime-status] [322216] Ephemeral server handling GET request
+[debug] [2020-03-06T01:46:18.291Z] [runtime-status] [322216] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:95:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:94:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] >  (node:322216) UnhandledPromiseRejectionWarning: TypeError: doc.id is not a function
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:84:41
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:81:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] >  (node:322216) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+[info] >  (node:322216) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2020-03-06T01:49:12.208Z] File C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js changed, reloading triggers
+[debug] [2020-03-06T01:49:13.209Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-06T01:49:13.209Z] [worker-~diagnostic~-ddc2dc04-a8d8-44d6-9293-9a5c45c85474]: FINISHING
+[debug] [2020-03-06T01:49:13.210Z] [worker-pool] Marking BUSY worker to finish (api)
+[debug] [2020-03-06T01:49:13.210Z] [worker-api-d92e28bf-5ec7-4727-ad84-57c5ab2c2317]: FINISHING
+[debug] [2020-03-06T01:49:13.421Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-06T01:49:13.421Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-06T01:49:13.421Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-06T01:49:13.421Z] [worker-~diagnostic~-36ca3b07-5a65-4aeb-b616-9ab72442c855]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\318800
+[debug] [2020-03-06T01:49:13.421Z] [worker-~diagnostic~-36ca3b07-5a65-4aeb-b616-9ab72442c855]: BUSY
+[debug] [2020-03-06T01:49:13.422Z] [worker-~diagnostic~-ddc2dc04-a8d8-44d6-9293-9a5c45c85474]: exited
+[debug] [2020-03-06T01:49:13.422Z] [worker-~diagnostic~-ddc2dc04-a8d8-44d6-9293-9a5c45c85474]: FINISHED
+[debug] [2020-03-06T01:49:14.560Z] [runtime-status] [318800] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:49:14.563Z] [runtime-status] [318800] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:49:14.572Z] [runtime-status] [318800] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:49:14.577Z] [runtime-status] [318800] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:49:14.579Z] [runtime-status] [318800] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:49:15.724Z] [work-queue] {"queueLength":1,"workRunningCount":4}
+[debug] [2020-03-06T01:49:15.724Z] [work-queue] {"queueLength":0,"workRunningCount":5}
+[debug] [2020-03-06T01:49:15.724Z] Accepted request GET /picturepoint-381cf/us-central1/api/getFollowers?username=a-iacampo --> api
+[debug] [2020-03-06T01:49:15.725Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-06T01:49:15.770Z] [worker-pool] addWorker(api)
+[debug] [2020-03-06T01:49:15.771Z] [worker-pool] Adding worker with key api, total=5
+[debug] [2020-03-06T01:49:15.771Z] [worker-pool] submitWork(triggerId=api)
+[debug] [2020-03-06T01:49:15.771Z] [worker-api-acccbc3b-3daa-4390-930e-42834d685e46]: Assigning socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\322420
+[debug] [2020-03-06T01:49:15.771Z] [worker-api-acccbc3b-3daa-4390-930e-42834d685e46]: BUSY
+[debug] [2020-03-06T01:49:16.266Z] [worker-~diagnostic~-36ca3b07-5a65-4aeb-b616-9ab72442c855]: IDLE
+[debug] [2020-03-06T01:49:16.605Z] [runtime-status] [322420] Functions runtime initialized. {"cwd":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions","node_version":"12.14.1"}
+[debug] [2020-03-06T01:49:16.607Z] [runtime-status] [322420] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-06T01:49:16.614Z] [runtime-status] [322420] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-03-06T01:49:16.618Z] [runtime-status] [322420] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:49:16.621Z] [runtime-status] [322420] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\etothra\\Workspace\\SOEN341-PicturePoint\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-03-06T01:49:18.303Z] [runtime-status] [322420] Trigger "api" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-03-06T01:49:18.304Z] [runtime-status] [322420] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2020-03-06T01:49:18.304Z] [runtime-status] [322420] Running api in mode HTTPS
+[debug] [2020-03-06T01:49:18.312Z] [runtime-status] [322420] Attempting to listen to socketPath: \\?\pipe\C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\322420
+[debug] [2020-03-06T01:49:18.316Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-06T01:49:18.330Z] [runtime-status] [322420] Ephemeral server handling GET request
+[debug] [2020-03-06T01:49:18.342Z] [runtime-status] [322420] Ephemeral server survived.
+[info] >  ReferenceError: indexFollowers is not defined
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:95:33
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:94:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] >  (node:322420) UnhandledPromiseRejectionWarning: TypeError: doc.id is not a function
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:84:41
+[info] >      at QuerySnapshot.forEach (C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\node_modules\@google-cloud\firestore\build\src\reference.js:781:22)
+[info] >      at C:\Users\etothra\Workspace\SOEN341-PicturePoint\functions\index.js:81:14
+[info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
+[info] >  (node:322420) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+[info] >  (node:322420) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.

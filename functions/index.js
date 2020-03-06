@@ -7,7 +7,7 @@ const Busboy = require('busboy');
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
-const serviceAccount = require('./keys/picturepoint-381cf-firebase-adminsdk-a9cln-a81acf0f10.json');
+const serviceAccount = require('./keys/picturepoint-381cf-firebase-adminsdk-a9cln-8cb417d5a1.json');
 
 //Enable CORS
 const cors = require('cors');
@@ -72,6 +72,35 @@ app.get('/getFriend', (request, response) => {
         return response.json(friends);
     })
     .catch(err => console.error(err));
+});
+
+
+app.get('/getFollowers', (request,response) => {
+    db.collection('users').get().then(data => {
+        let indexFollowers = [];
+        data.forEach(doc => {
+            if (doc.data().username = "a-iacampo") {
+                indexFollowers.push({
+                    indexFollowers: doc.id().followed
+                });
+                response.json({header: "if statement"});
+            }
+        });
+        return response.json(indexFollowers);
+    })
+
+    db.collection('links').get().then(data => {
+        let followers = [];
+        data.forEach(doc => {
+            followers.push(data[indexFollowers[i]].following)
+        })
+        return response.json(followers);
+        // for (i = 0; i < indexFollowers.length; i++) {
+        //     followers.push(data[indexFollowers[i]].following)
+        // }
+    })
+    .catch(err => console.error(err));
+    //response.json({header: "hello !"});
 });
 
 //route to post 
