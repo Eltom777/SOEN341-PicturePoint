@@ -32,9 +32,8 @@ class AddPhoto extends Component {
     SubmitPicture(event) {
         event.preventDefault();
         //setup form
-        const formData = new FormData();
-        formData.append('file', this.state.file, this.state.fileName);
-        formData.append('text', this.state.text);
+        var form = document.getElementById('postPhoto')
+        const formData = new FormData(form);
 
         //setup httpsAgent
         const httpsAgent = new https.Agent({ //TODO: Add SSL certification, Disabled for now 
