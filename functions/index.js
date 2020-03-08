@@ -75,7 +75,7 @@ app.get('/getFriend', (request, response) => {
 });
 
 //route to post 
-app.post('/AddPhoto', (request,response) => {
+app.post('/addPhoto', (request,response) => {
     
     const busboy = new Busboy({headers: request.headers});
 
