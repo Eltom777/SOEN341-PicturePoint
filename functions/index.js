@@ -123,7 +123,7 @@ app.post('/AddPhoto', (request,response) => {
             firebaseConfig.storageBucket
             }/o/${imageFileName}?alt=media`;
             //creating a new document inside  collection photo
-            return db.collection('/photos').doc(imageFileName).set({imageUrl,caption,user: 't-flynn', creationData: new Date().toISOString()}); 
+            return db.collection('/photos').doc(imageFileName).set({imageUrl,caption,user: 't-flynn', creationDate: new Date().toISOString()}); 
         })
         .then(() => {
             return response.json({ message: 'image uploaded successfully' });
