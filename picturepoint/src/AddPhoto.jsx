@@ -7,26 +7,7 @@ import https from "https";
 class AddPhoto extends Component {
     constructor(props) {
         super(props);
-        this.state = {text: "", file: null, fileName: ""};
-    
-        this.handleChange = this.handleChange.bind(this);
-        this.handleImageChange = this.handleImageChange.bind(this);
         this.SubmitPicture = this.SubmitPicture.bind(this);
-    }
-    
-    handleChange(event) {
-        this.setState({
-          [event.target.type]: event.target.value
-        }); 
-    }
-
-    handleImageChange(event){
-        const image = event.target.files[0];
-        console.log(image);
-        this.setState({
-            file: event.target.files[0],
-            fileName: image.name
-        });
     }
     
     SubmitPicture(event) {
@@ -66,13 +47,11 @@ class AddPhoto extends Component {
                 label="Caption"
                 type="text"
                 name="Caption"
-                onChange={this.handleChange}
                 />
                 <input 
                 label="Upload Picture" 
                 type="file"
                 name="picture"
-                onChange={this.handleImageChange}
                 />
                 <button type="submit">Upload</button>
             </form>
