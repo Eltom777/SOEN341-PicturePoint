@@ -75,13 +75,10 @@ app.get('/getFriend', (request, response) => {
 });
 
 //route to post 
-app.post('/AddPhoto', (req,res) => {
+app.post('/AddPhoto', (request,response) => {
     
-    //const busboy = new Busboy({headers: req.headers});
+    const busboy = new Busboy({headers: request.headers});
 
-    res.json({header: JSON.stringify(req.header)});
-    /*
-    
     let imageToBeUploaded = {};
     let imageFileName;
     let caption;
@@ -93,7 +90,7 @@ app.post('/AddPhoto', (req,res) => {
     busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
         console.log(fieldname, file, filename, encoding, mimetype);
         if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
-            return res.status(400).json({ error: 'Wrong file type submitted' });
+            return response.status(400).json({ error: 'Wrong file type submitted' });
         }
         // my.image.png => ['my', 'image', 'png']
         const imageExtension = filename.split('.')[filename.split('.').length - 1];
@@ -129,16 +126,16 @@ app.post('/AddPhoto', (req,res) => {
             return db.collection('/photos').doc(imageFileName).set({imageUrl,caption,user: 't-flynn', creationData: new Date().toISOString()}); 
         })
         .then(() => {
-            return res.json({ message: 'image uploaded successfully' });
+            return response.json({ message: 'image uploaded successfully' });
         })
         .catch((err) => {
             console.error(err);
-            return res.status(500).json({ error: 'something went wrong' });
+            return response.status(500).json({ error: 'something went wrong' });
         });
 
     });
-    */
-    //req.pipe(busboy); 
+
+    request.pipe(busboy); 
 });
 
 //==========================================================================================================================================
