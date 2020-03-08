@@ -3,53 +3,66 @@ import axios from "axios";
 import https from "https";
 
 
+
 class AddPhoto extends Component {
     constructor(props) {
         super(props);
-        this.state = {text: '', file: ''};
+        this.state = {text: "", file: null, fileName: ""};
     
         this.handleChange = this.handleChange.bind(this);
+        this.handleImageChange = this.handleImageChange.bind(this);
         this.SubmitPicture = this.SubmitPicture.bind(this);
     }
     
     handleChange(event) {
         this.setState({
           [event.target.type]: event.target.value
-        }) 
+        }); 
+    }
+
+    handleImageChange(event){
+        const image = event.target.files[0];
+        console.log(image);
+        this.setState({
+            file: event.target.files[0],
+            fileName: image.name
+        });
     }
     
     SubmitPicture(event) {
         event.preventDefault();
+        //setup form
         const formData = new FormData();
+        formData.append('file', this.state.file, this.state.fileName);
+        formData.append('text', this.state.text);
+
+        //setup httpsAgent
         const httpsAgent = new https.Agent({ //TODO: Add SSL certification, Disabled for now 
             rejectUnauthorized: false
         });
-        console.log(this.state.text);
-        console.log(this.state.file);
-        formData.append('text', this.state.caption);
-        formData.append('file', this.state.file);
-        axios.post(
-                'https://us-central1-picturepoint-381cf.cloudfunctions.net/api/AddPhoto',
-                formData,
-                httpsAgent,
-                {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    }
-                }
-            )
-            .then((response) => {
-                // handle your response
-            })
-            .catch(() => {
-                // handle your error
-            });
+        
+        //sending post request to firebase functions
+        axios({
+            method: 'POST',
+            url: 'https://us-central1-picturepoint-381cf.cloudfunctions.net/api/addPhoto', 
+            data: formData,
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            } ,
+            https: httpsAgent
+        })
+        .then((response) => {
+            console.log(response)
+        })
+        .catch((err) => {
+            console.log(err.response);
+        });
     };
 
     render(){
         return (
             <div>
-            <form onSubmit={this.SubmitPicture}>
+            <form id="postPhoto" onSubmit={this.SubmitPicture}>
                 <input 
                 label="Caption"
                 type="text"
@@ -60,7 +73,7 @@ class AddPhoto extends Component {
                 label="Upload Picture" 
                 type="file"
                 name="picture"
-                onChange={this.handleChange}
+                onChange={this.handleImageChange}
                 />
                 <button type="submit">Upload</button>
             </form>
