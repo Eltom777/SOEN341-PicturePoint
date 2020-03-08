@@ -102,9 +102,6 @@ app.post('/AddPhoto', (request,response) => {
         imageToBeUploaded = { filepath, mimetype };
         file.pipe(fs.createWriteStream(filepath));
     });
-    busboy.on('field', function(fieldname, val, fieldnameTruncated, valTruncated) {
-         caption = val;
-    });
     busboy.on('finish', () => {
         const storage = admin.storage();
         admin
