@@ -1,9 +1,11 @@
+//NOT USING COMPONENT
+
 import React from "react";
 import { Link } from "react-router-dom";
 
 import AuthUserContext from "./AuthUserContext";
 import SignOutButton from "./SignOut";
-import * as routes from "../constants/routes";
+import * as routes from "../../Routes/routes";
 
 import Header from "../../Layouts/Header";
 
@@ -30,6 +32,8 @@ const NavigationAuth = () => (
   </div>
 );
 
-const NavigationNonAuth = () => <Link to={routes.SIGN_IN}>Sign In</Link>;
+const NavigationNonAuth = () => (
+  <Header />
+);
 
 export default Navigation;

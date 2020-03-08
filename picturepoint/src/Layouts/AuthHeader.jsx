@@ -3,6 +3,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import * as routes from "../Routes/routes";
 
+//Firebase
+import { auth } from "../Login/firebase";
+
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -17,8 +20,9 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import LockOpen from "@material-ui/icons/LockOpen";
-
+import AccountBox from "@material-ui/icons/AccountBox";
+import Home from "@material-ui/icons/Home";
+import ExitToApp from "@material-ui/icons/ExitToApp";
 
 //Style
 const useStyles = makeStyles(theme => ({
@@ -38,7 +42,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //Render
-function Header() {
+function AuthHeader() {
     const classes = useStyles();
 
     //Left Menu Functionality
@@ -62,12 +66,28 @@ function Header() {
         onKeyDown={toggleDrawer(side, false)}
       >
         <List>
-            <ListItem button component={Link} to={routes.SIGN_IN}>
+            <ListItem button component={Link} to={routes.HOME}>
               <ListItemIcon>
-                  <LockOpen />
+                  <Home />
               </ListItemIcon>
               <ListItemText>
-                  Sign In
+                  Home
+              </ListItemText>
+            </ListItem>
+            <ListItem button component={Link} to={routes.ACCOUNT}>
+              <ListItemIcon>
+                  <AccountBox />
+              </ListItemIcon>
+              <ListItemText>
+                  Account
+              </ListItemText>
+            </ListItem>
+            <ListItem button onClick={auth.doSignOut} component={Link} to={routes.SIGN_IN}>
+              <ListItemIcon>
+                  <ExitToApp />
+              </ListItemIcon>
+              <ListItemText>
+                  Logout
               </ListItemText>
             </ListItem>
         </List>
@@ -87,10 +107,16 @@ function Header() {
                     <Typography variant="h3" className={classes.title}>
                         Picture Point
                     </Typography>
+                    <IconButton
+                        edge="end"
+                        color="inherit"
+                    >
+                        <AccountCircle />
+                    </IconButton>
                 </Toolbar>
             </AppBar>
         </div>
     );
 }
 
-export default Header;
+export default AuthHeader;

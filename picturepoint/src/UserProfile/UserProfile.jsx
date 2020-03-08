@@ -14,7 +14,7 @@ import Photos from './Taskbar Components/Photos';
 
 //Pages
 import Picture from '../Posts/Picture';
-import AddPhoto from '../AddPhoto';
+import AddPhoto from '../AddPhoto/AddPhoto';
 
 function UserProfile(props) {
     var currentUserID = props.currentUserID;

@@ -1,3 +1,5 @@
+//NOT USING COMPONENT
+
 import React from "react";
 //import * as routes from "../constants/routes";
 import { auth } from "../firebase";

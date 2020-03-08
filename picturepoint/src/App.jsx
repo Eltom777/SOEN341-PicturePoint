@@ -9,15 +9,14 @@ import Header from './Layouts/Header';
 import UserProfile from './UserProfile/UserProfile';
 
 //
-import Navigation from "./Login/components/Navigation";
+import Navigation from "./Layouts/Navigation";
 import SignUpPage from "./Login/components/SignUp";
 import SignInPage from "./Login/components/SignIn";
 import PasswordForgetPage from "./Login/components/PasswordForget";
-import HomePage from "./Login/components/Home";
 import AccountPage from "./Login/components/Account";
 import withAuthentication from "./Login/components/withAuthentication";
 
-import * as routes from "./Login/constants/routes";
+import * as routes from "./Routes/routes";
 
 //Enter the user ID of the user profile you want to load
 var currentUserID = 't-flynn';
@@ -26,7 +25,6 @@ const App = () => (
   <Router>
     <div>
       <Navigation />
-      <hr />
       <Route exact path={routes.SIGN_UP} component={SignUpPage} />
       <Route exact path={routes.SIGN_IN} component={SignInPage} />
       <Route
