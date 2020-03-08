@@ -120,7 +120,7 @@ app.post('/AddPhoto', (request,response) => {
         })
         .then(() => {
             const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
-            config.storageBucket
+            firebaseConfig.storageBucket
             }/o/${imageFileName}?alt=media`;
             //creating a new document inside  collection photo
             return db.collection('/photos').doc(imageFileName).set({imageUrl,caption,user: 't-flynn', creationData: new Date().toISOString()}); 
