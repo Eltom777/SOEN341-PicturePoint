@@ -4,10 +4,14 @@ import { SignUpLink } from "./SignUp";
 import { PasswordForgetLink } from "./PasswordForget";
 import { auth } from "../firebase";
 import * as routes from "../../Routes/routes";
+import "./auth.css";
+import { Link } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 const SignInPage = ({ history }) => (
-  <div align="center">
-    <h1>SignIn</h1>
+  <div align="center" className="SignInBox">
+    <h2>SignIn</h2>
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
@@ -56,32 +60,51 @@ class SignInForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event =>
-            this.setState(byPropKey("email", event.target.value))
-          }
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={password}
-          onChange={event =>
-            this.setState(byPropKey("password", event.target.value))
-          }
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+      <TextField
+        name="Email"
+        label="Email"
+        id="standard-secondary"
+        value={email}
+        onChange={event =>
+          this.setState(byPropKey("email", event.target.value))
+        }
+      />
+      <br />
+      <TextField
+        name="Password"
+        type="password"
+        id="standard-secondary"
+        label="Password"
+        color="primary"
+        value={password}
+        onChange={event =>
+          this.setState(byPropKey("password", event.target.value))
+        }
+      />
 
-        {error && <p>{error.message}</p>}
+      <br />
+      <br />
+        <Button
+          type="submit"
+          disabled={isInvalid}
+          variant="contained"
+          color="primary"
+        >
+          Sign In
+        </Button>
+        {error && <p style={{ color: "red" }}>{error.message}</p>}
       </form>
     );
   }
 }
+const SignInLink = () => (
+  <p>
+    Already have an account?
+    <br />
+    <Link to={routes.SIGN_IN}>Sign In</Link>
+  </p>
+);
 
 export default SignInPage;
 
-export { SignInForm };
+export { SignInForm, SignInLink };
