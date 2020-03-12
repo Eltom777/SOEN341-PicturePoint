@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import "./auth.css";
-import * as routes from "../constants/routes";
+import * as routes from "../../Routes/routes";
 import { SignInLink } from "./SignIn";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -53,8 +53,14 @@ class SignUpForm extends Component {
         username
       )
       .then(authUser => {
+        if(authUser != null){
         this.setState(() => ({ ...INITIAL_STATE }));
         this.props.history.push(routes.HOME);
+        }
+        else{
+          this.setState(() => ({ ...INITIAL_STATE }));
+          this.props.history.push(routes.SIGN_UP);
+        }
       })
       .catch(error => {
         this.setState(byPropKey("error", error));
