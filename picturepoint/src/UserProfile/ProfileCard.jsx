@@ -1,5 +1,5 @@
 //React
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,48 +34,16 @@ const useStyles = makeStyles({
         marginTop: 20,
     },
     editIcon: {
-        marginLeft: 330
+        marginLeft: 300
     }
 });
 
 function ProfileCard(props) {
     const classes = useStyles();
 
-    //User data & User initial & User index
-    const [user, setUser] = useState({});
-    const [initial, setInitial] = useState("");
-    const currentUserID = props.currentUserID;
-
-    //Selects user's index
-    const selectUser = (users, userID) => {
-        var index;
-        for (var i = 0; i < users.length; i++){
-            if(users[i].userID === userID){
-                index = i;
-                break;
-            }
-        }
-        return index;
-    }
-
-    //Runs fecthing 
-    useEffect(() => {
-        fetchUser();
-    }, []);
-    
-    //Function to get user from Firebase api
-    const fetchUser = async () => {
-        const data = await fetch('https://us-central1-picturepoint-381cf.cloudfunctions.net/api/getUser');
-        const users = await data.json();
-
-        //For Test
-        console.log(users); 
-
-        setUser(users[selectUser(users, currentUserID)]);
-        setInitial(users[selectUser(users, currentUserID)].name[0]);
-    }
-
-    //Date variable 
+    //Login user properties
+    var user = props.currentUser;
+    var initial = props.userInitial;
     var date = new Date(user.creationDate);
 
     //Renders the profile card
