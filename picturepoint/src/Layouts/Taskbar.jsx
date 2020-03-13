@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 //Render
 function Taskbar(props) {
     const classes = useStyles();
-    const [value, setValue] = useState(0); //<- BUG here
+    const [value, setValue] = useState(null);
   
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -33,8 +33,8 @@ function Taskbar(props) {
             textColor="primary"
             centered
             >
-                <Tab label="My Friends" component={Link} to="/Friends" />
-                <Tab label="My Photos" component={Link} to="/Photos" />
+                <Tab label="My Friends" component={Link} to="/user/Friends" />
+                <Tab label="My Photos" component={Link} to="/user/Photos" />
                 <Tab label="My Albums" disabled />
             </Tabs>
         </Paper>
