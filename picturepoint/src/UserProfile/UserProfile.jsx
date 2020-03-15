@@ -6,19 +6,25 @@ import { Route, Switch } from 'react-router-dom';
 import * as routes from "../Routes/routes";
 
 //Components
-import ProfileCard from './ProfileCard';
+import ProfileCard from './components/ProfileCard';
 
 //Layout
 import Taskbar from '../Layouts/Taskbar';
 
 //Taskbar Components
-import Friends from './Taskbar Components/Friends';
-import Photos from './Taskbar Components/Photos';
+import Friends from './components/Taskbar Components/Friends';
+import Photos from './components/Taskbar Components/Photos';
 
 //Pages
 import Picture from '../Posts/Picture';
 import AddPhoto from '../AddPhoto/AddPhoto';
 import Account from '../Login/components/Account';
+
+//***TEST***
+import { getPhotos } from '../Firebase/functions/getPhotos';
+import { getUser } from '../Firebase/functions/getUser';
+getPhotos('t-flynn');
+getUser('thomas@email.com');
 
 function UserProfile(props) {
     //User data & User ID & User initial & Login user email

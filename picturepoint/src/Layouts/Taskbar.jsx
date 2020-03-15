@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 //Render
 function Taskbar(props) {
     const classes = useStyles();
-    const [value, setValue] = useState(null);
+    const [value, setValue] = useState(0); //<- BUG
   
     const handleChange = (event, newValue) => {
       setValue(newValue);
