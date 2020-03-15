@@ -14,7 +14,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 
 //Functions
-import { getFollowers, getFollowing } from '../../Functions/DataProcessor';
+import { getFollowers, getFollowing } from '../../../Functions/DataProcessor';
 
 //Style
 const useStyles = makeStyles({

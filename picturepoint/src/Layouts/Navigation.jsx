@@ -22,7 +22,6 @@ const Navigation = () => (
 
 const NavigationAuth = (props) => (
   <div>
-      {console.log(props.email)}
     <AuthHeader />
     <UserProfile loginEmail={props.email} />
   </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { SignUpLink } from "./SignUp";
 import { PasswordForgetLink } from "./PasswordForget";
-import { auth } from "../firebase";
+import { auth } from "../../Firebase/index";
 import * as routes from "../../Routes/routes";
 import "./auth.css";
 import { Link } from "react-router-dom";

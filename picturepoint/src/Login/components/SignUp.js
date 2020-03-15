@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../firebase";
+import { auth } from "../../Firebase/index";
 import "./auth.css";
 import * as routes from "../../Routes/routes";
 import { SignInLink } from "./SignIn";
