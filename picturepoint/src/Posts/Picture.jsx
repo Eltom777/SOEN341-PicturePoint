@@ -1,6 +1,9 @@
 //React
 import React, { useState, useEffect } from 'react';
 
+//Firebase function
+import { getPhoto } from '../Firebase/functions/getPhoto';
+
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -24,36 +27,19 @@ const useStyles = makeStyles({
 
 function Picture({ match }) {
     const classes = useStyles();
+    
+    const [photo, setPhoto] = useState({});
+    var photoID = match.params.id;
 
     //Runs fecthing 
     useEffect(() => {
         fetchPhoto();
-
-        //For Test
-        console.log(match);
     }, []);
 
-    //User data & User initial & User index
-    const [photo, setPhoto] = useState({});
-
-    //Selects photo's index
-    const selectPhoto = (photos) => {
-        var index;
-        for (var i = 0; i < photos.length; i++){
-            if(photos[i].photoID === match.params.id){
-                index = i;
-                break;
-            }
-        }
-        return index;
-    }
-    
-    //Function to get user from Firebase api
     const fetchPhoto = async () => {
-        const data = await fetch('https://us-central1-picturepoint-381cf.cloudfunctions.net/api/getPhoto');
-        const photos = await data.json();
-        
-        setPhoto(photos[selectPhoto(photos)]);
+        getPhoto(photoID, (data) => {
+            setPhoto(data);
+        });
     }
 
     //This page should include the caption, likes and comments --> Assign Jordan

@@ -45,38 +45,7 @@ const useStyles = makeStyles({
 function Photos(props) {
     const classes = useStyles();
 
-    //Runs fecthing 
-    useEffect(() => {
-        fetchPhotos();
-    }, []);
-
-    //User data & User initial & User index
-    const [photos, setPhotos] = useState([]);
-    const currentUserID = props.currentUserID;
-
-    const selectPhoto = (photos) => {
-        var selectedPhoto = [];
-        for(var i = 0; i < photos.length; i++) {
-            if(photos[i].username === currentUserID) {
-                selectedPhoto.push(photos[i]);
-            }
-        }
-        return selectedPhoto;
-    }
-    
-    //Function to get user from Firebase api
-    const fetchPhotos = async () => {
-        const data = await fetch('https://us-central1-picturepoint-381cf.cloudfunctions.net/api/getPhoto');
-        const photos = await data.json();
-
-        //For Test
-        console.log(photos);
-        
-        setPhotos(selectPhoto(photos));
-    }
-
-    //Date variable 
-    //var date = new Date(photo.creationDate);
+    var photos = props.photos;
 
     return(
         <div>
