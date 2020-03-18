@@ -43,7 +43,6 @@ function ProfileCard(props) {
 
     //Login user properties
     var user = props.currentUser;
-    var initial = props.userInitial;
     var date = new Date(user.creationDate);
 
     //Renders the profile card
@@ -53,7 +52,7 @@ function ProfileCard(props) {
                 <Card className={classes.card}>
                     <Grid container>
                         <Grid item className={classes.avatar}>
-                            <Avatar className={classes.avatarSize}>{initial}</Avatar>
+                            <Avatar className={classes.avatarSize}>{null}</Avatar>
                         </Grid>
                         <Grid item>
                             <CardContent>

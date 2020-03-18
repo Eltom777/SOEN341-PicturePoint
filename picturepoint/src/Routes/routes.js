@@ -7,6 +7,6 @@ export const PASSWORD_FORGET = "/pw-forget";
 export const HOME = "/user";
 export const ACCOUNT = "/user/Account";
 export const FRIEND = "/user/Friends";
-export const PHOTO = "/user/Photos";
+//export const PHOTO = "/user/Photos";
 export const ADD_PHOTO = "/user/Photos/AddPhoto";
 export const PHOTO_ID = "/user/Photos/:id";
