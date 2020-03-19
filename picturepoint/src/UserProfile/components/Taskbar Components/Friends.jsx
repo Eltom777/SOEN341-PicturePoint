@@ -1,5 +1,6 @@
 //React
 import React, { useState, useEffect, Fragment } from 'react';
+import {Link} from 'react-router-dom';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,7 +25,7 @@ const useStyles = makeStyles({
         marginLeft: 20,
         marginRight: 20,
         marginBottom: 20,
-        height: 800, 
+        minHeight: 515, 
         overflow: 'auto'
     },
     avatarSize: {
@@ -53,7 +54,7 @@ function Friends(props) {
                             {followers.map(follower => (
                                 <Fragment>
                                     <List component="nav">
-                                        <ListItem button>
+                                        <ListItem button component={Link} to={`/${follower.username}`}>
                                             <ListItemAvatar>
                                                 <Avatar className={classes.avatarSize}>{follower.name[0]}</Avatar>
                                             </ListItemAvatar>
@@ -72,7 +73,7 @@ function Friends(props) {
                             {following.map(following => (
                                 <Fragment>
                                     <List component="nav">
-                                        <ListItem button>
+                                        <ListItem button component={Link} to={`/${following.username}`}>
                                             <ListItemAvatar>
                                                 <Avatar className={classes.avatarSize}>{following.name[0]}</Avatar>
                                             </ListItemAvatar>

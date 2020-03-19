@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 //Firebase function
-import { getPhoto } from '../Firebase/functions/getPhoto';
+
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,38 +21,30 @@ const useStyles = makeStyles({
         minHeight: 500, 
         width: 900,
         overflow: 'auto',
-
     }
 });
 
-function Picture({ match }) {
+function Friend({ match }) {
     const classes = useStyles();
     
-    const [photo, setPhoto] = useState({});
-    var photoID = match.params.id;
+    var userID = match.params.id;
 
     //Runs fecthing 
     useEffect(() => {
-        fetchPhoto();
+        fetchUser();
+        console.log(userID);
     }, []);
 
-    const fetchPhoto = async () => {
-        getPhoto(photoID, (data) => {
-            setPhoto(data);
-        });
+    const fetchUser = async () => {
+        
     }
 
-    //This page should include the caption, likes and comments --> Assign Jordan
     return(
         <div>
             <Box display="flex" justifyContent="center">
                 <Paper className={classes.paper} elevation={3}>
                     <Typography variant="h4" align="center">
-                        Posts
-                   </Typography>
-                    <img src={photo.imageUrl} />
-                    <Typography variant="h4" align="center">
-                        {photo.caption}
+                        {userID}
                    </Typography>
                 </Paper>
             </Box>
@@ -60,4 +52,4 @@ function Picture({ match }) {
     );
 }
 
-export default Picture; 
+export default Friend; 

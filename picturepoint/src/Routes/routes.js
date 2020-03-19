@@ -10,3 +10,9 @@ export const FRIEND = "/user/Friends";
 //export const PHOTO = "/user/Photos";
 export const ADD_PHOTO = "/user/Photos/AddPhoto";
 export const PHOTO_ID = "/user/Photos/:id";
+
+//FriendProfile
+export const FRIEND_ID = "/:id";
+export const F_FRIEND = "/:id/Friends";
+export const F_PHOTO = "/:id/Photos";
+export const F_PHOTO_ID = "/:id/Photos/:id";
