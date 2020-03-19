@@ -1040,3 +1040,18 @@
 [info] >      at processTicksAndRejections (internal/process/task_queues.js:94:5)
 [info] >  (node:322420) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
 [info] >  (node:322420) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2020-03-10T02:24:58.635Z] [worker-api-acccbc3b-3daa-4390-930e-42834d685e46]: exited
+[debug] [2020-03-10T02:24:58.638Z] [worker-api-acccbc3b-3daa-4390-930e-42834d685e46]: FINISHED
+[debug] [2020-03-10T02:24:58.640Z] [work-queue] {"queueLength":0,"workRunningCount":4}
+[debug] [2020-03-10T02:24:58.664Z] [worker-~diagnostic~-36ca3b07-5a65-4aeb-b616-9ab72442c855]: exited
+[debug] [2020-03-10T02:24:58.665Z] [worker-~diagnostic~-36ca3b07-5a65-4aeb-b616-9ab72442c855]: FINISHED
+[debug] [2020-03-10T02:24:58.670Z] [worker-api-d92e28bf-5ec7-4727-ad84-57c5ab2c2317]: exited
+[debug] [2020-03-10T02:24:58.670Z] [worker-api-d92e28bf-5ec7-4727-ad84-57c5ab2c2317]: FINISHED
+[debug] [2020-03-10T02:24:58.670Z] [work-queue] {"queueLength":0,"workRunningCount":3}
+[debug] [2020-03-10T02:24:58.712Z] [worker-api-1f3a4836-e29e-4173-b7d3-8195281c49a6]: exited
+[debug] [2020-03-10T02:24:58.712Z] [worker-api-1f3a4836-e29e-4173-b7d3-8195281c49a6]: FINISHED
+[debug] [2020-03-10T02:24:58.712Z] [work-queue] {"queueLength":0,"workRunningCount":2}
+[debug] [2020-03-10T02:24:58.742Z] [worker-api-db50cada-e545-4a99-89fa-f4aa569813c8]: exited
+[debug] [2020-03-10T02:24:58.742Z] [worker-api-db50cada-e545-4a99-89fa-f4aa569813c8]: FINISHED
+[debug] [2020-03-10T02:24:58.742Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-10T02:24:58.766Z] [worker-api-7389b1be-7e7c-4ced-9b1b-248aef15d25a]: exited
