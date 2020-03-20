@@ -34,6 +34,7 @@ function Picture({ match }) {
     //Runs fecthing 
     useEffect(() => {
         fetchPhoto();
+        console.log(match);
     }, []);
 
     const fetchPhoto = async () => {

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 //Firebase function
-import { getUser } from '../Firebase/functions/getUser';
+import { getFriend } from '../Firebase/functions/getFriend';
 import { getPhotos } from '../Firebase/functions/getPhotos';
 
 //Routes
@@ -24,10 +24,10 @@ import Picture from '../Posts/Picture';
 import AddPhoto from '../AddPhoto/AddPhoto';
 import Account from '../Login/components/Account';
 
-function UserProfile(props) {
+function UserProfile({ match }) {
     const [user, setUser] = useState({});
     const [photos, setPhotos] = useState([]);
-    const loginEmail = props.loginEmail;
+    const userID = match.params.username;
 
     //Runs fecthing 
     useEffect(() => {
@@ -35,7 +35,7 @@ function UserProfile(props) {
     }, []);
 
     const fetchUser = async () => {
-        getUser(loginEmail, (data) => {
+        getFriend(userID, (data) => {
             setUser(data);
             getPhotos(data.username, (photoData) => {
                 setPhotos(photoData);

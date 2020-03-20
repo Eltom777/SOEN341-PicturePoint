@@ -17,19 +17,19 @@ import Friend from '../Friend';
 //Routes
 import * as routes from "../Routes/routes";
 
-const Navigation = () => (
+const Navigation = () => {
+  return(
   <AuthUserContext.Consumer>
     {authUser => (
       authUser ? <NavigationAuth email={authUser.email} /> : <NavigationNonAuth /> 
     )}
   </AuthUserContext.Consumer>
-);
+  )};
 
-const NavigationAuth = (props) => (
+const NavigationAuth = () => (
   <div>
     <AuthHeader />
-    <UserProfile loginEmail={props.email} />
-    <Route exact path={routes.FRIEND_ID} component={Friend} />
+    <Route path={routes.HOME} component={UserProfile} />
   </div>
 );
 

@@ -44,7 +44,7 @@ export const doSignInWithEmailAndPassword = (email, password) =>
   auth.signInWithEmailAndPassword(email, password);
 
 // Sign Out
-export const doSignOut = () => auth.signOut();
+export const doSignOut = () => auth.signOut().then(() => localStorage.removeItem("username"));
 
 // Password Reset
 export const doPasswordReset = email =>
