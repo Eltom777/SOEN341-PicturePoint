@@ -25,7 +25,6 @@ import AddPhoto from '../AddPhoto/AddPhoto';
 import Account from '../Login/components/Account';
 
 export default class UserProfile extends Component {
-
     constructor(props) {
         super(props);
 
@@ -37,7 +36,10 @@ export default class UserProfile extends Component {
 
     //Update when data changes
     componentDidUpdate() {
-        this.getUserData();
+        //If statement prevents re-fetching
+        if (this.props.match.params.username !== this.state.username) {
+            this.getUserData();
+        }
     }
 
     getUserData() {
