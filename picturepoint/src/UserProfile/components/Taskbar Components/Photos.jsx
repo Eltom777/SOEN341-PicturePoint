@@ -58,7 +58,7 @@ function Photos(props) {
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Fab color="primary" aria-label="add" component={Link} to={`/${localStorage.getItem("username")}/Photos/AddPhoto`}>
+                            <Fab color="primary" aria-label="add" component={Link} to={`/${props.username}/Photos/AddPhoto`}>
                                 <AddIcon />
                             </Fab>
                         </Grid>
@@ -66,7 +66,7 @@ function Photos(props) {
                     <Paper className={classes.paperImage} elevation={0}>
                         {photos.map(photo => (
                             <Card className={classes.card}>
-                                <CardActionArea component={Link} to={`/${localStorage.getItem("username")}/Photos/${photo.photoID}`}>
+                                <CardActionArea component={Link} to={`/${props.username}/Photos/${photo.photoID}`}>
                                     <CardMedia className={classes.image} image={photo.imageUrl} />  
                                 </CardActionArea>
                             </Card>

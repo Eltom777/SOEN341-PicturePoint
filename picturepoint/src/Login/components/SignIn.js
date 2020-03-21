@@ -9,7 +9,7 @@ import "./auth.css";
 import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { getUser } from "../../Firebase/functions/getUser";
+import { getUsername } from "../../Firebase/functions/getUsername";
 
 const SignInPage = ({ history }) => (
   <div align="center" className="SignInBox">
@@ -45,7 +45,7 @@ class SignInForm extends Component {
     auth
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
-        getUser(this.state.email, (user) => {
+        getUsername(this.state.email, (user) => {
           this.setState(() => ({ ...INITIAL_STATE }));
           localStorage.setItem("username", user.username);
           history.push(`/${user.username}`);

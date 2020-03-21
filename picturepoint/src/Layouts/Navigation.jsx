@@ -20,7 +20,7 @@ const Navigation = () => {
   return(
   <AuthUserContext.Consumer>
     {authUser => (
-      authUser ? <NavigationAuth email={authUser.email} /> : <NavigationNonAuth /> 
+      authUser ? <NavigationAuth /> : <NavigationNonAuth /> 
     )}
   </AuthUserContext.Consumer>
   )};

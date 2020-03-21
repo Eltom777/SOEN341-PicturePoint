@@ -30,9 +30,17 @@ export default class UserProfile extends Component {
         super(props);
 
         this.state = {ready: false};
+
+        //Load first time
+        this.getUserData();
     }
 
+    //Update when data changes
     componentDidUpdate() {
+        this.getUserData();
+    }
+
+    getUserData() {
         getUser(this.props.match.params.username, (userData) => {
             getPhotos(this.props.match.params.username, (data) => {
                 this.setState({...userData, photos: data, ready: true});
@@ -50,11 +58,11 @@ export default class UserProfile extends Component {
         return (
             <div>
                 <ProfileCard currentUser={this.state}/>
-                <Taskbar state={location[location.length - 1]} />
+                <Taskbar state={location[location.length - 1]} username={this.props.match.params.username} />
                 <Switch>
                     <Route exact path={routes.ACCOUNT} component={Account} />
-                    <Route exact path={routes.FRIEND} component={Friends} />
-                    <Route exact path={routes.HOME} render={() => <Photos photos={this.state.photos} />} />
+                    <Route exact path={routes.FRIEND} render={() => <Friends username={this.props.match.params.username} />} />
+                    <Route exact path={routes.HOME} render={() => <Photos photos={this.state.photos} username={this.props.match.params.username} />} />
                     <Route exact path={routes.ADD_PHOTO} component={AddPhoto} />
                     <Route exact path={routes.PHOTO_ID} component={Picture} />
                 </Switch>

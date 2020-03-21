@@ -54,9 +54,9 @@ class SignUpForm extends Component {
       )
       .then(authUser => {
         if(authUser != null){
-        this.setState(() => ({ ...INITIAL_STATE }));
-        localStorage.setItem("username", username);
-        this.props.history.push(`/${username}`);
+          this.setState(() => ({ ...INITIAL_STATE }));
+          localStorage.setItem("username", username);
+          this.props.history.push(`/${username}`);
         }
         else{
           this.setState(() => ({ ...INITIAL_STATE }));
