@@ -12,7 +12,6 @@ import AuthHeader from "../Layouts/AuthHeader";
 //Pages
 import Login from "../Login/Login";
 import UserProfile from "../UserProfile/UserProfile";
-import Friend from '../Friend';
 
 //Routes
 import * as routes from "../Routes/routes";

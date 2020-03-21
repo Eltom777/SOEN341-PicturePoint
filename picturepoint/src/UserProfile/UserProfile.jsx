@@ -1,9 +1,9 @@
 //React
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-//Firebase function
-import { getFriend } from '../Firebase/functions/getFriend';
+//Firebase functions
+import { getUser } from '../Firebase/functions/getUser';
 import { getPhotos } from '../Firebase/functions/getPhotos';
 
 //Routes
@@ -24,42 +24,41 @@ import Picture from '../Posts/Picture';
 import AddPhoto from '../AddPhoto/AddPhoto';
 import Account from '../Login/components/Account';
 
-function UserProfile({ match }) {
-    const [user, setUser] = useState({});
-    const [photos, setPhotos] = useState([]);
-    const userID = match.params.username;
+export default class UserProfile extends Component {
 
-    //Runs fecthing 
-    useEffect(() => {
-        fetchUser();
-    }, []);
+    constructor(props) {
+        super(props);
 
-    const fetchUser = async () => {
-        getFriend(userID, (data) => {
-            setUser(data);
-            getPhotos(data.username, (photoData) => {
-                setPhotos(photoData);
+        this.state = {ready: false};
+    }
+
+    componentDidUpdate() {
+        getUser(this.props.match.params.username, (userData) => {
+            getPhotos(this.props.match.params.username, (data) => {
+                this.setState({...userData, photos: data, ready: true});
             });
         });
     }
 
-    //Current URL location 
-    var location = window.location.pathname.split('/');
+    render = function() {
+        if(this.state.ready === false)
+            return <div></div>;
+        
+        //Current URL location 
+        var location = window.location.pathname.split('/');
 
-    //Renders the main user profile page
-    return (
-        <div>
-            <ProfileCard currentUser={user} />
-            <Taskbar state={location[location.length - 1]} />
-            <Switch>
-                <Route exact path={routes.ACCOUNT} component={Account} />
-                <Route exact path={routes.FRIEND} component={Friends} />
-                <Route exact path={routes.HOME} render={(props) => <Photos photos={photos} />} />
-                <Route exact path={routes.ADD_PHOTO} component={AddPhoto} />
-                <Route exact path={routes.PHOTO_ID} component={Picture} />
-            </Switch>
-        </div>
-    );
+        return (
+            <div>
+                <ProfileCard currentUser={this.state}/>
+                <Taskbar state={location[location.length - 1]} />
+                <Switch>
+                    <Route exact path={routes.ACCOUNT} component={Account} />
+                    <Route exact path={routes.FRIEND} component={Friends} />
+                    <Route exact path={routes.HOME} render={() => <Photos photos={this.state.photos} />} />
+                    <Route exact path={routes.ADD_PHOTO} component={AddPhoto} />
+                    <Route exact path={routes.PHOTO_ID} component={Picture} />
+                </Switch>
+            </div>
+        );
+    }
 }
-
-export default UserProfile;
