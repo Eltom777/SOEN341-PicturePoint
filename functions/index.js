@@ -74,6 +74,56 @@ app.get('/getFriend', (request, response) => {
     .catch(err => console.error(err));
 });
 
+// const createLink = (notification => {
+//     return(
+//         admin.firestore().collection('notification')
+//         .add(notification)
+//         .then(doc => console.log('notification added, doc))'))
+//     );
+// })
+
+// exports.linkAdded = functions.firestore
+//     .document('projects/{projectId}')
+//     .onCreate( doc => {
+//         const followedUser = doc.data();
+//         const follwingUser = doc.data();
+//         const link = {
+//             followed: `${followedUser.username}` ,
+//             following: `${followingUser.username}` ,
+//             time: admin.firestore.FieldValue.serverTimestamp()
+//         }
+
+//         return createNotification(notification)
+//     })
+
+app.get('/getFollowers', (request,response) => {
+    db.collection('users').get().then(data => {
+        let indexFollowers = [];
+        data.forEach(doc => {
+            if (doc.data().username = "a-iacampo") {
+                indexFollowers.push({
+                    indexFollowers: doc.id().followed
+                });
+                response.json({header: "if statement"});
+            }
+        });
+        return response.json(indexFollowers);
+    })
+
+    db.collection('links').get().then(data => {
+        let followers = [];
+        data.forEach(doc => {
+            followers.push(data[indexFollowers[i]].following)
+        })
+        return response.json(followers);
+        // for (i = 0; i < indexFollowers.length; i++) {
+        //     followers.push(data[indexFollowers[i]].following)
+        // }
+    })
+    .catch(err => console.error(err));
+    //response.json({header: "hello !"});
+});
+
 //route to post 
 app.post('/addPhoto', (request,response) => {
     

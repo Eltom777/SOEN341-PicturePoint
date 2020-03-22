@@ -11,19 +11,22 @@ import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
+import { Button } from '@material-ui/core';
+import AddLink from '../../components/AddLink';
+import GetLink from '../../components/GetLink';
 
 //Style
 const useStyles = makeStyles({
     card: {
-      width: 700,
-      backgroundColor: 'whitesmoke',
-      padding: 10,
-      marginTop: 10,
-      marginBottom: 10
+        width: 700,
+        backgroundColor: 'whitesmoke',
+        padding: 10,
+        marginTop: 10,
+        marginBottom: 10
     },
     avatar: {
-      marginTop: 30,
-      marginRight: 10
+        marginTop: 30,
+        marginRight: 10
     },
     avatarSize: {
         fontSize: '40px',
