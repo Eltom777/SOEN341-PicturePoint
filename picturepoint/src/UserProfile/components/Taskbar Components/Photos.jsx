@@ -46,6 +46,17 @@ function Photos(props) {
     const classes = useStyles();
 
     var photos = props.photos;
+    var button;
+
+    if(props.isCurrentUser) {
+        button = (
+            <Fab color="primary" aria-label="add" component={Link} to={`/${props.username}/Photos/AddPhoto`}>
+                <AddIcon />
+            </Fab>
+        );
+    } else {
+        button = null;
+    }
 
     return(
         <div>
@@ -58,9 +69,7 @@ function Photos(props) {
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Fab color="primary" aria-label="add" component={Link} to={`/${props.username}/Photos/AddPhoto`}>
-                                <AddIcon />
-                            </Fab>
+                            {button}
                         </Grid>
                     </Grid>
                     <Paper className={classes.paperImage} elevation={0}>

@@ -59,12 +59,12 @@ export default class UserProfile extends Component {
 
         return (
             <div>
-                <ProfileCard currentUser={this.state}/>
-                <Taskbar state={location[location.length - 1]} username={this.props.match.params.username} />
+                <ProfileCard currentUser={this.state} isCurrentUser={localStorage.getItem("username") === this.state.username} />
+                <Taskbar state={location[location.length - 1]} username={this.state.username} />
                 <Switch>
                     <Route exact path={routes.ACCOUNT} component={Account} />
-                    <Route exact path={routes.FRIEND} render={() => <Friends username={this.props.match.params.username} />} />
-                    <Route exact path={routes.HOME} render={() => <Photos photos={this.state.photos} username={this.props.match.params.username} />} />
+                    <Route exact path={routes.FRIEND} render={() => <Friends username={this.state.username} />} />
+                    <Route exact path={routes.HOME} render={() => <Photos photos={this.state.photos} username={this.state.username} isCurrentUser={localStorage.getItem("username") === this.state.username} />} />
                     <Route exact path={routes.ADD_PHOTO} component={AddPhoto} />
                     <Route exact path={routes.PHOTO_ID} component={Picture} />
                 </Switch>

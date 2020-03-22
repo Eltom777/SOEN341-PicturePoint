@@ -35,7 +35,7 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
   <div>
     <Header />
-    <Login />
+    <Route path={routes.SIGN_IN} component={Login} />
   </div>
 );
 
