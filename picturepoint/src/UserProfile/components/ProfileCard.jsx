@@ -27,8 +27,8 @@ const useStyles = makeStyles({
         width: 490
     },
     avatar: {
-      marginTop: 30,
-      marginRight: 10
+        marginTop: 30,
+        marginRight: 10
     },
     avatarSize: {
         marginLeft: 3,

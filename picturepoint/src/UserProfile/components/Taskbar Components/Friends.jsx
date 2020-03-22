@@ -16,6 +16,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 //Functions
 import { getFollowers, getFollowing } from '../../../Functions/DataProcessor';
+import GetLink from '../../../components/GetLink';
 
 //Style
 const useStyles = makeStyles({
@@ -51,6 +52,7 @@ function Friends(props) {
                             <Typography variant="h4" align="center">
                                 Followers
                             </Typography>
+                            <GetLink></GetLink>
                             {followers.map(follower => (
                                 <Fragment>
                                     <List component="nav">
