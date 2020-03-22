@@ -66,7 +66,7 @@ function AuthHeader() {
         onKeyDown={toggleDrawer(side, false)}
       >
         <List>
-            <ListItem button component={Link} to={routes.HOME}>
+            <ListItem button component={Link} to={`/${localStorage.getItem("username")}`}>
               <ListItemIcon>
                   <Home />
               </ListItemIcon>
@@ -74,7 +74,7 @@ function AuthHeader() {
                   Home
               </ListItemText>
             </ListItem>
-            <ListItem button component={Link} to={routes.ACCOUNT}>
+            <ListItem button component={Link} to={`/${localStorage.getItem("username")}/Account`}>
               <ListItemIcon>
                   <AccountBox />
               </ListItemIcon>

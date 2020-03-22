@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         marginLeft: 20,
         marginRight: 20,
         marginBottom: 20,
-        height: 800, 
+        minHeight: 500, 
         width: 900,
         overflow: 'auto',
 
@@ -34,6 +34,7 @@ function Picture({ match }) {
     //Runs fecthing 
     useEffect(() => {
         fetchPhoto();
+        console.log(match);
     }, []);
 
     const fetchPhoto = async () => {

@@ -41,8 +41,8 @@ function Taskbar(props) {
             textColor="primary"
             centered
             >
-                <Tab label="My Friends" component={Link} to="/user/Friends" />
-                <Tab label="My Photos" component={Link} to="/user" />
+                <Tab label="My Friends" component={Link} to={`/${props.username}/Friends`} />
+                <Tab label="My Photos" component={Link} to={`/${props.username}`} />
                 <Tab label="My Albums" disabled />
             </Tabs>
         </Paper>

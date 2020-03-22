@@ -1,5 +1,6 @@
 //React
 import React from "react";
+import { Route } from 'react-router-dom';
 
 //Authentication
 import AuthUserContext from "../Login/components/AuthUserContext";
@@ -12,25 +13,29 @@ import AuthHeader from "../Layouts/AuthHeader";
 import Login from "../Login/Login";
 import UserProfile from "../UserProfile/UserProfile";
 
-const Navigation = () => (
+//Routes
+import * as routes from "../Routes/routes";
+
+const Navigation = () => {
+  return(
   <AuthUserContext.Consumer>
     {authUser => (
-      authUser ? <NavigationAuth email={authUser.email} /> : <NavigationNonAuth /> 
+      authUser ? <NavigationAuth /> : <NavigationNonAuth /> 
     )}
   </AuthUserContext.Consumer>
-);
+  )};
 
-const NavigationAuth = (props) => (
+const NavigationAuth = () => (
   <div>
     <AuthHeader />
-    <UserProfile loginEmail={props.email} />
+    <Route path={routes.HOME} component={UserProfile} />
   </div>
 );
 
 const NavigationNonAuth = () => (
   <div>
     <Header />
-    <Login />
+    <Route path={routes.SIGN_IN} component={Login} />
   </div>
 );
 

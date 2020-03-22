@@ -1,10 +1,10 @@
 const { db } = require('./firebase');
 
-exports.getUser = (userID, callback) => {
-    db.collection('users').doc(userID)
+exports.getUsername = (email, callback) => {
+    db.collection('users').where("email", '==', email)
     .get()
     .then(function(querySnapshot) {
-        callback(querySnapshot.data());
+        callback(querySnapshot.docs[0].data());
     })
     .catch(function(error) {
         console.log("Error: ", error);

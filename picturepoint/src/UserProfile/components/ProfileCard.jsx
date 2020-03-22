@@ -1,5 +1,6 @@
 //React
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,6 +12,7 @@ import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
+import Button from '@material-ui/core/Button';
 
 //Style
 const useStyles = makeStyles({
@@ -20,6 +22,9 @@ const useStyles = makeStyles({
       padding: 10,
       marginTop: 10,
       marginBottom: 10
+    },
+    cardContent: {
+        width: 470
     },
     avatar: {
       marginTop: 30,
@@ -34,7 +39,11 @@ const useStyles = makeStyles({
         marginTop: 20,
     },
     editIcon: {
-        marginLeft: 300
+        marginLeft: 52
+    },
+    followButton: {
+        width: 100,
+        marginTop: 2,
     }
 });
 
@@ -45,17 +54,33 @@ function ProfileCard(props) {
     var user = props.currentUser;
     var date = new Date(user.creationDate);
 
+    var button;
+
+    if(props.isCurrentUser) {
+        button = (
+            <Fab className={classes.editIcon} size="small" color="secondary" aria-label="edit" component={Link} to={`/${localStorage.getItem("username")}/Account`} >
+                <EditIcon />
+            </Fab>
+        );
+    } else {
+        button = (
+            <Button className={classes.followButton} variant="contained" color="primary" >
+                Follow
+            </Button>
+        );
+    }
+
     //Renders the profile card
     return (
         <div>
             <Box display="flex" justifyContent="center">
                 <Card className={classes.card}>
-                    <Grid container>
+                    <Grid container >
                         <Grid item className={classes.avatar}>
                             <Avatar className={classes.avatarSize}>{null}</Avatar>
                         </Grid>
                         <Grid item>
-                            <CardContent>
+                            <CardContent className={classes.cardContent}>
                                 <Typography variant="h3" color="inherit">
                                     {user.username}
                                 </Typography>
@@ -73,10 +98,8 @@ function ProfileCard(props) {
                                 </Typography>
                             </CardContent>
                         </Grid>
-                        <Grid item>
-                            <Fab className={classes.editIcon} size="small" color="secondary" aria-label="edit">
-                                <EditIcon />
-                            </Fab>
+                        <Grid item >
+                            {button}
                         </Grid>
                     </Grid>
                 </Card>
