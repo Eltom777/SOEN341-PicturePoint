@@ -59,3 +59,23 @@ export const doPasswordReset = email =>
 // Password Change
 export const doPasswordUpdate = password =>
   auth.currentUser.updatePassword(password);
+
+  //Email Update
+  export const doEmailUpdate = email =>
+    auth.currentUser.updateEmail(email).then(
+      db
+        .collection("users")
+        .doc("user3") //retrieve user name from fb
+        .update({
+          email: email
+        })
+    );
+
+  //Update nick name
+  export const doNickNameUpdate = nickname =>
+    db
+      .collection("users")
+      .doc("user3")
+      .update({
+        name: nickname
+      });

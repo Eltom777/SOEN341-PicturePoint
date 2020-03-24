@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { auth } from "../firebase";
-
+import { doNickNameUpdate } from "../firebase/auth";
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value
 });
 
 const INITIAL_STATE = {
-  passwordOne: "",
-  passwordTwo: "",
+  fullname: "",
   error: null
 };
 
-class PasswordChangeForm extends Component {
+class FullnameUpdateform extends Component {
   constructor(props) {
     super(props);
 
@@ -21,10 +19,9 @@ class PasswordChangeForm extends Component {
   }
 
   onSubmit = event => {
-    const { passwordOne } = this.state;
+    const { fullname } = this.state;
 
-    auth
-      .doPasswordUpdate(passwordOne)
+    doNickNameUpdate(fullname)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
       })
@@ -36,36 +33,23 @@ class PasswordChangeForm extends Component {
   };
 
   render() {
-    const { passwordOne, passwordTwo, error } = this.state;
+    const { fullname, error } = this.state;
 
-    const isInvalid = passwordOne !== passwordTwo || passwordOne === "";
+    const isInvalid = fullname === "";
 
     return (
       <form onSubmit={this.onSubmit}>
         <TextField
-          name="PasswordOne"
-          value={passwordOne}
+          name="Fullname"
+          value={fullname}
           id="standard-secondary"
-          label="New Password"
+          label="New Nick Name"
           color="primary"
           onChange={event =>
-            this.setState(byPropKey("passwordOne", event.target.value))
+            this.setState(byPropKey("fullname", event.target.value))
           }
-          type="password"
         />
         <br />
-        <br />
-        <TextField
-          name="PasswordTwo"
-          value={passwordTwo}
-          id="standard-secondary"
-          label="Confirm Password"
-          color="primary"
-          onChange={event =>
-            this.setState(byPropKey("passwordTwo", event.target.value))
-          }
-          type="password"
-        />
         <br />
         <br />
         <Button
@@ -74,7 +58,7 @@ class PasswordChangeForm extends Component {
           variant="contained"
           color="primary"
         >
-          Update Password
+          Update Nick Name
         </Button>
 
         {error && <p>{error.message}</p>}
@@ -83,4 +67,4 @@ class PasswordChangeForm extends Component {
   }
 }
 
-export default PasswordChangeForm;
+export default FullnameUpdateform;

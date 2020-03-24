@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { auth } from "../firebase";
+import { doEmailUpdate } from "../firebase/auth";
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value
 });
 
 const INITIAL_STATE = {
-  passwordOne: "",
-  passwordTwo: "",
+  email: "",
   error: null
 };
 
-class PasswordChangeForm extends Component {
+class EmailUpdateForm extends Component {
   constructor(props) {
     super(props);
 
@@ -21,10 +20,9 @@ class PasswordChangeForm extends Component {
   }
 
   onSubmit = event => {
-    const { passwordOne } = this.state;
+    const { email } = this.state;
 
-    auth
-      .doPasswordUpdate(passwordOne)
+    doEmailUpdate(email)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
       })
@@ -36,36 +34,22 @@ class PasswordChangeForm extends Component {
   };
 
   render() {
-    const { passwordOne, passwordTwo, error } = this.state;
-
-    const isInvalid = passwordOne !== passwordTwo || passwordOne === "";
+    const { email, error } = this.state;
+    const isInvalid = email === "";
 
     return (
       <form onSubmit={this.onSubmit}>
         <TextField
-          name="PasswordOne"
-          value={passwordOne}
+          name="Email"
+          value={email}
           id="standard-secondary"
-          label="New Password"
+          label="New email"
           color="primary"
           onChange={event =>
-            this.setState(byPropKey("passwordOne", event.target.value))
+            this.setState(byPropKey("email", event.target.value))
           }
-          type="password"
         />
         <br />
-        <br />
-        <TextField
-          name="PasswordTwo"
-          value={passwordTwo}
-          id="standard-secondary"
-          label="Confirm Password"
-          color="primary"
-          onChange={event =>
-            this.setState(byPropKey("passwordTwo", event.target.value))
-          }
-          type="password"
-        />
         <br />
         <br />
         <Button
@@ -74,7 +58,7 @@ class PasswordChangeForm extends Component {
           variant="contained"
           color="primary"
         >
-          Update Password
+          Update my Email
         </Button>
 
         {error && <p>{error.message}</p>}
@@ -83,4 +67,4 @@ class PasswordChangeForm extends Component {
   }
 }
 
-export default PasswordChangeForm;
+export default EmailUpdateForm;
