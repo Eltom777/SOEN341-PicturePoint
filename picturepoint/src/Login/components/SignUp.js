@@ -6,7 +6,6 @@ import * as routes from "../../Routes/routes";
 import { SignInLink } from "./SignIn";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { usernameExists } from '../../Firebase/functions/usernameExists';
 
 
 const SignUpPage = ({ history }) => (
