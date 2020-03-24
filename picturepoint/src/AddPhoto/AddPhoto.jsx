@@ -2,49 +2,56 @@ import React, {useEffect, useState, Component } from "react";
 import axios from "axios";
 import https from "https";
 import Dropzone from "react-dropzone";
+import {DropzoneArea} from 'material-ui-dropzone'
+import PropTypes from 'prop-types';
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/styles'
+import Typography from '@material-ui/core/Typography'
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 
 const acceptedFileTypes = 'image/x-png, image/png, image/jpg, image/jpeg, image/gif'
 const imageMaxSize = 2000000 //bytes 
 const acceptedFileTypesArray = acceptedFileTypes.split(",").map((item) => {return item.trim()})
 
-const thumbsContainer = {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginTop: 16
-  };
-  
-  const thumb = {
-    display: 'inline-flex',
-    borderRadius: 2,
-    border: '1px solid #eaeaea',
-    marginBottom: 8,
-    marginRight: 8,
-    width: 100,
-    height: 100,
-    padding: 4,
-    boxSizing: 'border-box'
-  };
-  
-  const thumbInner = {
-    display: 'flex',
-    minWidth: 0,
-    overflow: 'hidden'
-  };
-  
-  const img = {
-    display: 'block',
-    width: 'auto',
-    height: '100%'
-  };
-  
-
+const styles = theme => ({
+    paper: {
+        padding: 10,
+        marginTop: 20,
+        marginLeft: 20,
+        marginRight: 20,
+        marginBottom: 20,
+        height: 800, 
+        width: 900,
+        overflow: 'auto',
+        backgroundColor: 'whitesmoke',
+    },
+    paperImage: {
+        marginTop: 10,
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly'
+    },
+    card: {
+        marginTop: 10,
+        height: 360,
+        width: 360
+    },
+    image: {
+        height: 360,
+        width: 360
+    }
+});
 
 
 class AddPhoto extends Component {
@@ -54,7 +61,9 @@ class AddPhoto extends Component {
         this.state = {
             imgSrc: null,
             caption: "",
-            file: null
+            file: null,
+            progress: 0,
+            isUploading: false
         }   
     }
 
@@ -85,6 +94,22 @@ class AddPhoto extends Component {
             headers: {
                 'Content-Type': 'multipart/form-data',
             } ,
+            onUploadProgress: progressEvent =>{
+                var currentProgress = Math.round( (progressEvent.load/progressEvent.total) * 100 )
+                console.log("Upload Progress: " + currentProgress)
+                if(currentProgress < 100){
+                    this.setState({
+                        progress: currentProgress,
+                        isUploading: true
+                    })
+                }
+                else{
+                    this.setState({
+                        progress: currentProgress,
+                        isUploading: false
+                    })
+                }
+            },
             https: httpsAgent
         })
         .then((response) => {
@@ -142,39 +167,59 @@ class AddPhoto extends Component {
 
     render() {
         const {imgSrc} = this.state
+        const {classes} = this.props;
+        
         return (
             <div>
-                <box>
-                    <Grid container direction="row" justify="center" alignItems="center">
-                        <Grid item direction="column" justify="space-evenly" alignItems="center">
-                            <p>Preview: </p>
-                            {imgSrc != null ? 
-                            <div>
-                                <img src={imgSrc} />
-                            </div>
-                            :
-                            ""
-                            }
-                        </Grid>
-                        <Grid item direction="column" justify="space-evenly" alignItems="center"> 
-                            <Dropzone onDrop={this.handleOnDrop} accept={acceptedFileTypes} multiple={false} maxSize={imageMaxSize} >
-                                {({getRootProps, getInputProps}) => (
-                                <section className="container">
-                                    <div {...getRootProps({className: 'dropzone'})}>
-                                    <input {...getInputProps()} />
-                                    <p>Drag 'n' drop some files here, or click to select files</p>
+                <Box display="flex" justifyContent="center">
+                    <Paper className={classes.paper} elevation={3}>
+                        <Grid container justify="center" spacing={5}>
+                                <Grid item direction="column" justify="center">
+                                    <Typography variant="h3" color="inherit">
+                                        Preview:
+                                    </Typography>
+                                    {imgSrc != null ? 
+                                     
+                                    <div>
+                                        <Card className={classes.card}>
+                                            <CardHeader title={this.state.caption} subheader={new Date().toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}/>
+                                            <CardMedia className={classes.image} image={imgSrc} title={this.state.caption}/>
+                                        </Card>
                                     </div>
-                                </section>
-                                )}
-                            </Dropzone>
-                            <TextField id="Caption" label="Caption" onChange={this.handleChange}/>
-                            <Button variant="contained" color="inherit" onClick={this.SubmitPicture}>Upload</Button>
+                                    :
+                                    ""
+                                    }
+                                </Grid>
+                                <Grid item direction="column" justify="center">
+                                    <DropzoneArea onChange={this.handleOnDrop} showAlerts={false} acceptedFiles={acceptedFileTypesArray} filesLimit={1} maxFileSize={imageMaxSize} dropzoneText="Drag'n'Drop an Image or Click !" showPreviewsInDropzone={false} />
+                                    <TextField id="Caption" label="Caption" onChange={this.handleChange}/>
+                                    <Button variant="contained" color="inherit" onClick={this.SubmitPicture}>Upload</Button>
+                                </Grid> 
                         </Grid>
-                    </Grid>
-                </box>
+                        { this.state.isUploading ? <LinearProgress variant="determinate" value={this.state.progress} /> : ""}
+                        {(this.state.progress == 100) ? <Typography variant="h3" color="inherit">Image Successfully Uploaded</Typography> : ""}
+                    </Paper> 
+                </Box>
             </div>
         );
     }
 }
 
-export default AddPhoto;
+AddPhoto.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(AddPhoto);
+
+/*
+<Dropzone onDrop={this.handleOnDrop} acceptedFiles={acceptedFileTypes} filesLimit={1} maxFileSize={imageMaxSize} showPreviews={false}>
+                                        {({getRootProps, getInputProps}) => (
+                                        <section className="container">
+                                            <div {...getRootProps({className: 'dropzone'})}>
+                                            <input {...getInputProps()} />
+                                            <p>Drag 'n' drop some files here, or click to select files</p>
+                                            </div>
+                                        </section>
+                                        )}
+                                    </Dropzone>
+*/
