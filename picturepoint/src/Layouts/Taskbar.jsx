@@ -18,7 +18,15 @@ const useStyles = makeStyles({
 //Render
 function Taskbar(props) {
     const classes = useStyles();
-    const [value, setValue] = useState(0); //<- BUG here
+    
+    var select;
+
+    if(props.state === 'Friends')
+        select = 0;
+    else
+        select = 1;
+
+    const [value, setValue] = useState(select);
   
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -33,8 +41,8 @@ function Taskbar(props) {
             textColor="primary"
             centered
             >
-                <Tab label="My Friends" component={Link} to="/Friends" />
-                <Tab label="My Photos" component={Link} to="/Photos" />
+                <Tab label="My Friends" component={Link} to={`/${props.username}/Friends`} />
+                <Tab label="My Photos" component={Link} to={`/${props.username}`} />
                 <Tab label="My Albums" disabled />
             </Tabs>
         </Paper>

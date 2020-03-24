@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import { auth } from "../firebase";
+import { auth } from "../../Firebase/index";
 
 const PasswordForgetPage = () => (
   <div align="center">

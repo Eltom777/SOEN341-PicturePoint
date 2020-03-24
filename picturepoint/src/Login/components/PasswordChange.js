@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+
+import { auth } from "../../Firebase/index";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { auth } from "../firebase";
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value

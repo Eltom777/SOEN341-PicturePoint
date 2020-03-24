@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import * as routes from "../Routes/routes";
 
 //Firebase
-import { auth } from "../Login/firebase";
+import { auth } from "../Firebase/index";
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -66,7 +66,7 @@ function AuthHeader() {
         onKeyDown={toggleDrawer(side, false)}
       >
         <List>
-            <ListItem button component={Link} to={routes.HOME}>
+            <ListItem button component={Link} to={`/${localStorage.getItem("username")}`}>
               <ListItemIcon>
                   <Home />
               </ListItemIcon>
@@ -74,7 +74,7 @@ function AuthHeader() {
                   Home
               </ListItemText>
             </ListItem>
-            <ListItem button component={Link} to={routes.ACCOUNT}>
+            <ListItem button component={Link} to={`/${localStorage.getItem("username")}/Account`}>
               <ListItemIcon>
                   <AccountBox />
               </ListItemIcon>

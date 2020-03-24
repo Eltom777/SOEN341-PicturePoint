@@ -1,5 +1,5 @@
 //React
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 //Material UI
@@ -22,9 +22,8 @@ const useStyles = makeStyles({
         marginLeft: 20,
         marginRight: 20,
         marginBottom: 20,
-        height: 800, 
+        minHeight: 500, 
         width: 900,
-        overflow: 'auto',
     },
     paperImage: {
         marginTop: 10,
@@ -46,38 +45,18 @@ const useStyles = makeStyles({
 function Photos(props) {
     const classes = useStyles();
 
-    //Runs fecthing 
-    useEffect(() => {
-        fetchPhotos();
-    }, []);
+    var photos = props.photos;
+    var button;
 
-    //User data & User initial & User index
-    const [photos, setPhotos] = useState([]);
-    const currentUserID = props.currentUserID;
-
-    const selectPhoto = (photos) => {
-        var selectedPhoto = [];
-        for(var i = 0; i < photos.length; i++) {
-            if(photos[i].username === currentUserID) {
-                selectedPhoto.push(photos[i]);
-            }
-        }
-        return selectedPhoto;
+    if(props.isCurrentUser) {
+        button = (
+            <Fab color="primary" aria-label="add" component={Link} to={`/${props.username}/Photos/AddPhoto`}>
+                <AddIcon />
+            </Fab>
+        );
+    } else {
+        button = null;
     }
-    
-    //Function to get user from Firebase api
-    const fetchPhotos = async () => {
-        const data = await fetch('https://us-central1-picturepoint-381cf.cloudfunctions.net/api/getPhoto');
-        const photos = await data.json();
-
-        //For Test
-        console.log(photos);
-        
-        setPhotos(selectPhoto(photos));
-    }
-
-    //Date variable 
-    //var date = new Date(photo.creationDate);
 
     return(
         <div>
@@ -90,21 +69,18 @@ function Photos(props) {
                             </Typography>
                         </Grid>
                         <Grid item>
-                            <Fab color="primary" aria-label="add" component={Link} to={'/Photos/AddPhoto'}>
-                                <AddIcon />
-                            </Fab>
+                            {button}
                         </Grid>
                     </Grid>
                     <Paper className={classes.paperImage} elevation={0}>
                         {photos.map(photo => (
                             <Card className={classes.card}>
-                                <CardActionArea component={Link} to={`/Photos/${photo.photoID}`}>
+                                <CardActionArea component={Link} to={`/${props.username}/Photos/${photo.photoID}`}>
                                     <CardMedia className={classes.image} image={photo.imageUrl} />  
                                 </CardActionArea>
                             </Card>
                         ))}
                     </Paper>
-
                 </Paper>
             </Box>
         </div>
