@@ -7,6 +7,7 @@ import { SignInLink } from "./SignIn";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
+
 const SignUpPage = ({ history }) => (
   <div align="center" className="SignUpBox">
     <h1>SignUp</h1>
@@ -50,23 +51,19 @@ class SignUpForm extends Component {
         email,
         passwordOne,
         name,
-        username
-      )
-      .then(authUser => {
-        if(authUser != null){
-          this.setState(() => ({ ...INITIAL_STATE }));
-          localStorage.setItem("username", username);
-          this.props.history.push(`/${username}`);
+        username,
+        (authUser) => {
+          if(authUser != null){
+            this.setState(() => ({ ...INITIAL_STATE }));
+            localStorage.setItem("username", username);
+            this.props.history.push(`/${username}`);
+          }
+          else{
+            this.setState(() => ({ ...INITIAL_STATE }));
+            this.props.history.push(routes.SIGN_UP);
+          }
         }
-        else{
-          this.setState(() => ({ ...INITIAL_STATE }));
-          this.props.history.push(routes.SIGN_UP);
-        }
-      })
-      .catch(error => {
-        this.setState(byPropKey("error", error));
-      });
-  };
+  )};
 
   render() {
     const {
