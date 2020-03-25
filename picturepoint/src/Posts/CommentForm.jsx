@@ -7,54 +7,61 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { commentOnPost } from "../Firebase/functions/postComment";
 
-const INITIAL_STATE = {
-    body: ""
-};
-  
-  const byPropKey = (propertyName, value) => () => ({
-    [propertyName]: value
-  });
-  
 class CommentForm extends Component {
-    state = { ...INITIAL_STATE };
-  
-    onSubmit = event => {
-      event.preventDefault();
-
-      const { body } = this.state;
+  constructor(props) {
+    super(props);
+    this.state = {
+      body: ""
     };
-  
-    render() {
-      const {
-        body
-      } = this.state;
-  
-      //500 character limit
-      const isInvalid = body.length > 500;
-  
-      return (
-        <form onSubmit={this.onSubmit}>
-          <TextField
-            id="outlined-comment"
-            label="Add a comment..."
-            color="primary"
-            variant="outlined"
-            onChange={event =>
-              console.log(event)
-            }
-          />
-          <br />
-          <Button
-            type="submit"
-            disabled={isInvalid}
-            variant="contained"
-            color="primary"
-          >
-            Post
-          </Button>
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleSubmit(e) {
+    console.log(this.state);
+    e.preventDefault();
+    const newComment = {
+      body: this.state.body,
+      username: this.props.username,
+      photo_id: this.props.photoID,
+      createdAt: new Date().toISOString()
+    };
+
+    commentOnPost(newComment);
+
+    this.setState({
+      body: ""
+    });
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  render() {
+    return (
+      <div className="comments-form">
+        <form onSubmit={this.handleSubmit}>
+          <ul>
+            <li>
+              <textarea
+                name="body"
+                placeholder="Comment"
+                value={this.state.body}
+                onChange={this.handleChange}
+                required
+              />
+            </li>
+            <li>
+              <input type="submit" value="Post" />
+            </li>
+          </ul>
         </form>
-      );
-    }
+      </div>
+    );
+  }
 }
 
 export default CommentForm;

@@ -72,7 +72,7 @@ function Picture({ match }) {
                     <Typography variant="h4" align="center">
                         {photo.caption}
                    </Typography>
-                   <CommentForm />
+                   <CommentForm username={username} photoID={photoID} />
                    {comments.map(comment => (
                         <Fragment>
                             <List component="nav">
