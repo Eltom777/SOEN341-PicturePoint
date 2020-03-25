@@ -13,6 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import TextField from "@material-ui/core/TextField";
+
+//Components
+import CommentForm from './CommentForm'
 
 //Style
 const useStyles = makeStyles({
@@ -35,6 +39,7 @@ function Picture({ match }) {
     const [photo, setPhoto] = useState({});
     const [comments, setComments] = useState([]);
     var photoID = match.params.id;
+    var username = localStorage.getItem("username");
 
     //Runs fecthing 
     useEffect(() => {
@@ -67,6 +72,7 @@ function Picture({ match }) {
                     <Typography variant="h4" align="center">
                         {photo.caption}
                    </Typography>
+                   <CommentForm />
                    {comments.map(comment => (
                         <Fragment>
                             <List component="nav">
