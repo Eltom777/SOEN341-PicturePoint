@@ -2,10 +2,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+//Firebase
+import { commentOnPost } from "../Firebase/functions/postComment";
+
 //Material-UI
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { commentOnPost } from "../Firebase/functions/postComment";
+
+
+//Style
+const useStyles = makeStyles({
+  commentField: {
+      marginTop: 10,
+      marginLeft: 30
+  }
+});
 
 class CommentForm extends Component {
   constructor(props) {
@@ -40,24 +52,35 @@ class CommentForm extends Component {
     });
   }
 
+  //500 character limit
+  isInvalid() {
+    return this.state.body.length > 200 || this.state.body === "";
+  }
+
   render() {
     return (
-      <div className="comments-form">
+      <div>
         <form onSubmit={this.handleSubmit}>
-          <ul>
-            <li>
-              <textarea
-                name="body"
-                placeholder="Comment"
-                value={this.state.body}
-                onChange={this.handleChange}
-                required
-              />
-            </li>
-            <li>
-              <input type="submit" value="Post" />
-            </li>
-          </ul>
+          <TextField
+            name="body"
+            id="outlined-comment"
+            label="Add a comment..."
+            color="primary"
+            variant="outlined"
+            value={this.state.body}
+            onChange={this.handleChange}
+            fullWidth
+          />
+          <br />
+          <br />
+          <Button
+            type="submit"
+            disabled={this.isInvalid()}
+            variant="contained"
+            color="primary"
+          >
+            Post
+          </Button>
         </form>
       </div>
     );
