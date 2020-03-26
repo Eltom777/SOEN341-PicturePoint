@@ -14,7 +14,7 @@ import Button from "@material-ui/core/Button";
 //Style
 const useStyles = makeStyles({
   commentField: {
-      marginTop: 10,
+      marginTop: 50,
       marginLeft: 30
   }
 });
@@ -62,6 +62,7 @@ class CommentForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <TextField
+            className="commentField"
             name="body"
             id="outlined-comment"
             label="Add a comment..."

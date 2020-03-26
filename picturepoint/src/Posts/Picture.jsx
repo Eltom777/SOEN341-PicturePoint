@@ -6,7 +6,7 @@ import { getPhoto } from '../Firebase/functions/getPhoto';
 import { getComments } from '../Firebase/functions/getComments';
 
 //Material UI
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -22,9 +22,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from "@material-ui/core/TextField";
 
+
 //Components
 import CommentForm from './CommentForm'
-import { typography } from '@material-ui/system';
 
 //Style
 const useStyles = makeStyles({
@@ -36,13 +36,9 @@ const useStyles = makeStyles({
         marginBottom: 20,
         minHeight: 500, 
         width: 900,
-        overflow: 'auto',
-
-    },
-    paperImage: {
-        marginTop: 10,
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        overflow: 'auto',
     },
     card: {
         height: 'auto',
@@ -51,6 +47,9 @@ const useStyles = makeStyles({
     image: {
         height: 720,
         width: 720
+    },
+    caption: {
+        marginBottom: 10
     }
 });
 
@@ -85,12 +84,8 @@ function Picture({ match }) {
     return(
         <div>
             <Box display="flex" justifyContent="center">
-                <Paper className={classes.paper} elevation={3}>
-                    <Typography variant="h4" align="center">
-                        Posts
-                   </Typography>
-                   <Paper className={classes.paperImage} elevation={0}>
-                        <Card className={classes.card}>
+                <Paper className={classes.paper} elevation={0}>
+                    <Card className={classes.card}>
                             <CardHeader
                                 avatar={
                                 <Avatar>
@@ -101,26 +96,25 @@ function Picture({ match }) {
                                 subheader={date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
                             />
                             <CardMedia className={classes.image} image={photo.imageUrl} />
-                            <IconButton aria-label="Like!">
+                            <IconButton aria-label="Like!" align="left">
                                 <FavoriteIcon />
                             </IconButton>
                             <CardContent>
-                                <Typography variant="body1" color="" component="p" align="left">
+                                <Typography className={classes.caption} variant="body1" color="" component="p" align="left">
                                     {photo.caption}
                                 </Typography>
-                            </CardContent>
-                        </Card>
-                    </Paper>
-                   <CommentForm username={username} photoID={photoID} />
-                   {comments.map(comment => (
-                        <Fragment>
-                            <List component="nav">
-                                <ListItem button>
-                                    <ListItemText secondary={comment.body} primary={comment.username} />
-                                </ListItem>
-                            </List>
-                        </Fragment>
-                    ))}
+                            <CommentForm username={username} photoID={photoID} />
+                            {comments.map(comment => (
+                                    <Fragment>
+                                        <List component="nav">
+                                            <ListItem button>
+                                                <ListItemText secondary={comment.body} primary={comment.username} />
+                                            </ListItem>
+                                        </List>
+                                    </Fragment>
+                            ))}
+                        </CardContent>
+                    </Card>
                 </Paper>
             </Box>
         </div>
