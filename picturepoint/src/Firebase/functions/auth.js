@@ -72,7 +72,7 @@ export const doPasswordUpdate = password =>
     auth.currentUser.updateEmail(email).then(
       db
         .collection("users")
-        .doc("user3") //retrieve user name from fb
+        .doc(localStorage.getItem("username")) //retrieve user name from fb
         .update({
           email: email
         })
@@ -82,7 +82,7 @@ export const doPasswordUpdate = password =>
   export const doNickNameUpdate = nickname =>
     db
       .collection("users")
-      .doc("user3")
+      .doc(localStorage.getItem("username"))
       .update({
         name: nickname
       });

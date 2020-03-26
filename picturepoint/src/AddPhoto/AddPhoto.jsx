@@ -1,7 +1,6 @@
 import React, {useEffect, useState, Component } from "react";
 import axios from "axios";
 import https from "https";
-import Dropzone from "react-dropzone";
 import {DropzoneArea} from 'material-ui-dropzone'
 import PropTypes from 'prop-types';
 
