@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { doEmailUpdate } from "../firebase/auth";
+import { doEmailUpdate } from "../../Firebase/functions/auth";
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value
