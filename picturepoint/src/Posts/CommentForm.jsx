@@ -1,23 +1,12 @@
 //React
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 //Firebase
 import { commentOnPost } from "../Firebase/functions/postComment";
 
 //Material-UI
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
-
-//Style
-const useStyles = makeStyles({
-  commentField: {
-      marginTop: 50,
-      marginLeft: 30
-  }
-});
 
 class CommentForm extends Component {
   constructor(props) {

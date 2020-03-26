@@ -1,12 +1,16 @@
 //React
 import React, { useState, useEffect, Fragment } from 'react';
 
+//Relative time (Dayjs)
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
 //Firebase function
 import { getPhoto } from '../Firebase/functions/getPhoto';
 import { getComments } from '../Firebase/functions/getComments';
 
 //Material UI
-import { makeStyles, withTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -20,8 +24,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import TextField from "@material-ui/core/TextField";
-
+import Divider from '@material-ui/core/Divider';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 //Components
 import CommentForm from './CommentForm'
@@ -41,6 +45,7 @@ const useStyles = makeStyles({
         overflow: 'auto',
     },
     card: {
+        backgroundColor: '#f2eee5',
         height: 'auto',
         width: 720
     },
@@ -49,7 +54,7 @@ const useStyles = makeStyles({
         width: 720
     },
     caption: {
-        marginBottom: 10
+        marginBottom: 15
     }
 });
 
@@ -61,6 +66,7 @@ function Picture({ match }) {
     var photoID = match.params.id;
     var username = localStorage.getItem("username");
     var date = new Date(photo.creationDate);
+    dayjs.extend(relativeTime);
 
     //Runs fecthing 
     useEffect(() => {
@@ -107,9 +113,22 @@ function Picture({ match }) {
                             {comments.map(comment => (
                                     <Fragment>
                                         <List component="nav">
-                                            <ListItem button>
-                                                <ListItemText secondary={comment.body} primary={comment.username} />
+                                            <ListItem>
+                                                <ListItemAvatar>
+                                                    <Avatar />
+                                                </ListItemAvatar>
+                                                <ListItemText primary={comment.username} secondary={
+                                                    <Fragment>
+                                                        <Typography variant="body1" >
+                                                            {comment.body}
+                                                        </Typography>
+                                                        <Typography variant="subtitle2" align="right">
+                                                            {dayjs(comment.createdAt).fromNow()}
+                                                        </Typography>
+                                                    </Fragment>
+                                                }/>
                                             </ListItem>
+                                            <Divider variant="fullWidth" component="li" />
                                         </List>
                                     </Fragment>
                             ))}

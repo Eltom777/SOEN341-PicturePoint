@@ -18,7 +18,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles({
     card: {
       width: 700,
-      backgroundColor: 'whitesmoke',
+      backgroundColor: '#f2eee5',
       padding: 10,
       marginTop: 10,
       marginBottom: 10
