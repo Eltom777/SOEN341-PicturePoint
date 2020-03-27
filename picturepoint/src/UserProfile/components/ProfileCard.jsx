@@ -20,7 +20,7 @@ const useStyles = makeStyles({
       width: 720,
       backgroundColor: 'white',
       padding: 3,
-      marginTop: 10,
+      marginTop: 30,
       marginBottom: 10
     },
     cardContent: {

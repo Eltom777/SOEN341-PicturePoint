@@ -39,10 +39,6 @@ const useStyles = makeStyles(theme => ({
     },
     list: {
         width: 250
-    },
-    logo: {
-        width: 50,
-        height: 100
     }
 }));
 

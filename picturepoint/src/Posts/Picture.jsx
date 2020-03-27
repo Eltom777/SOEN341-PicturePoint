@@ -12,6 +12,7 @@ import { getComments } from '../Firebase/functions/getComments';
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
@@ -38,15 +39,21 @@ const useStyles = makeStyles({
         marginRight: 20,
         marginBottom: 20,
         minHeight: 500, 
-        width: 720,
         display: 'flex',
         justifyContent: 'center',
-        overflow: 'auto',
     },
     card: {
         backgroundColor: 'white',
         height: 'auto',
-        width: 720
+        width: 1200
+    },
+    cardContent: {
+        width: 480
+    },
+    comments: {
+        marginTop: 5,
+        maxHeight: 500,
+        overflow: 'auto',
     },
     image: {
         height: 720,
@@ -88,50 +95,58 @@ function Picture({ match }) {
     //This page should include the caption, likes and comments --> Assign Jordan
     return(
         <div>
-            <Box className={classes.root} display="flex" justifyContent="center">
+            <Box display="flex" justifyContent="center">
                 <Paper className={classes.paper}>
                     <Card className={classes.card}>
-                            <CardHeader
-                                avatar={
-                                <Avatar>
-                                    {null}
-                                </Avatar>
-                                }
-                                title={photo.user}
-                                subheader={date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
-                            />
-                            <CardMedia className={classes.image} image={photo.imageUrl} />
-                            <IconButton aria-label="Like!" align="left">
-                                <FavoriteIcon />
-                            </IconButton>
-                            <CardContent>
-                                <Typography className={classes.caption} variant="body1" color="" component="p" align="left">
-                                    {photo.caption}
-                                </Typography>
-                            <CommentForm username={username} photoID={photoID} />
-                            {comments.map(comment => (
-                                    <Fragment>
-                                        <List component="nav">
-                                            <ListItem>
-                                                <ListItemAvatar>
-                                                    <Avatar />
-                                                </ListItemAvatar>
-                                                <ListItemText primary={comment.username} secondary={
-                                                    <Fragment>
-                                                        <Typography variant="body1" >
-                                                            {comment.body}
-                                                        </Typography>
-                                                        <Typography variant="subtitle2" align="right">
-                                                            {dayjs(comment.createdAt).fromNow()}
-                                                        </Typography>
-                                                    </Fragment>
-                                                }/>
-                                            </ListItem>
-                                            <Divider variant="fullWidth" component="li" />
-                                        </List>
-                                    </Fragment>
-                            ))}
-                        </CardContent>
+                        <Grid container>
+                            <Grid item>
+                                <CardMedia className={classes.image} image={photo.imageUrl} />
+                                <IconButton aria-label="Like!" align="left">
+                                    <FavoriteIcon />
+                                </IconButton>
+                            </Grid>
+                            <Grid item className={classes.cardContent}>
+                                <CardHeader
+                                    avatar={
+                                    <Avatar>
+                                        {null}
+                                    </Avatar>
+                                    }
+                                    title={photo.user}
+                                    subheader={date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
+                                />
+                                <CardContent>
+                                    <Typography className={classes.caption} variant="body1" color="" component="p" align="left">
+                                        {photo.caption}
+                                    </Typography>
+                                <CommentForm username={username} photoID={photoID} />
+                                <Box className={classes.comments}>
+                                {comments.map(comment => (
+                                        <Fragment>
+                                            <List component="nav">
+                                                <ListItem>
+                                                    <ListItemAvatar>
+                                                        <Avatar />
+                                                    </ListItemAvatar>
+                                                    <ListItemText primary={comment.username} secondary={
+                                                        <Fragment>
+                                                            <Typography variant="body1" >
+                                                                {comment.body}
+                                                            </Typography>
+                                                            <Typography variant="subtitle2" align="right">
+                                                                {dayjs(comment.createdAt).fromNow()}
+                                                            </Typography>
+                                                        </Fragment>
+                                                    }/>
+                                                </ListItem>
+                                                <Divider variant="fullWidth" component="li" />
+                                            </List>
+                                        </Fragment>
+                                ))}
+                                </Box>
+                                </CardContent>
+                            </Grid>   
+                        </Grid>    
                     </Card>
                 </Paper>
             </Box>
