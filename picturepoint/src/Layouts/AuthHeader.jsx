@@ -23,6 +23,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import AccountBox from "@material-ui/icons/AccountBox";
 import Home from "@material-ui/icons/Home";
 import ExitToApp from "@material-ui/icons/ExitToApp";
+import { Paper } from '@material-ui/core';
 
 //Style
 const useStyles = makeStyles(theme => ({
@@ -34,10 +35,14 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        fontFamily: "Bradley Hand ITC"
+        fontFamily: "Yu Gothic UI"
     },
     list: {
         width: 250
+    },
+    logo: {
+        width: 50,
+        height: 100
     }
 }));
 
@@ -104,6 +109,7 @@ function AuthHeader() {
                     <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
                         {sideList('left')}
                     </Drawer>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/picturepoint-381cf.appspot.com/o/Logo.png?alt=media&token=d41e7cc5-9831-4fb3-b4f1-c185e7832fff" width="55" height="35" />
                     <Typography variant="h3" className={classes.title}>
                         Picture Point
                     </Typography>
