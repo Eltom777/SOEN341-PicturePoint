@@ -33,19 +33,18 @@ import CommentForm from './CommentForm'
 //Style
 const useStyles = makeStyles({
     paper: {
-        padding: 10,
-        marginTop: 20,
+        marginTop: 10,
         marginLeft: 20,
         marginRight: 20,
         marginBottom: 20,
         minHeight: 500, 
-        width: 900,
+        width: 720,
         display: 'flex',
         justifyContent: 'center',
         overflow: 'auto',
     },
     card: {
-        backgroundColor: '#f2eee5',
+        backgroundColor: 'white',
         height: 'auto',
         width: 720
     },
@@ -89,8 +88,8 @@ function Picture({ match }) {
     //This page should include the caption, likes and comments --> Assign Jordan
     return(
         <div>
-            <Box display="flex" justifyContent="center">
-                <Paper className={classes.paper} elevation={0}>
+            <Box className={classes.root} display="flex" justifyContent="center">
+                <Paper className={classes.paper}>
                     <Card className={classes.card}>
                             <CardHeader
                                 avatar={

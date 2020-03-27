@@ -18,7 +18,7 @@ import AddIcon from '@material-ui/icons/Add';
 const useStyles = makeStyles({
     paper: {
         padding: 10,
-        marginTop: 20,
+        marginTop: 10,
         marginLeft: 20,
         marginRight: 20,
         marginBottom: 20,
