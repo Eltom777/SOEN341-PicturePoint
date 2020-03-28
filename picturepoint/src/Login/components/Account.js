@@ -4,6 +4,7 @@ import AuthUserContext from "./AuthUserContext";
 import PasswordChangeForm from "./PasswordChange";
 import EmailUpdateForm from "./EmailUpdate";
 import FullnameUpdateForm from "./FullnameUpdate";
+import BioUpdateform from "./BioUpdate";
 
 const AccountPage = () => (
   <AuthUserContext.Consumer>
@@ -15,6 +16,8 @@ const AccountPage = () => (
         <EmailUpdateForm />
         <br />
         <FullnameUpdateForm />
+        <br />
+        <BioUpdateform />
       </div>
     )}
   </AuthUserContext.Consumer>

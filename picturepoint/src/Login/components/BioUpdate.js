@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { doEmailUpdate } from "../../Firebase/functions/auth";
-
+import { doBioUpdate } from "../../Firebase/functions/auth";
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value
 });
 
 const INITIAL_STATE = {
-  email: "",
+  bio: "",
   error: null
 };
 
-class EmailUpdateForm extends Component {
+class BioUpdateform extends Component {
   constructor(props) {
     super(props);
 
@@ -20,9 +19,9 @@ class EmailUpdateForm extends Component {
   }
 
   onSubmit = event => {
-    const { email } = this.state;
+    const { bio } = this.state;
 
-    doEmailUpdate(email)
+    doBioUpdate(bio)
       .then(() => {
         this.setState(() => ({ ...INITIAL_STATE }));
       })
@@ -34,19 +33,20 @@ class EmailUpdateForm extends Component {
   };
 
   render() {
-    const { email, error } = this.state;
-    const isInvalid = email === "";
+    const { bio, error } = this.state;
+
+    const isInvalid = bio === "";
 
     return (
       <form onSubmit={this.onSubmit}>
         <TextField
-          name="Email"
-          value={email}
+          name="Bio"
+          value={bio}
           id="standard-secondary"
-          label="New email"
+          label="New Bio"
           color="primary"
           onChange={event =>
-            this.setState(byPropKey("email", event.target.value))
+            this.setState(byPropKey("bio", event.target.value))
           }
         />
         <br />
@@ -56,7 +56,7 @@ class EmailUpdateForm extends Component {
           variant="contained"
           color="primary"
         >
-          Update my Email
+          Update Bio
         </Button>
 
         {error && <p>{error.message}</p>}
@@ -65,4 +65,4 @@ class EmailUpdateForm extends Component {
   }
 }
 
-export default EmailUpdateForm;
+export default BioUpdateform;

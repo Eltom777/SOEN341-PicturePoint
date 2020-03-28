@@ -25,7 +25,7 @@ export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u, callb
           alert("user name already taken :(")
           console.log('here')
           callback(null)
-      } else { 
+      } else {
         auth.createUserWithEmailAndPassword(email, passwordone).then(resp => {
           callback(db
           .collection("users")
@@ -35,6 +35,7 @@ export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u, callb
             name: n,
             email: email,
             creationDate:new Date().toISOString(),
+            bio: "This is a bio",
             userID:resp.user.uid,
           })
           )
@@ -86,3 +87,12 @@ export const doPasswordUpdate = password =>
       .update({
         name: nickname
       });
+
+//Update bio
+export const doBioUpdate = newBio =>
+  db
+  .collection("users")
+  .doc(localStorage.getItem("username"))
+  .update({
+    bio: newBio
+  });
