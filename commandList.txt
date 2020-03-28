@@ -8,6 +8,7 @@ npm install express --save
 npm install @material-ui/core
 npm install @material-ui/icons
 npm install @material-ui/system
+npm install --save dayjs
 
 Create Firebase functions:
 firebase init

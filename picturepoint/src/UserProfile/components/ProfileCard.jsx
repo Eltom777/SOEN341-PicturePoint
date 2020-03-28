@@ -17,21 +17,21 @@ import Button from '@material-ui/core/Button';
 //Style
 const useStyles = makeStyles({
     card: {
-      width: 700,
-      backgroundColor: 'whitesmoke',
-      padding: 10,
-      marginTop: 10,
+      width: 720,
+      backgroundColor: 'white',
+      padding: 3,
+      marginTop: 30,
       marginBottom: 10
     },
     cardContent: {
-        width: 470
+        width: 490
     },
     avatar: {
       marginTop: 30,
       marginRight: 10
     },
     avatarSize: {
-        fontSize: '40px',
+        marginLeft: 3,
         width: '80px',
         height: '80px'
     },
@@ -39,6 +39,7 @@ const useStyles = makeStyles({
         marginTop: 20,
     },
     editIcon: {
+        marginTop: 3,
         marginLeft: 52
     },
     followButton: {
