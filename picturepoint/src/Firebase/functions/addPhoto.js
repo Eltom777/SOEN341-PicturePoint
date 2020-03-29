@@ -21,7 +21,7 @@ export const addPhoto = (file,caption,callback) => {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
         uploadTask.snapshot.ref.getDownloadURL().then(function(imageUrl) {
-            db.collection('/photos').doc(newImageFileName).set({imageUrl,caption,user: 't-flynn', creationDate: new Date().toISOString()});
+            db.collection('/photos').doc(newImageFileName).set({imageUrl,caption,user: localStorage.getItem("username"), creationDate: new Date().toISOString()});
             console.log('File available at', imageUrl);
         });
       });
