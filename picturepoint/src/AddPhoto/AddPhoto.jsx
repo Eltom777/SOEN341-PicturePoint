@@ -1,8 +1,8 @@
-import React, {useEffect, useState, Component } from "react";
-import axios from "axios";
-import https from "https";
+
+import React, { Component } from "react";
 import {DropzoneArea} from 'material-ui-dropzone'
 import PropTypes from 'prop-types';
+import {addPhoto} from "../Firebase/functions/addPhoto"
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
@@ -14,8 +14,6 @@ import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 
@@ -73,50 +71,12 @@ class AddPhoto extends Component {
     
     SubmitPicture = (event) => {
         event.preventDefault();
-        //setup form
-        //var form = document.getElementById('postPhoto')
-        const formData = new FormData();
-        console.log(this.state.caption);
-        formData.append('image',this.state.file, this.state.file.name)
-        formData.append('text', this.state.caption)
-
-        //setup httpsAgent
-        const httpsAgent = new https.Agent({ //TODO: Add SSL certification, Disabled for now 
-            rejectUnauthorized: false
-        });
         
-        //sending post request to firebase functions
-        axios({
-            method: 'POST',
-            url: 'https://us-central1-picturepoint-381cf.cloudfunctions.net/api/addPhoto', 
-            data: formData,
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            } ,
-            onUploadProgress: progressEvent =>{
-                var currentProgress = Math.round( (progressEvent.load/progressEvent.total) * 100 )
-                console.log("Upload Progress: " + currentProgress)
-                if(currentProgress < 100){
-                    this.setState({
-                        progress: currentProgress,
-                        isUploading: true
-                    })
-                }
-                else{
-                    this.setState({
-                        progress: currentProgress,
-                        isUploading: false
-                    })
-                }
-            },
-            https: httpsAgent
+        console.log(this.state.file);
+        
+        addPhoto(this.state.file, this.state.caption,(callback) =>{
+            console.log(callback);
         })
-        .then((response) => {
-            console.log(response)
-        })
-        .catch((err) => {
-            console.log(err.response);
-        });
     };
 
     verifyFile = (files) => {
