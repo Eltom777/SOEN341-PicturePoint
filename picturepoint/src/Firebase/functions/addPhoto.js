@@ -1,7 +1,7 @@
 import { db,storage } from "./firebase";
 const firebaseConfig = require('../config/config');
 
-export const addPhoto = (file,caption,callback) => {
+export const addPhoto = (file,caption,progress) => {
 
     const imageExtension = file.name.split('.')[file.name.split('.').length - 1];
     const newImageFileName = `${Math.round(
@@ -13,7 +13,7 @@ export const addPhoto = (file,caption,callback) => {
     var uploadTask = storageRef.child(newImageFileName).put(file);
     uploadTask.on('state_changed', function(snapshot){
         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log('Upload is ' + progress + '% done');
       }, function(error) {
         // Handle unsuccessful uploads
