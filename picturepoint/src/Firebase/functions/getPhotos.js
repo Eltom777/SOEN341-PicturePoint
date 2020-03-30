@@ -1,16 +1,11 @@
 const { db } = require('./firebase');
 
 exports.getPhotos = (username, callback) => {
-    db.collection('photos').where("user", '==', username)
-    .get()
-    .then(function(querySnapshot) {
+    db.collection('photos').where("user", '==', username).onSnapshot((snapshot) => {
         let data = [];
-        querySnapshot.forEach((doc) => {
+        snapshot.forEach((doc) => {
             data.push({...doc.data(), photoID:doc.id});
         })
         callback(data);
-    })
-    .catch(function(error) {
-        console.log("Error: ", error);
     });
-};
+}

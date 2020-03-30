@@ -1,5 +1,5 @@
+
 import React, { Component } from "react";
-//import Dropzone from "react-dropzone";
 import {DropzoneArea} from 'material-ui-dropzone'
 import PropTypes from 'prop-types';
 import {addPhoto} from "../Firebase/functions/addPhoto"

@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1,
-        fontFamily: "Bradley Hand ITC"
+        fontFamily: "Yu Gothic UI"
     },
     list: {
         width: 250
@@ -82,6 +82,7 @@ function Header() {
                     <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
                         {sideList('left')}
                     </Drawer>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/picturepoint-381cf.appspot.com/o/Logo.png?alt=media&token=d41e7cc5-9831-4fb3-b4f1-c185e7832fff" width="55" height="35" />
                     <Typography variant="h3" className={classes.title}>
                         Picture Point
                     </Typography>
