@@ -1,14 +1,14 @@
 import { db,storage } from "./firebase";
 const firebaseConfig = require('../config/config');
 
+const storageRef = storage.ref();
+
 export const addPhoto = (file,caption,progress) => {
 
-    const imageExtension = file.name.split('.')[file.name.split('.').length - 1];
-    const newImageFileName = `${Math.round(
-        Math.random() * 1000000000000
-    ).toString()}.${imageExtension}`;
-    
-    var storageRef = storage.ref();
+    let imageExtension = file.name.split('.')[file.name.split('.').length - 1];
+    let newImageName;
+    generateImageName(imageExtension, newImageName);
+  
     //Upload file to google storage 
     var uploadTask = storageRef.child(newImageFileName).put(file);
     uploadTask.on('state_changed', function(snapshot){
@@ -25,3 +25,30 @@ export const addPhoto = (file,caption,progress) => {
         });
       });
 };
+
+export const deletePhoto = (imageId) => {
+  var desertRef = storageRef.child(imageId)
+  desertRef.delete()
+  .then(()=>{
+    console.log("Image successfully deleted")
+  }).catch(err =>{ //throw an error if file was not deleted successfully 
+    console.log(err)
+  });
+}
+
+const generateImageName = (fileExtension, newName) => {
+  newName = `${Math.round(Math.random() * 1000000000000).toString()}.${fileExtension}`;
+  db.doc(`/users/${newName}`).get()
+  .then(doc => {
+    if(doc.exists){
+      console.log("Image already exists, generating a new image name")
+      generateImageName(fileExtension, newName);
+   } 
+  })
+  .catch(function(error) {
+  console.log("Error: ", error);
+  });
+}
+
+
+
