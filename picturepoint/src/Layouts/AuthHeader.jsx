@@ -1,10 +1,12 @@
 //React
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, Route } from "react-router-dom";
 import * as routes from "../Routes/routes";
 
 //Firebase
 import { auth } from "../Firebase/index";
+
+import UserProfile from "../UserProfile/UserProfile";
 
 //Material UI
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -23,7 +25,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import AccountBox from "@material-ui/icons/AccountBox";
 import Home from "@material-ui/icons/Home";
 import ExitToApp from "@material-ui/icons/ExitToApp";
-import { Paper } from '@material-ui/core';
 
 //Style
 const useStyles = makeStyles(theme => ({
@@ -80,11 +81,34 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //Render
-function AuthHeader() {
+function AuthHeader({history}) {
     const classes = useStyles();
 
-    //Left Menu Functionality
-    const [state, setState] = React.useState({
+    //Search functionality
+    const handleSubmit = (event) => {
+        console.log(state);
+        console.log(history);
+        event.preventDefault();
+
+        //Add a check if username exists
+
+        //Load searched user
+        //history.push(`/${state.username}`);
+        console.log(state.username);
+
+        setState({
+            username: ""
+        });
+    }
+
+    const onChange = (event) => {
+        setState({
+            [event.target.name]: event.target.value
+        });
+    };
+
+    //Left menu functionality
+    const [state, setState] = useState({
       left: false,
     });
   
@@ -95,7 +119,8 @@ function AuthHeader() {
   
       setState({ ...state, [side]: open });
     };
-  
+    
+    //Menu component
     const sideList = side => (
       <div
         className={classes.list}
@@ -148,16 +173,21 @@ function AuthHeader() {
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
-                        <SearchIcon />
+                            <SearchIcon />
                         </div>
-                        <InputBase
-                        placeholder="Search…"
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                        />
+                        <form onSubmit={handleSubmit}>
+                            <InputBase
+                            name="username"
+                            placeholder="Search…"
+                            classes={{
+                                root: classes.inputRoot,
+                                input: classes.inputInput,
+                            }}
+                            inputProps={{ 'aria-label': 'search' }}
+                            value={state.username}
+                            onChange={onChange}
+                            />
+                        </form>
                     </div>
                 </Toolbar>
             </AppBar>
