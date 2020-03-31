@@ -19,7 +19,6 @@ class CommentForm extends Component {
   }
 
   handleSubmit(e) {
-    console.log(this.state);
     e.preventDefault();
     const newComment = {
       body: this.state.body,

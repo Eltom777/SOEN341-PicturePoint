@@ -1,10 +1,11 @@
 //React
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import * as routes from "../Routes/routes";
 
 //Firebase
 import { auth } from "../Firebase/index";
+import { usernameExists } from "../Firebase/functions/usernameExists";
 
 //Material UI
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -23,7 +24,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import AccountBox from "@material-ui/icons/AccountBox";
 import Home from "@material-ui/icons/Home";
 import ExitToApp from "@material-ui/icons/ExitToApp";
-import { Paper } from '@material-ui/core';
 
 //Style
 const useStyles = makeStyles(theme => ({
@@ -80,11 +80,41 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //Render
-function AuthHeader() {
+function AuthHeader({history}) {
     const classes = useStyles();
+    var doesExist = false;
 
-    //Left Menu Functionality
-    const [state, setState] = React.useState({
+    //Search functionality
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        usernameExists(state.username, (data) => {
+            if(data) {
+                doesExist = true;
+                window.open(`/${state.username}`, "_self");
+            } else {
+                doesExist = false;
+                alert("No results found.");
+            }
+        })
+
+        setState({
+            username: ""
+        });
+    }
+
+    const onChange = (event) => {
+        setState({
+            [event.target.name]: event.target.value
+        });
+    };
+
+    const isInvalid = () => {
+        return doesExist;
+    }
+
+    //Left menu functionality
+    const [state, setState] = useState({
       left: false,
     });
   
@@ -95,7 +125,8 @@ function AuthHeader() {
   
       setState({ ...state, [side]: open });
     };
-  
+    
+    //Menu component
     const sideList = side => (
       <div
         className={classes.list}
@@ -148,16 +179,22 @@ function AuthHeader() {
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
-                        <SearchIcon />
+                            <SearchIcon />
                         </div>
-                        <InputBase
-                        placeholder="Search…"
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                        />
+                        <form onSubmit={handleSubmit}>
+                            <InputBase
+                            name="username"
+                            placeholder="Search…"
+                            classes={{
+                                root: classes.inputRoot,
+                                input: classes.inputInput,
+                            }}
+                            inputProps={{ 'aria-label': 'search' }}
+                            value={state.username}
+                            onChange={onChange}
+                            disabled={isInvalid()}
+                            />
+                        </form>
                     </div>
                 </Toolbar>
             </AppBar>
