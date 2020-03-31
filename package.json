@@ -15,9 +15,5 @@
   "bugs": {
     "url": "https://github.com/Eltom777/SOEN341-PicturePoint/issues"
   },
-  "homepage": "https://github.com/Eltom777/SOEN341-PicturePoint#readme",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/Eltom777/SOEN341-PicturePoint#readme"
 }
