@@ -1,12 +1,11 @@
 //React
 import React, { useState } from 'react';
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as routes from "../Routes/routes";
 
 //Firebase
 import { auth } from "../Firebase/index";
-
-import UserProfile from "../UserProfile/UserProfile";
+import { usernameExists } from "../Firebase/functions/usernameExists";
 
 //Material UI
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -83,18 +82,21 @@ const useStyles = makeStyles(theme => ({
 //Render
 function AuthHeader({history}) {
     const classes = useStyles();
+    var doesExist = false;
 
     //Search functionality
     const handleSubmit = (event) => {
-        console.log(state);
-        console.log(history);
         event.preventDefault();
 
-        //Add a check if username exists
-
-        //Load searched user
-        //history.push(`/${state.username}`);
-        console.log(state.username);
+        usernameExists(state.username, (data) => {
+            if(data) {
+                doesExist = true;
+                window.open(`/${state.username}`, "_self");
+            } else {
+                doesExist = false;
+                alert("No results found.");
+            }
+        })
 
         setState({
             username: ""
@@ -106,6 +108,10 @@ function AuthHeader({history}) {
             [event.target.name]: event.target.value
         });
     };
+
+    const isInvalid = () => {
+        return doesExist;
+    }
 
     //Left menu functionality
     const [state, setState] = useState({
@@ -186,6 +192,7 @@ function AuthHeader({history}) {
                             inputProps={{ 'aria-label': 'search' }}
                             value={state.username}
                             onChange={onChange}
+                            disabled={isInvalid()}
                             />
                         </form>
                     </div>
