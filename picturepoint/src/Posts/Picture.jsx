@@ -8,6 +8,9 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 //Firebase function
 import { getPhoto } from '../Firebase/functions/getPhoto';
 import { getComments } from '../Firebase/functions/getComments';
+import { checkLike } from '../Firebase/functions/checkLike';
+import { likePost } from "../Firebase/functions/likePhoto";
+import { unlikePost } from "../Firebase/functions/unlikePhoto";
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -29,7 +32,8 @@ import Divider from '@material-ui/core/Divider';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 //Components
-import CommentForm from './CommentForm'
+import CommentForm from './CommentForm';
+import LikeButton from './LikeButton';
 
 //Style
 const useStyles = makeStyles({
@@ -66,18 +70,26 @@ const useStyles = makeStyles({
 
 function Picture({ match }) {
     const classes = useStyles();
+
+    const [state, setState] = useState({
+        isLiked: false
+    });
     
     const [photo, setPhoto] = useState({});
     const [comments, setComments] = useState([]);
     var photoID = match.params.id;
     var username = localStorage.getItem("username");
     var date = new Date(photo.creationDate);
+    var button;
+
+    //Relative time
     dayjs.extend(relativeTime);
 
     //Runs fecthing 
     useEffect(() => {
         fetchPhoto();
         fetchComments();
+        fetchIsLiked();  
     }, []);
 
     const fetchPhoto = async () => {
@@ -92,7 +104,15 @@ function Picture({ match }) {
         });
     }
 
-    //This page should include the caption, likes and comments --> Assign Jordan
+    const fetchIsLiked = async () => {
+        checkLike(photoID, username, (data) => {
+            setState({
+                isLiked: data
+            });
+        })
+    }
+
+    //This page should include the caption, likes and comments 
     return(
         <div>
             <Box display="flex" justifyContent="center">
@@ -101,9 +121,7 @@ function Picture({ match }) {
                         <Grid container>
                             <Grid item>
                                 <CardMedia className={classes.image} image={photo.imageUrl} />
-                                <IconButton aria-label="Like!" align="left">
-                                    <FavoriteIcon />
-                                </IconButton>
+                                <LikeButton photoID={photoID} username={username} likes={photo.likes} />
                             </Grid>
                             <Grid item className={classes.cardContent}>
                                 <CardHeader
