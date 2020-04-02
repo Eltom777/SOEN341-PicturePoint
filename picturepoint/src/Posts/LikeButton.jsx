@@ -24,8 +24,6 @@ class LikeButton extends Component {
         console.log(this.state);
     }
 
-    componentWillUpdate
-
     unlikePhoto(e) {
         e.preventDefault();
         console.log("unliking");
@@ -42,27 +40,27 @@ class LikeButton extends Component {
         likePost(newLike, this.props.photoID, this.props.photo);
     }
 
-    // render() {
-    //     if(false) {
-    //         return (
-    //             <IconButton aria-label="unlike" align="left" onClick={this.unlikePhoto}>
-    //                 <FavoriteIcon color="secondary" />
-    //                 <Typography>
-    //                     {this.props.photo.likes}
-    //                 </Typography>
-    //             </IconButton>
-    //         );
-    //     } else {
-    //         return (
-    //             <IconButton aria-label="like" align="left" onClick={this.likePhoto}>
-    //                 <FavoriteIcon color="default" />
-    //                 <Typography>
-    //                     {this.props.photo.likes}
-    //                 </Typography>
-    //             </IconButton>
-    //         );
-    //     }
-    // }
+    render() {
+        if(false) {
+            return (
+                <IconButton aria-label="unlike" align="left" onClick={this.unlikePhoto}>
+                    <FavoriteIcon color="secondary" />
+                    <Typography>
+                        {this.props.photo.likes}
+                    </Typography>
+                </IconButton>
+            );
+        } else {
+            return (
+                <IconButton aria-label="like" align="left" onClick={this.likePhoto}>
+                    <FavoriteIcon color="default" />
+                    <Typography>
+                        {this.props.photo.likes}
+                    </Typography>
+                </IconButton>
+            );
+        }
+    }
 }
 
 export default LikeButton;

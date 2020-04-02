@@ -74,7 +74,6 @@ function Picture({ match }) {
     const [state, setState] = useState({
         isLiked: false
     });
-    
     const [photo, setPhoto] = useState({});
     const [comments, setComments] = useState([]);
     var photoID = match.params.id;
@@ -105,12 +104,58 @@ function Picture({ match }) {
     }
 
     const fetchIsLiked = async () => {
+        debugger;
         checkLike(photoID, username, (data) => {
             setState({
                 isLiked: data
             });
+            console.log(data);
         })
     }
+
+    const unlikePhoto = (e) => {
+        e.preventDefault();
+        console.log("unliking");
+        unlikePost(photoID, username, photo);
+        setState({
+            isLiked: false
+        });
+    }
+
+    const likePhoto = (e) => {
+        e.preventDefault();
+        console.log("liking");
+        const newLike = {
+            photo: photoID,
+            user: username
+        };
+        likePost(newLike, photoID, photo);
+        setState({
+            isLiked: true
+        });
+    }
+
+    if(state.isLiked) {
+        button = (
+            <IconButton aria-label="unlike" align="left" onClick={unlikePhoto}>
+                <FavoriteIcon color="secondary" />
+                <Typography>
+                    {photo.likes}
+                </Typography>
+            </IconButton>
+        );
+    } else {
+        button = (
+            <IconButton aria-label="like" align="left" onClick={likePhoto}>
+                <FavoriteIcon color="default" />
+                <Typography>
+                    {photo.likes}
+                </Typography>
+            </IconButton>
+        );
+    }
+
+    //<LikeButton photoID={photoID} username={username} likes={photo.likes} />
 
     //This page should include the caption, likes and comments 
     return(
@@ -121,7 +166,7 @@ function Picture({ match }) {
                         <Grid container>
                             <Grid item>
                                 <CardMedia className={classes.image} image={photo.imageUrl} />
-                                <LikeButton photoID={photoID} username={username} likes={photo.likes} />
+                                {button}
                             </Grid>
                             <Grid item className={classes.cardContent}>
                                 <CardHeader
@@ -140,26 +185,26 @@ function Picture({ match }) {
                                 <CommentForm username={username} photoID={photoID} />
                                 <Box className={classes.comments}>
                                 {comments.map(comment => (
-                                        <Fragment>
-                                            <List component="nav">
-                                                <ListItem>
-                                                    <ListItemAvatar>
-                                                        <Avatar />
-                                                    </ListItemAvatar>
-                                                    <ListItemText primary={comment.username} secondary={
-                                                        <Fragment>
-                                                            <Typography variant="body1" >
-                                                                {comment.body}
-                                                            </Typography>
-                                                            <Typography variant="subtitle2" align="right">
-                                                                {dayjs(comment.createdAt).fromNow()}
-                                                            </Typography>
-                                                        </Fragment>
-                                                    }/>
-                                                </ListItem>
-                                                <Divider variant="fullWidth" component="li" />
-                                            </List>
-                                        </Fragment>
+                                    <Fragment>
+                                        <List component="nav">
+                                            <ListItem>
+                                                <ListItemAvatar>
+                                                    <Avatar />
+                                                </ListItemAvatar>
+                                                <ListItemText primary={comment.username} secondary={
+                                                    <Fragment>
+                                                        <Typography variant="body1" >
+                                                            {comment.body}
+                                                        </Typography>
+                                                        <Typography variant="subtitle2" align="right">
+                                                            {dayjs(comment.createdAt).fromNow()}
+                                                        </Typography>
+                                                    </Fragment>
+                                                }/>
+                                            </ListItem>
+                                            <Divider variant="fullWidth" component="li" />
+                                        </List>
+                                    </Fragment>
                                 ))}
                                 </Box>
                                 </CardContent>
