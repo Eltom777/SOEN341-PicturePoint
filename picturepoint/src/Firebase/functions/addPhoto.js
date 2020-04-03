@@ -29,35 +29,48 @@ export const addPhoto = (file,caption,progress) => {
 export const deletePhoto = (photoID) => {
   // delete photo document
   db.collection('photo').doc(photoID).delete(); 
+
   // delete all comment document related to this picture
   db.collection('comments').where('photo_id', '==', photoID).get()
   .then(snapshot => {
     if (snapshot.empty) {
       console.log('No matching comment documents.');
-      return;
-    }  
+    }
+    else{
+    //start batch
+    let batch = db.batch(); 
     snapshot.forEach(doc => {
-      doc.delete();
+      batch.delete(doc.ref); // can only delete up to 500 documents with one batch
     });
+    // Commit the batch
+    batch.commit();
+    }
   })
   .catch(err => {
     console.log('Error getting comment documents', err);
   });
+  
   // delete all likes document related to this picture
   db.collection('likes').where('photo', '==', photoID).get()
   .then(snapshot => {
     if (snapshot.empty) {
       console.log('No matching likes documents.');
-      return;
-    }  
+    }
+    else{
+    //start batch
+    let batch = db.batch(); 
     snapshot.forEach(doc => {
-      doc.delete();
+      batch.delete(doc.ref); // can only delete up to 500 documents with one batch
     });
+    // Commit the batch
+    batch.commit();
+    }
   })
   .catch(err => {
     console.log('Error getting likes documents', err);
   });
   //final step, remove picture from google storage
+  
   let desertRef = storageRef.child(photoID)
   desertRef.delete(photoID)
   .then(()=>{
@@ -65,6 +78,7 @@ export const deletePhoto = (photoID) => {
   }).catch(err =>{ //throw an error if file was not deleted successfully 
     console.log(err)
   });
+  
 }
 
 const generateImageName = (fileExtension, newName) => { //Checks if Image name already exists in DB
