@@ -2,12 +2,14 @@ const { db } = require('./firebase');
 
 //Unlike a photo
 exports.unlikePost = (photoID, username, photo) => {
-    db.collection('likes').where("photo", '==', photoID).onSnapshot((snapshot) => {
-        let isLiked;
-        snapshot.forEach((doc) => {
+    db.collection('likes').where("photo", '==', photoID).get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
             if(doc.data().user === username)
                 db.collection('likes').doc(doc.id).delete();
         });
+    })
+    .catch((error) => {
+        console.log("Error: ", error);
     });
 
     db.collection('photos').doc(photoID).update({

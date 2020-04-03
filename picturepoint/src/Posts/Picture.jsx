@@ -33,7 +33,6 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 //Components
 import CommentForm from './CommentForm';
-import LikeButton from './LikeButton';
 
 //Style
 const useStyles = makeStyles({
@@ -104,18 +103,15 @@ function Picture({ match }) {
     }
 
     const fetchIsLiked = async () => {
-        debugger;
         checkLike(photoID, username, (data) => {
             setState({
                 isLiked: data
             });
-            console.log(data);
         })
     }
 
     const unlikePhoto = (e) => {
         e.preventDefault();
-        console.log("unliking");
         unlikePost(photoID, username, photo);
         setState({
             isLiked: false
@@ -124,7 +120,6 @@ function Picture({ match }) {
 
     const likePhoto = (e) => {
         e.preventDefault();
-        console.log("liking");
         const newLike = {
             photo: photoID,
             user: username
@@ -155,9 +150,6 @@ function Picture({ match }) {
         );
     }
 
-    //<LikeButton photoID={photoID} username={username} likes={photo.likes} />
-
-    //This page should include the caption, likes and comments 
     return(
         <div>
             <Box display="flex" justifyContent="center">
