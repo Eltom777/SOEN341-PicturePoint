@@ -30,7 +30,7 @@ export const deletePhoto = (photoID) => {
   // delete photo document
   db.collection('photo').doc(photoID).delete(); 
   // delete all comment document related to this picture
-  db.collection('comments').where('photo_id', '==', photoID).get() // delete 
+  db.collection('comments').where('photo_id', '==', photoID).get()
   .then(snapshot => {
     if (snapshot.empty) {
       console.log('No matching comment documents.');
@@ -44,7 +44,7 @@ export const deletePhoto = (photoID) => {
     console.log('Error getting comment documents', err);
   });
   // delete all likes document related to this picture
-  db.collection('likes').where('photo', '==', photoID).get() // delete 
+  db.collection('likes').where('photo', '==', photoID).get()
   .then(snapshot => {
     if (snapshot.empty) {
       console.log('No matching likes documents.');
@@ -57,8 +57,7 @@ export const deletePhoto = (photoID) => {
   .catch(err => {
     console.log('Error getting likes documents', err);
   });
-  //final step, remove is from google storage
-  var desertRef = storageRef.child(imageId)
+  //final step, remove picture from google storage
   desertRef.delete()
   .then(()=>{
     console.log("Image successfully deleted")
