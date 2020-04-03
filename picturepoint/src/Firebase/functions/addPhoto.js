@@ -26,6 +26,46 @@ export const addPhoto = (file,caption,progress) => {
       });
 };
 
+export const deletePhoto = (photoID) => {
+  // delete photo document
+  db.collection('photo').doc(photoID).delete(); 
+  // delete all comment document related to this picture
+  db.collection('comments').where('photo_id', '==', photoID).get() // delete 
+  .then(snapshot => {
+    if (snapshot.empty) {
+      console.log('No matching comment documents.');
+      return;
+    }  
+    snapshot.forEach(doc => {
+      doc.delete();
+    });
+  })
+  .catch(err => {
+    console.log('Error getting comment documents', err);
+  });
+  // delete all likes document related to this picture
+  db.collection('likes').where('photo', '==', photoID).get() // delete 
+  .then(snapshot => {
+    if (snapshot.empty) {
+      console.log('No matching likes documents.');
+      return;
+    }  
+    snapshot.forEach(doc => {
+      doc.delete();
+    });
+  })
+  .catch(err => {
+    console.log('Error getting likes documents', err);
+  });
+  //final step, remove is from google storage
+  var desertRef = storageRef.child(imageId)
+  desertRef.delete()
+  .then(()=>{
+    console.log("Image successfully deleted")
+  }).catch(err =>{ //throw an error if file was not deleted successfully 
+    console.log(err)
+  });
+}
 
 const generateImageName = (fileExtension, newName) => { //Checks if Image name already exists in DB
   newName = `${Math.round(Math.random() * 1000000000000).toString()}.${fileExtension}`;
