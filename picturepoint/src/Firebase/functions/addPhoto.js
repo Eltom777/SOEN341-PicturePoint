@@ -69,16 +69,15 @@ export const deletePhoto = (photoID) => {
   .catch(err => {
     console.log('Error getting likes documents', err);
   });
-  //final step, remove picture from google storage
   
+  //final step, remove picture from google storage
   let desertRef = storageRef.child(photoID)
-  desertRef.delete(photoID)
+  desertRef.delete()
   .then(()=>{
-    console.log("Image successfully deleted")
+    console.log(photoID+" successfully deleted")
   }).catch(err =>{ //throw an error if file was not deleted successfully 
     console.log(err)
   });
-  
 }
 
 const generateImageName = (fileExtension, newName) => { //Checks if Image name already exists in DB
