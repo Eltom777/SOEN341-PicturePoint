@@ -28,7 +28,7 @@ export const addPhoto = (file,caption,progress) => {
 
 export const deletePhoto = (photoID) => {
   // delete photo document
-  db.collection('photo').doc(photoID).delete(); 
+  db.collection('photos').doc(photoID).delete(); 
 
   // delete all comment document related to this picture
   db.collection('comments').where('photo_id', '==', photoID).get()
