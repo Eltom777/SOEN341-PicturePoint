@@ -58,7 +58,8 @@ export const deletePhoto = (photoID) => {
     console.log('Error getting likes documents', err);
   });
   //final step, remove picture from google storage
-  desertRef.delete()
+  let desertRef = storageRef.child(photoID)
+  desertRef.delete(photoID)
   .then(()=>{
     console.log("Image successfully deleted")
   }).catch(err =>{ //throw an error if file was not deleted successfully 
