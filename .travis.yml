@@ -1,5 +1,13 @@
-llanguage: node_js
+sudo: false
+language: node_js
 node_js:
-  - 7
+- '8'
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm update
+install:
+- npm install
 script:
-    - node ./unit-tests/test1.js
+- npm test
