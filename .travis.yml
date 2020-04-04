@@ -12,3 +12,5 @@ install:
 script:
 - npm test
 - node ./unit-tests/test1.js
+env:
+- NODE_ENV: development
