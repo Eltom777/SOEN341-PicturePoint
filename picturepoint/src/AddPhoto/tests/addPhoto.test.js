@@ -9,4 +9,3 @@ const file = ({name: "test.jpeg"});
 test("file upload should be successful", () =>{
     expect(file.name).toBe("test.jpeg");
 });
-
