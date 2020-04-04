@@ -1,6 +1,6 @@
 const { db } = require('./firebase');
 
-exports.getPhoto = (photoID, callback) => {
+export const getPhoto = (photoID, callback) => {
     db.collection('photos').doc(photoID)
     .onSnapshot((snapshot) => {
         callback(snapshot.data());

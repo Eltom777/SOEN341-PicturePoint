@@ -1,7 +1,7 @@
 const { db } = require('./firebase');
 
 //Like a picture
-exports.likePost = (newLike, photoID, photo) => {
+export const likePost = (newLike, photoID, photo) => {
     db.collection('likes').add(newLike);
 
     db.collection('photos').doc(photoID).update({

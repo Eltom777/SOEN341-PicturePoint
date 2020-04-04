@@ -1,7 +1,7 @@
 const { db } = require('./firebase');
 
 //Unlike a photo
-exports.unlikePost = (photoID, username, photo) => {
+export const unlikePost = (photoID, username, photo) => {
     db.collection('likes').where("photo", '==', photoID).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if(doc.data().user === username)
