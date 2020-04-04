@@ -11,6 +11,7 @@ import { getComments } from '../Firebase/functions/getComments';
 import { checkLike } from '../Firebase/functions/checkLike';
 import { likePost } from "../Firebase/functions/likePhoto";
 import { unlikePost } from "../Firebase/functions/unlikePhoto";
+import { deletePhoto } from "../Firebase/functions/deletePhoto";
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -30,6 +31,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 //Components
 import CommentForm from './CommentForm';
@@ -79,6 +81,7 @@ function Picture({ match }) {
     var username = localStorage.getItem("username");
     var date = new Date(photo.creationDate);
     var button;
+    var deleteButton;
 
     //Relative time
     dayjs.extend(relativeTime);
@@ -130,6 +133,12 @@ function Picture({ match }) {
         });
     }
 
+    const handleDelete = (e) => {
+        e.preventDefault();
+        deletePhoto(photoID);
+        window.open(`/${username}`, "_self");
+    }
+
     if(state.isLiked) {
         button = (
             <IconButton aria-label="unlike" align="left" onClick={unlikePhoto}>
@@ -150,6 +159,16 @@ function Picture({ match }) {
         );
     }
 
+    if(username === match.params.username) {
+        deleteButton = (
+            <IconButton aria-label="delete" align="right" onClick={handleDelete}>
+                <DeleteForeverIcon color="secondary" />
+            </IconButton>
+        );
+    } else {
+        deleteButton = null;
+    }
+
     return(
         <div>
             <Box display="flex" justifyContent="center">
@@ -161,7 +180,7 @@ function Picture({ match }) {
                                 {button}
                             </Grid>
                             <Grid item className={classes.cardContent}>
-                                <CardHeader
+                                 <CardHeader
                                     avatar={
                                     <Avatar>
                                         {null}
@@ -169,6 +188,7 @@ function Picture({ match }) {
                                     }
                                     title={photo.user}
                                     subheader={date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
+                                    action={deleteButton}
                                 />
                                 <CardContent>
                                     <Typography className={classes.caption} variant="body1" color="" component="p" align="left">
