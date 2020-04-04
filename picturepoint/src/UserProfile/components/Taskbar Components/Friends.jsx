@@ -15,7 +15,10 @@ import Avatar from '@material-ui/core/Avatar';
 
 //Functions
 import { getFollowers, getFollowing } from '../../../Functions/DataProcessor';
-import GetLink from '../../../components/GetLink';
+import GetFollowers from '../../../components/GetFollowers';
+import GetFollowings from '../../../components/GetFollowings';
+import FollowUser from '../../../components/FollowUser';
+import UnfollowUser from '../../../components/UnfollowUser';
 
 //Style
 const useStyles = makeStyles({
@@ -51,7 +54,7 @@ function Friends(props) {
                             <Typography variant="h4" align="center">
                                 Followers
                             </Typography>
-                            <GetLink></GetLink>
+                            <GetFollowers></GetFollowers>
                             {followers.map(follower => (
                                 <Fragment>
                                     <List component="nav">
@@ -71,6 +74,7 @@ function Friends(props) {
                             <Typography variant="h4" align="center">
                                 Following
                             </Typography>
+                            <GetFollowings></GetFollowings>
                             {following.map(following => (
                                 <Fragment>
                                     <List component="nav">

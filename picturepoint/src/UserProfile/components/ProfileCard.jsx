@@ -12,8 +12,10 @@ import Avatar from '@material-ui/core/Avatar';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
 import { Button } from '@material-ui/core';
-import AddLink from '../../components/AddLink';
-import GetLink from '../../components/GetLink';
+
+import FollowUser from '../../components/FollowUser';
+import UnfollowUser from '../../components/UnfollowUser';
+import IsFollowing from '../../components/IsFollowing';
 
 //Style
 const useStyles = makeStyles({
@@ -80,6 +82,9 @@ function ProfileCard(props) {
                             <Fab className={classes.editIcon} size="small" color="secondary" aria-label="edit">
                                 <EditIcon />
                             </Fab>
+                            <FollowUser/>
+                            <UnfollowUser/>
+                            <IsFollowing/>
                         </Grid>
                     </Grid>
                 </Card>
