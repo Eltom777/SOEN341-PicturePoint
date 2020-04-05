@@ -50,8 +50,6 @@ class FullnameUpdateform extends Component {
           }
         />
         <br />
-        <br />
-        <br />
         <Button
           type="submit"
           disabled={isInvalid}

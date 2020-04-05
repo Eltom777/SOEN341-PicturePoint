@@ -22,8 +22,6 @@ export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u, callb
   db.doc(`/users/${u}`).get()
   .then(doc => {
        if(doc.exists){
-          //alert("user name already taken :(")
-          //callback(null)
           throw "username already taken"
       } else { 
         auth.createUserWithEmailAndPassword(email, passwordone).then(resp => {
@@ -35,6 +33,7 @@ export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u, callb
             name: n,
             email: email,
             creationDate:new Date().toISOString(),
+            bio: "This is a bio",
             userID:resp.user.uid,
           })
           )
@@ -90,3 +89,12 @@ export const doPasswordUpdate = password =>
       .update({
         name: nickname
       });
+
+//Update bio
+export const doBioUpdate = newBio =>
+  db
+  .collection("users")
+  .doc(localStorage.getItem("username"))
+  .update({
+    bio: newBio
+  });

@@ -94,7 +94,7 @@ function ProfileCard(props) {
                                     {user.email}
                                 </Typography>
                                 <Typography variant="body1" component="p">
-                                    This is my bio!
+                                    {user.bio}
                                 </Typography>
                                 <Typography className={classes.posBottom} variant="body2" color="textSecondary">
                                     Member since {date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}

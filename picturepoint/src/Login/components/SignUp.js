@@ -100,6 +100,7 @@ class SignUpForm extends Component {
           }
           type="text"
         />
+        <br/>
         <TextField
           name="name"
           value={name}
@@ -111,6 +112,7 @@ class SignUpForm extends Component {
           }
           type="text"
         />
+        <br/>
         <TextField
           name="email"
           value={email}
@@ -122,6 +124,7 @@ class SignUpForm extends Component {
           }
           type="email"
         />
+        <br/>
         <TextField
           name="password"
           value={passwordOne}
@@ -133,6 +136,7 @@ class SignUpForm extends Component {
           }
           type="password"
         />
+        <br/>
         <TextField
           name="ConfirmPassword"
           value={passwordTwo}
