@@ -17,11 +17,8 @@
     "material-ui-dropzone": "^2.4.9",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-<<<<<<< HEAD
     "react-dropzone": "^10.2.1",
-=======
     "react-redux": "^7.2.0",
->>>>>>> display list of followers and folloing in user page and follow button implemented issues #71 and #72
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1",
     "redux": "^4.0.5"
