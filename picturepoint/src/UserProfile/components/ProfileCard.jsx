@@ -12,7 +12,11 @@ import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
+
+import FollowUser from '../../components/FollowUser';
+import UnfollowUser from '../../components/UnfollowUser';
+import IsFollowing from '../../components/IsFollowing';
 
 //Style
 const useStyles = makeStyles({
@@ -24,11 +28,11 @@ const useStyles = makeStyles({
       marginBottom: 10
     },
     cardContent: {
-        width: 490
+        width: 470
     },
     avatar: {
-      marginTop: 30,
-      marginRight: 10
+        marginTop: 30,
+        marginRight: 10
     },
     avatarSize: {
         marginLeft: 3,
@@ -65,9 +69,7 @@ function ProfileCard(props) {
         );
     } else {
         button = (
-            <Button className={classes.followButton} variant="contained" color="primary" >
-                Follow
-            </Button>
+            <IsFollowing username={user.username}/>
         );
     }
 

@@ -14,10 +14,10 @@ const muiTheme = createMuiTheme({
       main: '#2a66e7'
     },
     secondary: {
-      main: '#ff1744'
+      main: '#ff1744',
+      secondary: "#D3D3D3"
     }
-  },
-
+  }
 });
 
 const App = () => ( 

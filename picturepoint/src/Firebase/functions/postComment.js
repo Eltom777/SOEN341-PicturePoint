@@ -1,7 +1,7 @@
 const { db } = require('./firebase');
 
 // Comment on a Post
-exports.commentOnPost = (newComment) => {
+export const commentOnPost = (newComment) => {
   if(newComment.body.trim() === '') 
     console.log("Must not be empty");
 

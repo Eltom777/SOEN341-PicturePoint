@@ -10,11 +10,6 @@ npm install @material-ui/icons
 npm install @material-ui/system
 npm install --save dayjs
 
-Create Firebase functions:
-firebase init
-
-cd into functions:
-npm install -g firebase-tools
-npm install --save firebase
-npm install --save express
-npm install --save cors
+How to run:
+1. cd into picturepoint
+2. npm start

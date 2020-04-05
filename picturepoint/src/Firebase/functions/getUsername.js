@@ -1,6 +1,6 @@
 const { db } = require('./firebase');
 
-exports.getUsername = (email, callback) => {
+export const getUsername = (email, callback) => {
     db.collection('users').where("email", '==', email)
     .get()
     .then(function(querySnapshot) {
