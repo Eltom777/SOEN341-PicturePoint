@@ -28,7 +28,7 @@ const useStyles = makeStyles({
       marginBottom: 10
     },
     cardContent: {
-        width: 490
+        width: 470
     },
     avatar: {
         marginTop: 30,
@@ -69,9 +69,7 @@ function ProfileCard(props) {
         );
     } else {
         button = (
-            <Button className={classes.followButton} variant="contained" color="primary" >
-                Follow
-            </Button>
+            <IsFollowing username={user.username}/>
         );
     }
 

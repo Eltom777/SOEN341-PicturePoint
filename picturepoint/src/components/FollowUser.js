@@ -2,6 +2,9 @@ import React from 'react'
 import { db, auth } from '../Firebase/functions/firebase'
 
 class FollowUser extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
     addLink = () => {
 
@@ -22,8 +25,8 @@ class FollowUser extends React.Component {
 
         db.collection('links')
             .add({
-                followed: "t-flynn", //person being followed
-                following: "a-iacampo" //person that is following
+                followed: this.props.username, //person being followed
+                following: localStorage.getItem("username") //person that is following
             })
         // this.checkDuplicate();
     }

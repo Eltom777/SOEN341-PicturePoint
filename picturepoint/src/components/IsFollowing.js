@@ -1,14 +1,15 @@
 import React from 'react'
 import { db, auth } from '../Firebase/functions/firebase'
 
-import FollowUser from './FollowUser';
-import UnfollowUser from './UnfollowUser';
+import { Button } from '@material-ui/core';
 
 class IsFollowing extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = { isFollowing: false };
+        console.log(this.props.username);
+        this.updateIsFollowing();
     }
 
     updateIsFollowing = () => {
@@ -17,37 +18,74 @@ class IsFollowing extends React.Component {
             .get()
             .then(snapshot => {
                 snapshot.forEach(doc => {
-                    if (doc.data().following == "a-iacampo" && doc.data().followed == "t-flynn") { //username of the user //username of other user
-                        return true;
+                    if (doc.data().following == localStorage.getItem("username") && doc.data().followed == this.props.username) { //username of the user //username of other user
+                        this.setState({
+                            isFollowing: true
+                        })
                     }
                 })
                 console.log(snapshot);
             }).catch(error => console.log(error))
-        return false;
+    }
+
+    removeLink = () => {
+        db.collection('links')
+            .get()
+            .then(snapshot => {
+                snapshot.forEach(doc => {
+                    if (doc.data().following == localStorage.getItem("username")
+                        && doc.data().followed == this.props.username) {
+                        
+                        let id = doc.id;
+                        db.collection('links').doc(id).delete();
+                    }
+                })
+                console.log(snapshot)
+            }).catch(error => console.log(error))
+        
+        this.setState({
+            isFollowing: false
+        })
+    }
+
+    addLink = () => {
+        db.collection('links')
+            .add({
+                followed: this.props.username, //person being followed
+                following: localStorage.getItem("username") //person that is following
+            })
+
+        this.setState({
+            isFollowing: true
+        })
     }
 
     render() {
-        const isFollowing = this.state.isFollowing;
+        let isFollowing = this.state.isFollowing;
         let button;
         if (isFollowing) {
-            button = <UnfollowUser />;
+            button = (
+                <div className="UnfollowUser">
+                    <Button onClick={this.removeLink} variant="contained" color="secondary.secondary" >
+                        UNFOLLOW
+                    </Button>
+                </div>
+            );
         } else {
-            button = <FollowUser />;
+            button = (
+                <div className="FollowUser">
+                    <Button onClick={this.addLink} variant="contained" color="primary">
+                        FOLLOW
+                    </Button>
+                </div>
+            );
         }
+
         return (
             <div>
                 {button}
             </div>
         )
-
-
-        // return (
-        //     <div className="GetFollowings">
-        //         {
-        //             this.isFollowing ? <UnfollowUser /> : <FollowUser />
-        //         }
-        //     </div>
-        // )
     }
 }
 

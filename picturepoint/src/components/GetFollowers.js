@@ -29,7 +29,7 @@ class GetFollowers extends React.Component {
             .then(snapshot => {
                 const followers = []
                 snapshot.forEach(doc => {
-                    if (doc.data().followed == "t-flynn") { //username of the user
+                    if (doc.data().followed == localStorage.getItem("username")) { //username of the user
                         const data = doc.data()
                         followers.push(data)
                     }
