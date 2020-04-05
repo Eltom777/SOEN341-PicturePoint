@@ -12,7 +12,4 @@ install:
 - npm install
 script:
 - npm test
-<<<<<<< HEAD
-=======
 
->>>>>>> parent of e3cbd41... Trying to Jest test through coveralls. #108
