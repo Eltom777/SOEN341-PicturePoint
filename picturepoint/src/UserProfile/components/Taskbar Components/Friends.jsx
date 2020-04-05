@@ -42,10 +42,6 @@ const useStyles = makeStyles({
 function Friends(props) {
     const classes = useStyles();
 
-    //Temp Data
-    const [followers] = useState(getFollowers);
-    const [following] = useState(getFollowing);
-
     return(
         <div>
             <Box>
@@ -55,19 +51,7 @@ function Friends(props) {
                             <Typography variant="h4" align="center">
                                 Followers
                             </Typography>
-                            <GetFollowers></GetFollowers>
-                            {followers.map(follower => (
-                                <Fragment>
-                                    <List component="nav">
-                                        <ListItem button component={Link} to={`/${follower.username}`}>
-                                            <ListItemAvatar>
-                                                <Avatar className={classes.avatarSize}>{follower.name[0]}</Avatar>
-                                            </ListItemAvatar>
-                                            <ListItemText primary={follower.name} />
-                                        </ListItem>
-                                    </List>
-                                </Fragment>
-                            ))}
+                            <GetFollowers username={props.username} />
                         </Paper>
                     </Grid>
                     <Grid item xs>
@@ -75,19 +59,7 @@ function Friends(props) {
                             <Typography variant="h4" align="center">
                                 Following
                             </Typography>
-                            <GetFollowings></GetFollowings>
-                            {following.map(following => (
-                                <Fragment>
-                                    <List component="nav">
-                                        <ListItem button component={Link} to={`/${following.username}`}>
-                                            <ListItemAvatar>
-                                                <Avatar className={classes.avatarSize}>{following.name[0]}</Avatar>
-                                            </ListItemAvatar>
-                                             <ListItemText primary={following.name} />
-                                        </ListItem>
-                                    </List>
-                                </Fragment>
-                            ))}
+                            <GetFollowings username={props.username} />
                         </Paper>
                     </Grid>
                 </Grid>
