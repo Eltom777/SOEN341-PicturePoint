@@ -16,6 +16,10 @@ import Avatar from '@material-ui/core/Avatar';
 
 //Functions
 import { getFollowers, getFollowing } from '../../../Functions/DataProcessor';
+import GetFollowers from '../../../components/GetFollowers';
+import GetFollowings from '../../../components/GetFollowings';
+import FollowUser from '../../../components/FollowUser';
+import UnfollowUser from '../../../components/UnfollowUser';
 
 //Style
 const useStyles = makeStyles({
@@ -38,10 +42,6 @@ const useStyles = makeStyles({
 function Friends(props) {
     const classes = useStyles();
 
-    //Temp Data
-    const [followers] = useState(getFollowers);
-    const [following] = useState(getFollowing);
-
     return(
         <div>
             <Box>
@@ -51,18 +51,7 @@ function Friends(props) {
                             <Typography variant="h4" align="center">
                                 Followers
                             </Typography>
-                            {followers.map(follower => (
-                                <Fragment>
-                                    <List component="nav">
-                                        <ListItem button component={Link} to={`/${follower.username}`}>
-                                            <ListItemAvatar>
-                                                <Avatar className={classes.avatarSize}>{follower.name[0]}</Avatar>
-                                            </ListItemAvatar>
-                                            <ListItemText primary={follower.name} />
-                                        </ListItem>
-                                    </List>
-                                </Fragment>
-                            ))}
+                            <GetFollowers username={props.username} />
                         </Paper>
                     </Grid>
                     <Grid item xs>
@@ -70,18 +59,7 @@ function Friends(props) {
                             <Typography variant="h4" align="center">
                                 Following
                             </Typography>
-                            {following.map(following => (
-                                <Fragment>
-                                    <List component="nav">
-                                        <ListItem button component={Link} to={`/${following.username}`}>
-                                            <ListItemAvatar>
-                                                <Avatar className={classes.avatarSize}>{following.name[0]}</Avatar>
-                                            </ListItemAvatar>
-                                             <ListItemText primary={following.name} />
-                                        </ListItem>
-                                    </List>
-                                </Fragment>
-                            ))}
+                            <GetFollowings username={props.username} />
                         </Paper>
                     </Grid>
                 </Grid>
