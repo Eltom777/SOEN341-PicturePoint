@@ -1,6 +1,6 @@
 const { db } = require('./firebase');
 
-exports.checkLike = (photoID, username, callback) => {
+export const checkLike = (photoID, username, callback) => {
     db.collection('likes').where("photo", '==', photoID).get().then((querySnapshot) => {
         let isLiked = false;
         querySnapshot.forEach((doc) => {

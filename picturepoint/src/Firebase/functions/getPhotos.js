@@ -1,6 +1,6 @@
 const { db } = require('./firebase');
 
-exports.getPhotos = (username, callback) => {
+export const getPhotos = (username, callback) => {
     db.collection('photos').where("user", '==', username).onSnapshot((snapshot) => {
         let data = [];
         snapshot.forEach((doc) => {
