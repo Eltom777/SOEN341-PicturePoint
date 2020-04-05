@@ -22,9 +22,9 @@ export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u, callb
   db.doc(`/users/${u}`).get()
   .then(doc => {
        if(doc.exists){
-          alert("user name already taken :(")
-          console.log('here')
-          callback(null)
+          //alert("user name already taken :(")
+          //callback(null)
+          throw "username already taken"
       } else { 
         auth.createUserWithEmailAndPassword(email, passwordone).then(resp => {
           callback(db
@@ -38,11 +38,15 @@ export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u, callb
             userID:resp.user.uid,
           })
           )
+        }).catch(error => {
+          alert(error.message)
+          callback(0)
         });
       }
    })
-  .catch(function(error) {
-    console.log("Error: ", error);
+  .catch(error =>  {
+    alert(error)
+    callback(1)
   });
 };
 // Sign In

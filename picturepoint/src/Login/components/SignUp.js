@@ -53,17 +53,22 @@ class SignUpForm extends Component {
         name,
         username,
         (authUser) => {
-          if(authUser != null){
+          if(authUser == 0){ //duplicate email
+            this.setState(() => ({ email: "", error: "invalid email" }));
+            this.props.history.push(routes.SIGN_UP);
+          }
+          else if( authUser == 1){ //duplicate username
+            this.setState(() => ({ username: "", error: "invalid username" }));
+            this.props.history.push(routes.SIGN_UP);
+          }
+          else{
             this.setState(() => ({ ...INITIAL_STATE }));
             localStorage.setItem("username", username);
             this.props.history.push(`/${username}`);
           }
-          else{
-            this.setState(() => ({ ...INITIAL_STATE }));
-            this.props.history.push(routes.SIGN_UP);
-          }
         }
-  )};
+    )
+  }
 
   render() {
     const {
