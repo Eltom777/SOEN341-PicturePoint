@@ -25,13 +25,8 @@
     "preinstall": "npx npm-force-resolutions",
     "start": "react-scripts start",
     "build": "react-scripts build",
-<<<<<<< HEAD
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-=======
     "test": "jest",
     "eject": "react-scripts eject"
->>>>>>> parent of e3cbd41... Trying to Jest test through coveralls. #108
   },
   "eslintConfig": {
     "extends": "react-app"
