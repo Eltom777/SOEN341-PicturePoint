@@ -1,7 +1,7 @@
 import React from "react";
 
 import AuthUserContext from "./AuthUserContext";
-import { firebase } from "../firebase";
+import { firebase } from "../../Firebase/index";
 
 const withAuthentication = Component =>
   class WithAuthentication extends React.Component {
@@ -23,7 +23,6 @@ const withAuthentication = Component =>
 
     render() {
       const { authUser } = this.state;
-
       return (
         <AuthUserContext.Provider value={authUser}>
           <Component />

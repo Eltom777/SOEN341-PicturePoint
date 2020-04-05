@@ -10,17 +10,24 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.8.23",
     "express": "^4.17.1",
     "firebase": "^7.8.1",
+    "material-ui-dropzone": "^2.4.9",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-dropzone": "^10.2.1",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1"
+    "react-scripts": "3.3.1",
+    "redux": "^4.0.5"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,5 +44,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.9.4",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.13.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-numeric-separator"
+    ]
+  },
+  "resolutions": {
+    "@babel/preset-env": "^7.8.7"
   }
 }

@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../firebase";
-
+import { auth } from "../../Firebase/index";
+import "./auth.css";
 import * as routes from "../../Routes/routes";
+import { SignInLink } from "./SignIn";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
 
 const SignUpPage = ({ history }) => (
-  <div align="center">
+  <div align="center" className="SignUpBox">
     <h1>SignUp</h1>
     <SignUpForm history={history} />
+    <SignInLink />
   </div>
 );
 
@@ -27,21 +32,43 @@ const byPropKey = (propertyName, value) => () => ({
 class SignUpForm extends Component {
   state = { ...INITIAL_STATE };
 
+  //   checkPassword() {
+  //     if(!this.state.passwordOne || this.state.passwordOne !== this.state.passwordTwo){
+  //        this.setState({error:"passwords do not match"});
+  //    }
+  //    else {
+  //        this.setState({error:null});
+  //    }
+  // }
+
   onSubmit = event => {
     event.preventDefault();
 
     const { email, passwordOne, name, username } = this.state;
 
     auth
-      .doCreateUserWithEmailAndPassword(email, passwordOne, name, username)
-      .then(authUser => {
-        this.setState(() => ({ ...INITIAL_STATE }));
-        this.props.history.push(routes.HOME);
-      })
-      .catch(error => {
-        this.setState(byPropKey("error", error));
-      });
-  };
+      .doCreateUserWithEmailAndPassword(
+        email,
+        passwordOne,
+        name,
+        username,
+        (authUser) => {
+          if(authUser == 0){ //duplicate email
+            this.setState(() => ({ email: "", error: "invalid email" }));
+            this.props.history.push(routes.SIGN_UP);
+          }
+          else if( authUser == 1){ //duplicate username
+            this.setState(() => ({ username: "", error: "invalid username" }));
+            this.props.history.push(routes.SIGN_UP);
+          }
+          else{
+            this.setState(() => ({ ...INITIAL_STATE }));
+            localStorage.setItem("username", username);
+            this.props.history.push(`/${username}`);
+          }
+        }
+    )
+  }
 
   render() {
     const {
@@ -62,51 +89,75 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <input
+        <TextField
+          name="Username"
+          id="standard-secondary"
+          label="User name"
+          color="primary"
           value={username}
           onChange={event =>
             this.setState(byPropKey("username", event.target.value))
           }
           type="text"
-          placeholder="User nick name"
         />
-        <input
+        <TextField
+          name="name"
           value={name}
+          id="standard-secondary"
+          label="Full name"
+          color="primary"
           onChange={event =>
             this.setState(byPropKey("name", event.target.value))
           }
           type="text"
-          placeholder="Full Name"
         />
-        <input
+        <TextField
+          name="email"
           value={email}
+          id="standard-secondary"
+          label="Email Address"
+          color="primary"
           onChange={event =>
             this.setState(byPropKey("email", event.target.value))
           }
           type="email"
-          placeholder="Email Address"
         />
-        <input
+        <TextField
+          name="password"
           value={passwordOne}
+          id="standard-secondary"
+          label="Password"
+          color="primary"
           onChange={event =>
             this.setState(byPropKey("passwordOne", event.target.value))
           }
           type="password"
-          placeholder="Password"
         />
-        <input
+        <TextField
+          name="ConfirmPassword"
           value={passwordTwo}
+          id="standard-secondary"
+          label="Comfirm Password"
+          color="primary"
           onChange={event =>
             this.setState(byPropKey("passwordTwo", event.target.value))
           }
           type="password"
-          placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
 
-        {error && <p>{error.message}</p>}
+        <br />
+        <br />
+
+        <Button
+          type="submit"
+          disabled={isInvalid}
+          variant="contained"
+          color="primary"
+        >
+          Sign Up
+        </Button>
+
+        {error && <p style={{ color: "red" }}>{error.message}</p>}
       </form>
     );
   }
