@@ -1,6 +1,5 @@
 //React
-import React, { useState, useEffect, Fragment } from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
 
 //Material UI
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,18 +7,10 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
 
 //Functions
-import { getFollowers, getFollowing } from '../../../Functions/DataProcessor';
 import GetFollowers from '../../../components/GetFollowers';
 import GetFollowings from '../../../components/GetFollowings';
-import FollowUser from '../../../components/FollowUser';
-import UnfollowUser from '../../../components/UnfollowUser';
 
 //Style
 const useStyles = makeStyles({
