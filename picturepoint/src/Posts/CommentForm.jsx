@@ -27,7 +27,7 @@ class CommentForm extends Component {
       createdAt: new Date().toISOString()
     };
 
-    commentOnPost(newComment);
+    commentOnPost(newComment, (data) => {});
 
     this.setState({
       body: ""
