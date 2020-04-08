@@ -17,7 +17,6 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import LockOpen from "@material-ui/icons/LockOpen";
 
-
 //Style
 const useStyles = makeStyles(theme => ({
     root: {
@@ -52,6 +51,7 @@ function Header() {
       setState({ ...state, [side]: open });
     };
   
+    //Menu component
     const sideList = side => (
       <div
         className={classes.list}

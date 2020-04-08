@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-//Functions
+//Components
 import GetFollowers from '../../../components/GetFollowers';
 import GetFollowings from '../../../components/GetFollowings';
 
@@ -30,6 +30,7 @@ const useStyles = makeStyles({
     }
 });
 
+//Render
 function Friends(props) {
     const classes = useStyles();
 

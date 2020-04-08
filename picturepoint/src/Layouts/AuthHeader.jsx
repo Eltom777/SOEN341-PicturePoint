@@ -80,7 +80,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //Render
-function AuthHeader({history}) {
+function AuthHeader() {
     const classes = useStyles();
     var doesExist = false;
 

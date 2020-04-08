@@ -1,3 +1,4 @@
+//Firebase config
 module.exports = {
     apiKey: "AIzaSyDTSp-jysKsVYkvrlOjAJBqZoU4GsjG-nk",
     authDomain: "picturepoint-381cf.firebaseapp.com",
