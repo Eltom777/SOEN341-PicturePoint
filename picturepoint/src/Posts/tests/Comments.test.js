@@ -8,7 +8,7 @@ const newComment = {
     createdAt: "2010-04-06T22:07:39.198Z"
   };
 
-test("Comment posted successfully", done => {
+/* test("Comment posted successfully", done => {
     commentOnPost(newComment, data => {
         try {
             expect(data).toBeTruthy();
@@ -18,4 +18,4 @@ test("Comment posted successfully", done => {
             done(error);
         }
     });
-}) 
+}) */

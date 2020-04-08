@@ -23,7 +23,7 @@ const unlikephoto = {
     user: "test123"
 }
 
-test("photo liked successfully", done => {
+/*test("photo liked successfully", done => {
     likePost(newLike, "581396766658.jpg", likephoto);
     checkLike("581396766658.jpg", "test123", data => {
         try{
@@ -47,4 +47,4 @@ test("photo unliked successfully", done => {
             done(error);
         }
     })
-});
+}); */
