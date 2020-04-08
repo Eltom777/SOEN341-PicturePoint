@@ -34,6 +34,7 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 ### SignIn and SignUp
 - For the SignIn function, a user needs to input a valid email address and the corresponding password to that email in order to authenticate. If the login information are wrong, an error would show and state the reason.
 - SignIn appearence
+
 ![SignIn appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/button%20activated.png)
 - SignIn with invalid inputs
 ![SignIn with invalid inputs](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20input%20information.png)
