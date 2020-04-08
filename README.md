@@ -30,3 +30,9 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - Anthony Iacampo (a-iacampo) - 40096683
 - Thomas Tran (digathomas) - 40095654
 - Haocheng Yang (Swnoob) - 40031815
+## Features
+### Likes and comments
+- This feature allows the user to like and unlike a post as well as comment on a post
+- ![User can like a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/liked.png)
+- ![User can unlike a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/unliked.png)
+- ![User can comment on a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/comments.png)
