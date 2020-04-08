@@ -1,5 +1,6 @@
 const { db } = require('./firebase');
 
+//Fetch user's info with login email
 export const getUsername = (email, callback) => {
     db.collection('users').where("email", '==', email)
     .get()

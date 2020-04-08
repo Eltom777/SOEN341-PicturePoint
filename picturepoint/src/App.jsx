@@ -1,13 +1,15 @@
 //React
 import React from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
-import withAuthentication from "./Login/components/withAuthentication";
 
-//Layout
+//Components
+import withAuthentication from "./Login/components/withAuthentication";
 import Navigation from "./Layouts/Navigation";
 
+//Material UI
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
+//App theme
 const muiTheme = createMuiTheme({
   palette: {
     primary: {

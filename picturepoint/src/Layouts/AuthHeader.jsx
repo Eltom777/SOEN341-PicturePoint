@@ -80,7 +80,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 //Render
-function AuthHeader({history}) {
+function AuthHeader() {
     const classes = useStyles();
     var doesExist = false;
 
@@ -115,52 +115,52 @@ function AuthHeader({history}) {
 
     //Left menu functionality
     const [state, setState] = useState({
-      left: false,
+        left: false,
     });
   
     const toggleDrawer = (side, open) => event => {
-      if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-        return;
-      }
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
   
-      setState({ ...state, [side]: open });
+        setState({ ...state, [side]: open });
     };
     
     //Menu component
     const sideList = side => (
-      <div
-        className={classes.list}
-        role="presentation"
-        onClick={toggleDrawer(side, false)}
-        onKeyDown={toggleDrawer(side, false)}
-      >
-        <List>
-            <ListItem button component={Link} to={`/${localStorage.getItem("username")}`}>
-              <ListItemIcon>
-                  <Home />
-              </ListItemIcon>
-              <ListItemText>
-                  Home
-              </ListItemText>
-            </ListItem>
-            <ListItem button component={Link} to={`/${localStorage.getItem("username")}/Account`}>
-              <ListItemIcon>
-                  <AccountBox />
-              </ListItemIcon>
-              <ListItemText>
-                  Account
-              </ListItemText>
-            </ListItem>
-            <ListItem button onClick={auth.doSignOut} component={Link} to={routes.SIGN_IN}>
-              <ListItemIcon>
-                  <ExitToApp />
-              </ListItemIcon>
-              <ListItemText>
-                  Logout
-              </ListItemText>
-            </ListItem>
-        </List>
-      </div>
+        <div
+            className={classes.list}
+            role="presentation"
+            onClick={toggleDrawer(side, false)}
+            onKeyDown={toggleDrawer(side, false)}
+        >
+            <List>
+                <ListItem button component={Link} to={`/${localStorage.getItem("username")}`}>
+                <ListItemIcon>
+                    <Home />
+                </ListItemIcon>
+                <ListItemText>
+                    Home
+                </ListItemText>
+                </ListItem>
+                <ListItem button component={Link} to={`/${localStorage.getItem("username")}/Account`}>
+                <ListItemIcon>
+                    <AccountBox />
+                </ListItemIcon>
+                <ListItemText>
+                    Account
+                </ListItemText>
+                </ListItem>
+                <ListItem button onClick={auth.doSignOut} component={Link} to={routes.SIGN_IN}>
+                <ListItemIcon>
+                    <ExitToApp />
+                </ListItemIcon>
+                <ListItemText>
+                    Logout
+                </ListItemText>
+                </ListItem>
+            </List>
+        </div>
     );
 
      return (

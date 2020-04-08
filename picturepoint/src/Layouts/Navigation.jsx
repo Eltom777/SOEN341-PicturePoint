@@ -16,6 +16,7 @@ import UserProfile from "../UserProfile/UserProfile";
 //Routes
 import * as routes from "../Routes/routes";
 
+//Determines if user is logged in (authenticated)
 const Navigation = () => {
   return(
   <AuthUserContext.Consumer>
@@ -23,8 +24,10 @@ const Navigation = () => {
       authUser ? <NavigationAuth /> : <NavigationNonAuth /> 
     )}
   </AuthUserContext.Consumer>
-  )};
+  )
+};
 
+//Authenticated loads user profile
 const NavigationAuth = () => (
   <div>
     <AuthHeader />
@@ -32,6 +35,7 @@ const NavigationAuth = () => (
   </div>
 );
 
+//Non authenticated loads sign-in 
 const NavigationNonAuth = () => (
   <div>
     <Header />

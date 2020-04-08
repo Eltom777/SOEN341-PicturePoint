@@ -11,15 +11,9 @@ import * as routes from "../Routes/routes";
 
 //Components
 import ProfileCard from './components/ProfileCard';
-
-//Layout
 import Taskbar from '../Layouts/Taskbar';
-
-//Taskbar Components
 import Friends from './components/Taskbar Components/Friends';
 import Photos from './components/Taskbar Components/Photos';
-
-//Pages
 import Picture from '../Posts/Picture';
 import AddPhoto from '../AddPhoto/AddPhoto';
 import Account from '../Login/components/Account';
@@ -42,6 +36,7 @@ export default class UserProfile extends Component {
         }
     }
 
+    //Fetch user data
     getUserData() {
         getUser(this.props.match.params.username, (userData) => {
             getPhotos(this.props.match.params.username, (data) => {
@@ -50,6 +45,7 @@ export default class UserProfile extends Component {
         });
     }
 
+    //Render
     render = function() {
         if(this.state.ready === false)
             return <div></div>;
@@ -57,6 +53,7 @@ export default class UserProfile extends Component {
         //Current URL location 
         var location = window.location.pathname.split('/');
 
+        //Render main page/Route to all other pages
         return (
             <div>
                 <ProfileCard currentUser={this.state} isCurrentUser={localStorage.getItem("username") === this.state.username} />

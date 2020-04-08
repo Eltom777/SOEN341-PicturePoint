@@ -7,13 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
 
 //Style
 const useStyles = makeStyles({
@@ -42,12 +39,15 @@ const useStyles = makeStyles({
     }
 });
 
+//Render
 function Photos(props) {
     const classes = useStyles();
 
+    //Photo info
     var photos = props.photos;
+    
+    //Upload photo button
     var button;
-
     if(props.isCurrentUser) {
         button = (
             <Button className={classes.followButton} variant="contained" color="primary" component={Link} to={`/${props.username}/Photos/AddPhoto`}>
@@ -58,6 +58,7 @@ function Photos(props) {
         button = null;
     }
 
+    //Render all photos
     return(
         <div>
             <Box display="flex" justifyContent="center">
