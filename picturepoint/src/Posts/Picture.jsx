@@ -135,7 +135,9 @@ function Picture({ match }) {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        deletePhoto(photoID);
+        deletePhoto(photoID, (callback) =>{
+            alert(callback)
+        });
         window.open(`/${username}`, "_self");
     }
 
