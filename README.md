@@ -31,6 +31,16 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - Thomas Tran (digathomas) - 40095654
 - Haocheng Yang (Swnoob) - 40031815
 ## Features
+### SignIn and SignUp
+- For the SignIn function, a user needs to input a valid email address and the corresponding password to that email in order to authenticate. If the login information are wrong, an error would show and state the reason.
+- For the SignUp, a user will have to put a unique user name, a nickname, a email address with the right format and two identical passwords in order to activate the sign up button, any error such as: user name has been taken, email has been taken would stop the signup and is showed by a popup alert.
+![SignIn appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/button%20activated.png)
+![SignIn with invalid inputs](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20input%20information.png)
+![SignIn with invalid password](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20corresponding%20password.png)
+![SignUp Appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/Appearence.png)
+![SignUp with email error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20email%20error.png)
+![SignUp with password error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20password%20error.png)
+![SignUp with username error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20username%20error.png)
 ### Follow and Unfollow
 - A user can follow any other user
 - A user can't follow twice a user
@@ -45,3 +55,12 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 ![User can unlike a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/unliked.png)
 - Commenting on a post
 ![User can comment on a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/comments.png)
+### Update Profile Information
+- Change password: in order to change the password, a user needs to input two identical password with at least 6 characters, otherwise, either the button is not activated or it will show an error.
+- Change email: in order to change the email, a user needs to input a unique email with the right email format, otherwise there would be some errors that pop out. If the email address is updated successfully, the information would be updated on firebase authentication and on firebase database in the same time.
+- Change Nickname: In order to change the nickname, the user need to input a string.
+- Change Bio: In order to change the bio, the user need to input a string.
+![Appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/appearence.png)
+![password Update with wring input](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/password%20update(error).png)
+![email Update with wring input 1](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail).png)
+[email Update with wring input 2](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail2.0).png)
