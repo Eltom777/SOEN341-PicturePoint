@@ -33,9 +33,6 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 ## Features
 ### Likes and comments
 - This feature allows the user to like and unlike a post as well as comment on a post
-- User can like a post
-<img width="964" src= "https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/liked.png">
-- User can unlike a post
-<img width="964" src="https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/unliked.png">
-- User can comment on a post
-<img width="964" src = "https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/comments.png">
+- ![User can like a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/liked.png)
+- ![User can unlike a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/unliked.png)
+- ![User can comment on a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/comments.png)
