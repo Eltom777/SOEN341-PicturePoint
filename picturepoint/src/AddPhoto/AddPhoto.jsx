@@ -143,7 +143,7 @@ class AddPhoto extends Component {
                                 {error != null ? <p style={{ color: "red" }}>{error}</p> : ""}
                             </Grid>
                             <Grid container item className={"marginTop: 10"} xs={12} spacing={5} justify="center" >
-                                <Button disabled={isInvalid} variant="contained" color="inherit" onClick={this.SubmitPicture}>Upload</Button>
+                                <Button disabled={isInvalid} variant="contained" color="primary" onClick={this.SubmitPicture}>Upload</Button>
                             </Grid> 
                         </Grid>
                     </Paper> 
