@@ -14,33 +14,37 @@ Due to a lack of time and our acceptance test passing, mock function were not im
 ---------------------------
 
 
-import { usernameExists } from "../../Firebase/functions/usernameExists";
+import { IsFollowing } from "../../Firebase/functions/IsFollowing";
 
+const following = "test123";
+const followed = "test121";
 
-const username = "test123";
-const invalidUsername = "test456";
+test("user should follow other user", (done) => {
+    expect(file.name).toBe("test.jpeg");
+    addLink(following, followed, (data) => {
 
-//Test a valid user search
-test('The user exists in the database', (done) => {
-    usernameExists(username, (data) => {
+    })
+    IsFollowing(following, followed, (data) => {
         try {
             expect(data).toBeTruthy();
             done();
         } catch (error) {
             done(error);
         }
-    });
+    })
 });
 
-//Test an invalid user search
-test('The user does not exists in the database', (done) => {
-    usernameExists(invalidUsername, (data) => {
+test("user should unfollow other user", (done) => {
+    removeLink(following, followed, (data) => {
+
+    })
+    IsFollowing(following, followed, (data) => {
         try {
             expect(data).toBeFalsy();
             done();
         } catch (error) {
             done(error);
         }
-    });
+    })
 });
 */
