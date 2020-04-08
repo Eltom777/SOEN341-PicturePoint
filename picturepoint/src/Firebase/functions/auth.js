@@ -2,28 +2,12 @@ import { auth } from "./firebase";
 import { db } from "./firebase";
 
 // Sign Up
-/*
-export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u) =>
-  auth.createUserWithEmailAndPassword(email, passwordone).then(resp => {
-    return db
-      .collection("users")
-      .doc(u)
-      .set({
-        name: n,
-        username: u,
-        email: email,
-        creationDate:new Date().toISOString(),
-        userID:resp.user.uid,
-      });
-  });
-*/
-
 export const doCreateUserWithEmailAndPassword = (email, passwordone, n, u, callback) => {
   db.doc(`/users/${u}`).get()
   .then(doc => {
        if(doc.exists){
           throw "username already taken"
-      } else { 
+      } else {
         auth.createUserWithEmailAndPassword(email, passwordone).then(resp => {
           callback(db
           .collection("users")
