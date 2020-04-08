@@ -32,8 +32,8 @@ const useStyles = makeStyles({
 function Taskbar(props) {
     const classes = useStyles();
     
+    //Taskbar state handling
     var select;
-
     if(props.state === 'Friends')
         select = 0;
     else
@@ -58,7 +58,6 @@ function Taskbar(props) {
                 >
                     <Tab label="My Friends" component={Link} to={`/${props.username}/Friends`} />
                     <Tab label="My Photos" component={Link} to={`/${props.username}`} />
-                    <Tab label="My Albums" disabled />
                 </Tabs>
             </Paper>
             <Divider className={classes.divider} variant="middle" />

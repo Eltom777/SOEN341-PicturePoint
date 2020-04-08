@@ -3,6 +3,7 @@ import { usernameExists } from "../../Firebase/functions/usernameExists";
 const username = "test123";
 const invalidUsername = "test456";
 
+//Test a valid user search
 test('The user exists in the database', (done) => {
     usernameExists(username, (data) => {
         try {
@@ -14,6 +15,7 @@ test('The user exists in the database', (done) => {
     });
 });
 
+//Test an invalid user search
 test('The user does not exists in the database', (done) => {
     usernameExists(invalidUsername, (data) => {
         try {
