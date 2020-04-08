@@ -83,6 +83,6 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - Email Update with wrong input
 
 ![email Update with wrong input 1](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail).png)
-- Email Update with wrong input
+- Special case
 
 ![email Update with wrong input 2](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail2.0).png)
