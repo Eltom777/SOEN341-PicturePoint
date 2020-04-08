@@ -3,7 +3,7 @@ import { unlikePost } from "../../Firebase/functions/unlikePhoto";
 import { checkLike } from "../../Firebase/functions/checkLike";
 
 const newLike = {
-    photo: "test.jpeg",
+    photo: "581396766658.jpg",
     user: "test123"
 };
 
@@ -24,8 +24,8 @@ const unlikephoto = {
 }
 
 test("photo liked successfully", done => {
-    likePost(newLike, "test.jpeg", likephoto);
-    checkLike("test.jpeg", "test123", data => {
+    likePost(newLike, "581396766658.jpg", likephoto);
+    checkLike("581396766658.jpg", "test123", data => {
         try{
             expect(data).toBeTruthy();
             done();
@@ -37,8 +37,8 @@ test("photo liked successfully", done => {
 });
 
 test("photo unliked successfully", done => {
-    unlikePost("test.jpeg", "test123", unlikephoto);
-    checkLike("test.jpeg", "test123", data => {
+    unlikePost("581396766658.jpg", "test123", unlikephoto);
+    checkLike("581396766658.jpg", "test123", data => {
         try{
             expect(data).toBeFalsy();
             done();
