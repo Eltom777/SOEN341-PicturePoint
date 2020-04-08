@@ -33,10 +33,10 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 ## Features
 ### SignIn and SignUp
 - For the SignIn function, a user needs to input a valid email address and the corresponding password to that email in order to authenticate. If the login information are wrong, an error would show and state the reason.
-- For the SignUp, a user will have to put a unique user name, a nickname, a email address with the right format and two identical passwords in order to activate the sign up button, any error such as: user name has been taken, email has been taken would stop the signup and is showed by a popup alert.
 ![SignIn appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/button%20activated.png)
 ![SignIn with invalid inputs](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20input%20information.png)
 ![SignIn with invalid password](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20corresponding%20password.png)
+- For the SignUp, a user will have to put a unique user name, a nickname, a email address with the right format and two identical passwords in order to activate the sign up button, any error such as: user name has been taken, email has been taken would stop the signup and is showed by a popup alert.
 ![SignUp Appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/Appearence.png)
 ![SignUp with email error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20email%20error.png)
 ![SignUp with password error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20password%20error.png)
