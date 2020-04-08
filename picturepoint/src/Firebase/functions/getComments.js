@@ -1,6 +1,6 @@
 const { db } = require('./firebase');
 
-//Fetch one post
+//Fetch all the post's comments
 export const getComments = (photoID, callback) => {
     db.collection('comments').orderBy('createdAt', 'desc').where('photo_id', '==', photoID).onSnapshot((snapshot) => {
         let comments = [];

@@ -32,14 +32,6 @@ const byPropKey = (propertyName, value) => () => ({
 class SignUpForm extends Component {
   state = { ...INITIAL_STATE };
 
-  //   checkPassword() {
-  //     if(!this.state.passwordOne || this.state.passwordOne !== this.state.passwordTwo){
-  //        this.setState({error:"passwords do not match"});
-  //    }
-  //    else {
-  //        this.setState({error:null});
-  //    }
-  // }
 
   onSubmit = event => {
     event.preventDefault();
