@@ -1,5 +1,3 @@
-
-
 test('Test so Jest can run', () => { //Required test to make Jest pass
     expect(true).toBeTruthy();
 });
@@ -15,24 +13,38 @@ Due to a lack of time and our acceptance test passing, mock function were not im
 
 ---------------------------
 
-import { commentOnPost } from "../../Firebase/functions/postComment";
-import { getComments } from '../../Firebase/functions/getComments';
 
-const newComment = {
-    body: "test",
-    username: "test123",
-    photo_id: "test.jpeg",
-    createdAt: "2010-04-06T22:07:39.198Z"
-  };
+import { IsFollowing } from "../../Firebase/functions/IsFollowing";
 
- test("Comment posted successfully", done => {
-    commentOnPost(newComment, data => {
+const following = "test123";
+const followed = "test121";
+
+test("user should follow other user", (done) => {
+    expect(file.name).toBe("test.jpeg");
+    addLink(following, followed, (data) => {
+
+    })
+    IsFollowing(following, followed, (data) => {
         try {
             expect(data).toBeTruthy();
             done();
-        } 
-        catch (error) {
+        } catch (error) {
             done(error);
         }
-    });
-}) */
+    })
+});
+
+test("user should unfollow other user", (done) => {
+    removeLink(following, followed, (data) => {
+
+    })
+    IsFollowing(following, followed, (data) => {
+        try {
+            expect(data).toBeFalsy();
+            done();
+        } catch (error) {
+            done(error);
+        }
+    })
+});
+*/
