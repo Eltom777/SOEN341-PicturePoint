@@ -6,33 +6,18 @@ class FollowUser extends React.Component {
         super(props);
     }
 
+    // add a link to the collection 'links' which keeps track of following and followed relations
+    // represents the action of "following a user"
     addLink = () => {
-
-        // db.collection('links').doc(doc.id)
-        //     .get().then((docSnapshot) => {
-        //         if (docSnapshot.exists) {
-        //             db.collection('link').doc(doc.id).onSnapshot((doc) => {
-        //                 db.collection('links').doc(doc.id).delete();
-        //             });
-        //         } else {
-        //             db.collection('links')
-        //                 .add({
-        //                     followed: "t-flynn", //person being followed
-        //                     following: "a-iacampo" //person that is following
-        //                 })
-        //         }
-        //     });
-
-        db.collection('links')
+        db.collection('links') // get the collection 'link' in firestore
             .add({
-                followed: this.props.username, //person being followed
-                following: localStorage.getItem("username") //person that is following
+                followed: this.props.username, //logged in user
+                following: localStorage.getItem("username") //shown profile user
             })
-        // this.checkDuplicate();
     }
 
     checkDuplicate = () => {
-        db.collection('links')
+        db.collection('links') // get the collection 'link' in firestore
             .get()
             .then(snapshot => {
                 snapshot.forEach(doc => {

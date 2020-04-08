@@ -6,14 +6,16 @@ class UnfollowUser extends React.Component {
         super(props);
     }
 
+    // remove a link to the collection 'links' which keeps track of following and followed relations
+    // represents the action of "unfollowing a user"
     removeLink = () => {
-        db.collection('links')
+        db.collection('links') // get the collection 'link' in firestore
             .get()
             .then(snapshot => {
                 snapshot.forEach(doc => {
-                    if (doc.data().following == localStorage.getItem("username")
-                        && doc.data().followed == this.props.username) {
-                        
+                    if (doc.data().following == localStorage.getItem("username") // shown profile user
+                        && doc.data().followed == this.props.username) { //logged in user
+
                         let id = doc.id;
                         db.collection('links').doc(id).delete();
                     }
