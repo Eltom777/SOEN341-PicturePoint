@@ -1,22 +1,26 @@
 //React
-import React from 'react';
-import { Route } from "react-router-dom";
+import React from 'react'
+import { Route } from 'react-router-dom'
 
 //Routes
-import * as routes from "../Routes/routes";
+import * as routes from '../Routes/routes'
 
 //Pages
-import SignUpPage from "./components/SignUp";
-import SignInPage from "./components/SignIn";
-import PasswordForgetPage from "./components/PasswordForget";
+import SignUpPage from './components/SignUp'
+import SignInPage from './components/SignIn'
+import PasswordForgetPage from './components/PasswordForget'
 
 function Login() {
-     return (
+    return (
         <div>
             <Route exact path={routes.SIGN_UP} component={SignUpPage} />
             <Route exact path={routes.SIGN_IN} component={SignInPage} />
-            <Route exact path={routes.PASSWORD_FORGET} component={PasswordForgetPage}/>
+            <Route
+                exact
+                path={routes.PASSWORD_FORGET}
+                component={PasswordForgetPage}
+            />
         </div>
-    );
+    )
 }
-export default Login;
+export default Login

@@ -1,6 +1,7 @@
-test('Test so Jest can run', () => { //Required test to make Jest pass
-    expect(true).toBeTruthy();
-});
+test('Test so Jest can run', () => {
+    //Required test to make Jest pass
+    expect(true).toBeTruthy()
+})
 
 /*
 -------Information--------

@@ -3,7 +3,7 @@ import { db, auth } from '../Firebase/functions/firebase'
 
 class UnfollowUser extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     // remove a link to the collection 'links' which keeps track of following and followed relations
@@ -11,17 +11,22 @@ class UnfollowUser extends React.Component {
     removeLink = () => {
         db.collection('links') // get the collection 'link' in firestore
             .get()
-            .then(snapshot => {
-                snapshot.forEach(doc => {
-                    if (doc.data().following == localStorage.getItem("username") // shown profile user
-                        && doc.data().followed == this.props.username) { //logged in user
+            .then((snapshot) => {
+                snapshot.forEach((doc) => {
+                    if (
+                        doc.data().following ==
+                            localStorage.getItem('username') && // shown profile user
+                        doc.data().followed == this.props.username
+                    ) {
+                        //logged in user
 
-                        let id = doc.id;
-                        db.collection('links').doc(id).delete();
+                        let id = doc.id
+                        db.collection('links').doc(id).delete()
                     }
                 })
                 console.log(snapshot)
-            }).catch(error => console.log(error))
+            })
+            .catch((error) => console.log(error))
     }
 
     render() {
@@ -33,4 +38,4 @@ class UnfollowUser extends React.Component {
     }
 }
 
-export default UnfollowUser;
+export default UnfollowUser
