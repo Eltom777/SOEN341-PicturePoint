@@ -1,8 +1,10 @@
+//Firebase
 import { db,storage } from "./firebase";
 
 const storageRef = storage.ref();
 
-export const deletePhoto = (photoID) => {
+export const deletePhoto = (photoID, callback) => {
+  try{
     // delete photo document
     db.collection('photos').doc(photoID).delete(); 
   
@@ -23,7 +25,7 @@ export const deletePhoto = (photoID) => {
       }
     })
     .catch(err => {
-      console.log('Error getting comment documents', err);
+      throw('Error getting comment documents', err);
     });
     
     // delete all likes document related to this picture
@@ -43,15 +45,18 @@ export const deletePhoto = (photoID) => {
       }
     })
     .catch(err => {
-      console.log('Error getting likes documents', err);
+      throw('Error getting likes documents', err);
     });
     
     //final step, remove picture from google storage
     let desertRef = storageRef.child(photoID)
     desertRef.delete()
     .then(()=>{
-      console.log(photoID+" successfully deleted")
+      callback(photoID + " successfully deleted")
     }).catch(err =>{ //throw an error if file was not deleted successfully 
-      console.log(err)
+      throw(err)
     });
+  } catch (error) {
+    callback(error);
   }
+}
