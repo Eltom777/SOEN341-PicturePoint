@@ -1,66 +1,80 @@
 {
-  "name": "picturepoint",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.9.9",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/system": "^4.9.6",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "dayjs": "^1.8.23",
-    "express": "^4.17.1",
-    "firebase": "^7.13.2",
-    "material-ui-dropzone": "^2.4.9",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-dropzone": "^10.2.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1",
-    "redux": "^4.0.5"
-  },
-  "scripts": {
-    "preinstall": "npx npm-force-resolutions",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "jest",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.8.7",
-    "@babel/preset-react": "^7.9.4",
-    "babel-jest": "^24.9.0",
-    "jest": "^24.9.0",
-    "react-test-renderer": "^16.13.1"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-numeric-separator"
-    ]
-  },
-  "resolutions": {
-    "@babel/preset-env": "^7.8.7"
-  }
+    "name": "picturepoint",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@material-ui/core": "^4.9.9",
+        "@material-ui/icons": "^4.9.1",
+        "@material-ui/system": "^4.9.6",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "dayjs": "^1.8.23",
+        "express": "^4.17.1",
+        "firebase": "^7.13.2",
+        "material-ui-dropzone": "^2.4.9",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-dropzone": "^10.2.1",
+        "react-redux": "^7.2.0",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "3.3.1",
+        "redux": "^4.0.5"
+    },
+    "scripts": {
+        "preinstall": "npx npm-force-resolutions",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "jest",
+        "eject": "react-scripts eject",
+        "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.8.7",
+        "@babel/preset-react": "^7.9.4",
+        "babel-jest": "^24.9.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "jest": "^24.9.0",
+        "prettier": "2.0.4",
+        "react-test-renderer": "^16.13.1"
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-numeric-separator"
+        ]
+    },
+    "resolutions": {
+        "@babel/preset-env": "^7.8.7"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true,
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "arrowParens": "always"
+    }
 }

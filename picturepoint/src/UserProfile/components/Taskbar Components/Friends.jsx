@@ -1,16 +1,16 @@
 //React
-import React from 'react';
+import React from 'react'
 
 //Material UI
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles'
+import Box from '@material-ui/core/Box'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
 
 //Components
-import GetFollowers from '../../../components/GetFollowers';
-import GetFollowings from '../../../components/GetFollowings';
+import GetFollowers from '../../../Links/GetFollowers'
+import GetFollowings from '../../../Links/GetFollowings'
 
 //Style
 const useStyles = makeStyles({
@@ -20,21 +20,21 @@ const useStyles = makeStyles({
         marginLeft: 20,
         marginRight: 20,
         marginBottom: 20,
-        minHeight: 515, 
-        overflow: 'auto'
+        minHeight: 515,
+        overflow: 'auto',
     },
     avatarSize: {
         fontSize: '20px',
         width: '40px',
-        height: '40px'
-    }
-});
+        height: '40px',
+    },
+})
 
 //Render
 function Friends(props) {
-    const classes = useStyles();
+    const classes = useStyles()
 
-    return(
+    return (
         <div>
             <Box>
                 <Grid container>
@@ -57,7 +57,7 @@ function Friends(props) {
                 </Grid>
             </Box>
         </div>
-    );
+    )
 }
 
-export default Friends;
+export default Friends
