@@ -31,7 +31,13 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - Thomas Tran (digathomas) - 40095654
 - Haocheng Yang (Swnoob) - 40031815
 ## Features
-### Likes and comments
+### Follow and Unfollow
+- A user can follow any other user
+- A user can't follow twice a user
+- A user can unfollow any user he has followed
+- A user can't follow himself
+- A user sees a list of followers and following
+### Likes and Comments
 - This feature allows the user to like and unlike a post as well as comment on a post
 - Liking a post
 ![User can like a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/liked.png)
