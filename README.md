@@ -33,13 +33,27 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 ## Features
 ### SignIn and SignUp
 - For the SignIn function, a user needs to input a valid email address and the corresponding password to that email in order to authenticate. If the login information are wrong, an error would show and state the reason.
+- SignIn appearence
+
 ![SignIn appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/button%20activated.png)
+- SignIn with invalid inputs
+
 ![SignIn with invalid inputs](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20input%20information.png)
+- SignIn with invalid password
+
 ![SignIn with invalid password](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20corresponding%20password.png)
 - For the SignUp, a user will have to put a unique user name, a nickname, a email address with the right format and two identical passwords in order to activate the sign up button, any error such as: user name has been taken, email has been taken would stop the signup and is showed by a popup alert.
+- SignUp Appearence
+
 ![SignUp Appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/Appearence.png)
+- SignUp with email error
+
 ![SignUp with email error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20email%20error.png)
+- SignUp with password error
+
 ![SignUp with password error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20password%20error.png)
+- SignUp with username error
+
 ![SignUp with username error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20username%20error.png)
 ### Follow and Unfollow
 - A user can follow any other user
@@ -60,7 +74,15 @@ PicturePoint focuses on providing a platform to share pictures within a group. T
 - Change email: in order to change the email, a user needs to input a unique email with the right email format, otherwise there would be some errors that pop out. If the email address is updated successfully, the information would be updated on firebase authentication and on firebase database in the same time.
 - Change Nickname: In order to change the nickname, the user need to input a string.
 - Change Bio: In order to change the bio, the user need to input a string.
+- Update User Info Appearence
+
 ![Appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/appearence.png)
-![password Update with wring input](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/password%20update(error).png)
-![email Update with wring input 1](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail).png)
-[email Update with wring input 2](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail2.0).png)
+- Password Update with wrong input
+
+![password Update with wrong input](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/password%20update(error).png)
+- Email Update with wrong input
+
+![email Update with wrong input 1](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail).png)
+- Special case
+
+![email Update with wrong input 2](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail2.0).png)
