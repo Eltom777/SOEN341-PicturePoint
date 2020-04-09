@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SOEN341-PicturePoint/picturepoint/static/css/main.271135eb.chunk.css",
+    "main.js": "/SOEN341-PicturePoint/picturepoint/static/js/main.ef51bbc7.chunk.js",
+    "main.js.map": "/SOEN341-PicturePoint/picturepoint/static/js/main.ef51bbc7.chunk.js.map",
+    "runtime-main.js": "/SOEN341-PicturePoint/picturepoint/static/js/runtime-main.c59a01d7.js",
+    "runtime-main.js.map": "/SOEN341-PicturePoint/picturepoint/static/js/runtime-main.c59a01d7.js.map",
+    "static/js/2.758c4608.chunk.js": "/SOEN341-PicturePoint/picturepoint/static/js/2.758c4608.chunk.js",
+    "static/js/2.758c4608.chunk.js.map": "/SOEN341-PicturePoint/picturepoint/static/js/2.758c4608.chunk.js.map",
+    "index.html": "/SOEN341-PicturePoint/picturepoint/index.html",
+    "precache-manifest.0b121d4675a72f86056cf2cc003bbf75.js": "/SOEN341-PicturePoint/picturepoint/precache-manifest.0b121d4675a72f86056cf2cc003bbf75.js",
+    "service-worker.js": "/SOEN341-PicturePoint/picturepoint/service-worker.js",
+    "static/css/main.271135eb.chunk.css.map": "/SOEN341-PicturePoint/picturepoint/static/css/main.271135eb.chunk.css.map",
+    "static/js/2.758c4608.chunk.js.LICENSE.txt": "/SOEN341-PicturePoint/picturepoint/static/js/2.758c4608.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c59a01d7.js",
+    "static/js/2.758c4608.chunk.js",
+    "static/css/main.271135eb.chunk.css",
+    "static/js/main.ef51bbc7.chunk.js"
+  ]
+}
