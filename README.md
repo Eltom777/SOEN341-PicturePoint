@@ -1,88 +1,41 @@
-# SOEN341-PicturePoint
+# Picture Point (SOEN 341)
 
 ## Description
-PicturePoint is a photo-sharing web application. Similar to [Instagram](https://help.instagram.com/424737657584573), users may upload pictures to their profile, follow other users' and like/comment published picutres. This application lets PicturePointers create and be part of groups. Members within these groups will be able to upload and download pictures from this shared space. 
+Picture Point is a photo-sharing web application. Similar to [Instagram](https://help.instagram.com/424737657584573), users may upload and post pictures to their own profile, follow other users and like/comment on published pictures. This application enables people to create a network of friends virtually and share pictures with them via a feed that compiles all of their pictures together.
 ## Objective
-PicturePoint focuses on providing a platform to share pictures within a group. This application can be viewed as a shared cloud for images. Each storage space will be controlled by a group of users. The privacy of these shared pictures can also be configured by it's creator. This security measure will be controlled by the Google Authentication service provided in the development plateform: [Firebase](https://firebase.google.com/).
+The focus of the application is to provide a social media like platform for users to store their pictures safely and be able to share them with other users or friends. This application can be viewed as a mixture of a social media platform and a cloud for images. Each user controls his own uploaded pictures on his profile but these pictures can be liked and commented on by any other user. Firebase is hosted on Secure Sockets Layer which is a typical security technology used to establish encrypted links between a server & client. This concept comes handy to developers when securing the data manipulation into the NoSQL Firebase database.
+Links to the online demo, the description of the features as well as the acceptance tests will be found at the bottom of the readme.md. 
 ## Core Features
-- Login page for users to access their profile
-- Signup page allows a user to create a new profile
-- Allows the user to create a dynamic network of other users called followers
-- Allow users to post pictures with captions
-- Allow users to comment and like posts
-- Profile page which displays your followers/following, collection of pictures, collection of events, edit profile settings
-- Upload pictures to groups and personal profile
-### Extra Features
-- Create a group/event that store a collection of pictures uploaded by users within that group
-- Add/display a collection of events on the profile page
-- Allowing only followers to comment and like user's posts
-- Feed page that will display all new posts
-## Languages/Technologies
+- Follow and Unfollow capability between all users
+- Picture and caption upload capability for each user
+- Like and comment capability on all picture uploads
+- Login and signup page for users to access or create their profile.
+- Profile page that displays a list of followers/following, the collection of posted pictures.
+## Extra Features
+- Update user info capability for new credentials
+- Automatically sign-in capability for past signed in users
+- Recovery of password functionalities in login page
+- Search bar to find other users/friends before the network is created
+- Remove picture capability of self uploaded pictures
+## Languages and Tools
 - Javascript
 - Firebase
 - React
 - React Router
 - Node js
 - Material UI
+- Jest
+## Installation Instructions
+1. cd picturepoint/
+2. npm install
+3. npm start
 ## Contributors
 - Liam-Thomas Flynn (Eltom777) - 40034877 (Team leader)
 - Jordan Hum (Jordan-Hum) - 40095876
 - Anthony Iacampo (a-iacampo) - 40096683
 - Thomas Tran (digathomas) - 40095654
 - Haocheng Yang (Swnoob) - 40031815
-## Features
-### SignIn and SignUp
-- For the SignIn function, a user needs to input a valid email address and the corresponding password to that email in order to authenticate. If the login information are wrong, an error would show and state the reason.
-- SignIn appearence
-
-![SignIn appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/button%20activated.png)
-- SignIn with invalid inputs
-
-![SignIn with invalid inputs](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20input%20information.png)
-- SignIn with invalid password
-
-![SignIn with invalid password](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20In/wrong%20corresponding%20password.png)
-- For the SignUp, a user will have to put a unique user name, a nickname, a email address with the right format and two identical passwords in order to activate the sign up button, any error such as: user name has been taken, email has been taken would stop the signup and is showed by a popup alert.
-- SignUp Appearence
-
-![SignUp Appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/Appearence.png)
-- SignUp with email error
-
-![SignUp with email error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20email%20error.png)
-- SignUp with password error
-
-![SignUp with password error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20password%20error.png)
-- SignUp with username error
-
-![SignUp with username error](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Sign%20Up/sign%20up%20with%20username%20error.png)
-### Follow and Unfollow
-- A user can follow any other user
-- A user can't follow twice a user
-- A user can unfollow any user he has followed
-- A user can't follow himself
-- A user sees a list of followers and following
-### Likes and Comments
-- This feature allows the user to like and unlike a post as well as comment on a post
-- Liking a post
-![User can like a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/liked.png)
-- Unliking a post
-![User can unlike a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/unliked.png)
-- Commenting on a post
-![User can comment on a post](https://github.com/Eltom777/SOEN341-PicturePoint/blob/acceptance_test/likes_comments/Documentation/Likes%20and%20Comments/comments.png)
-### Update Profile Information
-- Change password: in order to change the password, a user needs to input two identical password with at least 6 characters, otherwise, either the button is not activated or it will show an error.
-- Change email: in order to change the email, a user needs to input a unique email with the right email format, otherwise there would be some errors that pop out. If the email address is updated successfully, the information would be updated on firebase authentication and on firebase database in the same time.
-- Change Nickname: In order to change the nickname, the user need to input a string.
-- Change Bio: In order to change the bio, the user need to input a string.
-- Update User Info Appearence
-
-![Appearence](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/appearence.png)
-- Password Update with wrong input
-
-![password Update with wrong input](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/password%20update(error).png)
-- Email Update with wrong input
-
-![email Update with wrong input 1](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail).png)
-- Special case
-
-![email Update with wrong input 2](https://github.com/Eltom777/SOEN341-PicturePoint/blob/dev/sprint4/Documentation/Profile%20Update/email%20update(fail2.0).png)
+## Revelant links
+- [Try out Picture Point](https://eltom777.github.io/SOEN341-PicturePoint/)
+- [Documentation of Features with Screenshots](https://docs.google.com/document/d/1x3p7RJACn_NGDPpP4tU9iUO_bLeaf1HmL-WqLkgcif0/edit?usp=sharing)
+- [Acceptance Tests](https://docs.google.com/spreadsheets/d/1EZgNiHpn1k9lVz96ZxzGB_bqUqjE-Rkx0SQxBJSwtt0/edit?usp=sharing)
