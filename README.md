@@ -1,5 +1,5 @@
 # PicturePoint (SOEN 341)
-## ---
+
 ## Contributors
 - Liam-Thomas Flynn (Eltom777) - 40034877 (Team leader)
 - Jordan Hum (Jordan-Hum) - 40095876
